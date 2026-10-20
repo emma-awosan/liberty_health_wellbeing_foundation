@@ -1,26 +1,133 @@
 @import "tailwindcss";
 
+@theme {
+  --font-heading: var(--font-bricolage-grotesque), system-ui, sans-serif;
+  --font-sans: var(--font-plus-jakarta-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Palette Colors from Brand Guide */
+  --color-primary: #C18E3C;
+  --color-primary-hover: #AA7B2F;
+  --color-primary-light: #FBF4E8;
+  --color-primary-subtle: #F5E8D2;
+  --color-cta: #C18E3C;
+
+  --color-navy: #314D79;
+  --color-navy-dark: #1F3354;
+  --color-navy-deep: #132238;
+  --color-navy-light: #E9EFF7;
+
+  --color-blue: #3662A4;
+  --color-blue-hover: #2B5088;
+  --color-blue-light: #EBF2FA;
+
+  --color-sky: #7BBBE6;
+  --color-sky-subtle: #DCEDF9;
+  --color-sky-light: #F0F7FD;
+
+  --color-canvas: #F7FAFD;
+  --color-surface: #FFFFFF;
+  --color-dark: #0F172A;
+  --color-muted: #5B6A82;
+  --color-border-subtle: #E2E8F0;
+
+  /* Badge Colors */
+  --color-badge-gold-bg: #FBF4E8;
+  --color-badge-gold-border: #F3E4CA;
+  --color-badge-gold-text: #8E6523;
+
+  --color-badge-blue-bg: #EBF2FA;
+  --color-badge-blue-border: #C8DCF2;
+  --color-badge-blue-text: #204B87;
+
+  /* Accent & Map Shades */
+  --color-gold-mid: #D8A54E;
+  --color-gold-dark: #B07C2E;
+  --color-sky-deep: #20639B;
+  --color-map-sand: #F4EFE6;
+  --color-map-sand-border: #E7DFC9;
+  --color-map-cream: #FAF6EE;
+
+  /* Footer Colors */
+  --color-footer-bg: #132238;
+  --color-footer-muted: #94A3B8;
+  --color-footer-border: #1F3354;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-sans: var(--font-plus-jakarta-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: var(--font-bricolage-grotesque), system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: var(--color-canvas);
+  color: var(--color-dark);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  background-color: var(--color-canvas);
+  color: var(--color-dark);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+/* Glassmorphism & Custom Accents */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-gold-mid) 50%, var(--color-gold-dark) 100%);
+}
+
+.navy-gradient {
+  background: linear-gradient(135deg, var(--color-navy-deep) 0%, var(--color-navy-dark) 50%, var(--color-navy) 100%);
+}
+
+.hero-overlay-gradient {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--color-navy-deep) 75%, transparent) 0%, color-mix(in srgb, var(--color-navy) 88%, transparent) 100%);
+}
+
+/* Custom Scrollbar - Scoped to main page only */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 8px;
+}
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background: var(--color-canvas);
+}
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-hover);
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+}
+.no-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
 }
