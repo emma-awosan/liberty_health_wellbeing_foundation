@@ -24,92 +24,94 @@ import CommunityCTA from "@/components/CommunityCTA";
 
 const getInvolvedPathways = [
   {
-    id: "partner" as const,
+    id: "preventive" as const,
     number: "01",
-    badge: "Institutional & Corporate",
-    title: "Institutional & Corporate Partnerships",
-    subtitle: "Co-fund clinics, technology grants, or health policy initiatives.",
+    badge: "Priority Focus",
+    title: "Community Preventive Health",
+    subtitle: "Health awareness, disease prevention and practical health knowledge.",
     description:
-      "Collaborate with Liberty Foundation to build scalable, high-impact healthcare infrastructure. We co-design sustainable interventions, CSR initiatives, and medical technology grants alongside enterprise and institutional leaders.",
+      "Advancing public health literacy and preventive interventions across underserved communities to address priority health needs before they turn into critical medical crises.",
     points: [
-      "Co-finance rural health posts, mobile units & diagnostic tools",
-      "Custom ESG & CSR impact framework with auditable results",
-      "Strategic alignment with regional health ministries and NGOs"
+      "Health awareness campaigns and disease prevention education",
+      "Early screening drives and practical hygiene guidance",
+      "Grassroots health literacy for families and local caregivers"
     ],
-    ctaText: "Explore Partnerships",
+    ctaText: "Explore Preventive Health",
+    ctaLink: "/mission-vision#focus",
+    accentBorder: "border-primary/50",
+    accentBg: "bg-primary-light/50",
+    badgeBg: "bg-primary",
+    image: "/images/hero.jpg",
+    showcaseTag: "Priority 01",
+    showcaseTitle: "Prevention Before Crisis",
+    showcaseDesc:
+      "Promoting knowledge, early action and access to reliable health information so individuals can protect family health.",
+    stat: "Focus 01",
+    statLabel: "Preventive Care",
+  },
+  {
+    id: "equity" as const,
+    number: "02",
+    badge: "Health Inclusion",
+    title: "Mental Health & Health Equity",
+    subtitle: "Promoting wellbeing and dismantling barriers to care access.",
+    description:
+      "Fostering psychological wellbeing and systematically confronting socioeconomic, geographic, and informational barriers that impede vulnerable populations from obtaining care.",
+    points: [
+      "Community mental health advocacy and awareness sessions",
+      "Addressing structural barriers to healthcare for vulnerable groups",
+      "Inclusive support frameworks tailored to community needs"
+    ],
+    ctaText: "Learn About Health Equity",
+    ctaLink: "/mission-vision#focus",
+    accentBorder: "border-blue/40",
+    accentBg: "bg-blue-light/50",
+    badgeBg: "bg-blue",
+    image: "/images/education.jpg",
+    showcaseTag: "Priority 02",
+    showcaseTitle: "Inclusive Wellbeing for All",
+    showcaseDesc:
+      "Ensuring mental wellbeing and healthcare opportunities are accessible without discrimination across Nigerian communities.",
+    stat: "Focus 02",
+    statLabel: "Health Equity",
+  },
+  {
+    id: "capacity" as const,
+    number: "03",
+    badge: "Skills & Training",
+    title: "Capacity Building & Partnerships",
+    subtitle: "Strengthening community knowledge and local partner capabilities.",
+    description:
+      "Developing the capacities of grassroots healthcare workers, community educators, and local partners through evidence-informed workshops and collaborative networks.",
+    points: [
+      "Training modules for community health educators and partners",
+      "Evidence-informed research and monitoring frameworks",
+      "Collaborations with healthcare professionals and researchers"
+    ],
+    ctaText: "Partner With Us",
     ctaLink: "/contact?type=partnership",
     accentBorder: "border-navy/40",
     accentBg: "bg-blue-light/40",
     badgeBg: "bg-navy",
-    image: "/images/hero.jpg",
-    showcaseTag: "Strategic Alliances",
-    showcaseTitle: "Expanding Healthcare Infrastructure & Medical Tech",
-    showcaseDesc:
-      "Directing institutional support and public-private investments to bring permanent medical facilities and diagnostic equipment to underserved regions.",
-    stat: "5+ Regions",
-    statLabel: "Target Expansion",
-  },
-  {
-    id: "volunteer" as const,
-    number: "02",
-    badge: "Medical & Field Missions",
-    title: "Volunteer & Medical Missions",
-    subtitle: "Provide medical, logistics, educational, or training support on the ground.",
-    description:
-      "Join our frontline medical outreach teams and operational missions. We welcome doctors, nurses, pharmacists, public health students, and logistics volunteers eager to bring specialized care directly to remote communities.",
-    points: [
-      "Short & medium-term frontline clinical outreach missions",
-      "Maternal, child wellness, and preventative screening drives",
-      "Clinical capacity-building & mentorship for local nurses"
-    ],
-    ctaText: "Register for Missions",
-    ctaLink: "/contact?type=volunteering",
-    accentBorder: "border-primary/50",
-    accentBg: "bg-primary-light/50",
-    badgeBg: "bg-primary",
-    image: "/images/education.jpg",
-    showcaseTag: "Frontline Outreach",
-    showcaseTitle: "Direct Medical Care & Clinical Training",
-    showcaseDesc:
-      "Empowering grassroots health workers and mobilizing specialized clinical volunteers to treat preventable and acute conditions.",
-    stat: "12,000+",
-    statLabel: "Community Screenings",
-  },
-  {
-    id: "advocate" as const,
-    number: "03",
-    badge: "Advocacy & Donorship",
-    title: "Community Advocacy & Donorship",
-    subtitle: "Amplify health campaigns and support sustainable local programs.",
-    description:
-      "Be a champion for health equity. From funding clean solar water boreholes to organizing preventive health educational drives, your donation and advocacy create enduring self-reliance for vulnerable households.",
-    points: [
-      "Sponsor clean solar water boreholes and hygiene stations",
-      "Fund vital medicine packs and mobile diagnostic kits",
-      "Youth and grassroots health literacy advocacy campaigns"
-    ],
-    ctaText: "Support Our Mission",
-    ctaLink: "/contact?type=donation",
-    accentBorder: "border-blue/40",
-    accentBg: "bg-blue-light/50",
-    badgeBg: "bg-blue",
     image: "/images/sustainability.jpg",
-    showcaseTag: "Community First",
-    showcaseTitle: "Sustainable Clean Water & Health Clinics",
+    showcaseTag: "Priority 03 & 04",
+    showcaseTitle: "Evidence-Guided Capacity Building",
     showcaseDesc:
-      "Every volunteer hour and philanthropic donation accelerates lasting health outcomes, clean water access, and nutritional security in rural communities.",
-    stat: "100%",
-    statLabel: "Locally Anchored",
+      "Equipping local partners with the skills, research, and tools necessary to sustain community-centred healthcare initiatives.",
+    stat: "Focus 03 & 04",
+    statLabel: "Capacity & Evidence",
   },
 ];
 
 export default function Home() {
-  const [selectedVolunteerTab, setSelectedVolunteerTab] = useState<"partner" | "volunteer" | "advocate">("partner");
+  const [selectedVolunteerTab, setSelectedVolunteerTab] = useState<"preventive" | "equity" | "capacity">("preventive");
   const [progress, setProgress] = useState(0);
+  const [isAccordionPaused, setIsAccordionPaused] = useState(false);
 
   const ACCORDION_DURATION = 6000; // 6 seconds auto-switch duration
 
   useEffect(() => {
+    if (isAccordionPaused) return;
     const intervalTime = 50; // 50ms ticks
     const step = (intervalTime / ACCORDION_DURATION) * 100;
 
@@ -128,9 +130,9 @@ export default function Home() {
     }, intervalTime);
 
     return () => clearInterval(interval);
-  }, [selectedVolunteerTab]);
+  }, [selectedVolunteerTab, isAccordionPaused]);
 
-  const handleSelectVolunteerTab = (tabId: "partner" | "volunteer" | "advocate") => {
+  const handleSelectVolunteerTab = (tabId: "preventive" | "equity" | "capacity") => {
     setSelectedVolunteerTab(tabId);
     setProgress(0);
   };
@@ -141,7 +143,7 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full bg-canvas">
       {/* =========================================
-          SECTION 1.A: HERO SECTION (WHITE BG & AFRICA MAP PHOTO MASK)
+          SECTION 1.A: HERO SECTION
       ========================================= */}
       <section className="relative overflow-hidden bg-white text-slate-900 pt-32 sm:pt-40 lg:pt-44 pb-16 lg:pb-24">
         <div className="relative max-w-[1440px] 2xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -150,64 +152,66 @@ export default function Home() {
             {/* Left Content */}
             <div className="lg:col-span-6 flex flex-col items-start gap-6 text-left">
               <Link
-                href="/mission-vision"
+                href="/about"
                 className="group inline-flex items-center gap-3 py-2 pl-2.5 pr-5 rounded-full bg-slate-50 hover:bg-white border border-slate-200/90 hover:border-slate-300 transition-all text-xs sm:text-sm"
               >
                 <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-navy text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider shrink-0">
-                  <Globe2 className="w-3.5 h-3.5 text-sky" />
-                  Pan-African Impact
+                  <ShieldCheck className="w-3.5 h-3.5 text-primary" />
+                  CAC 9469157
                 </span>
                 <span className="font-medium text-slate-700 group-hover:text-dark flex items-center gap-2 transition-colors">
-                  <span className="hidden sm:inline">Advancing Community Health &amp; Wellbeing</span>
-                  <span className="sm:hidden">Healthcare &amp; Wellbeing</span>
+                  <span className="hidden sm:inline">Incorporated Trustees · Registered in Nigeria</span>
+                  <span className="sm:hidden">Nigerian Nonprofit</span>
                   <ArrowRight className="w-3.5 h-3.5 text-primary group-hover:translate-x-0.5 transition-transform shrink-0" />
                 </span>
               </Link>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-heading leading-[1.12] text-dark">
-                A Healthier, Empowered and <span className="text-primary">Sustainable Africa.</span>
+                Better health. <br />
+                Stronger communities. <br />
+                <span className="text-primary">Brighter futures.</span>
               </h1>
 
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl font-normal">
-                Liberty Health &amp; Wellbeing Foundation is committed to improving health and wellbeing, empowering individuals and strengthening communities across Africa through meaningful and sustainable initiatives.
+                We are a Nigerian nonprofit foundation committed to advancing preventive health, health education and equitable wellbeing opportunities for underserved communities.
               </p>
 
-              {/* CTAs - Solid, clean, no light shadows or glowing effects */}
+              {/* CTAs */}
               <div className="flex flex-wrap items-center gap-4 pt-1">
                 <Link
-                  href="/#get-involved"
-                  className="w-40 sm:w-44 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white font-bold text-sm sm:text-base transition-all hover:scale-[1.02] active:scale-98 flex items-center justify-center gap-2 text-center"
+                  href="/about"
+                  className="w-44 sm:w-48 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white font-bold text-sm sm:text-base transition-all hover:scale-[1.02] active:scale-98 flex items-center justify-center gap-2 text-center"
                 >
-                  <span>Get Involved</span>
+                  <span>Discover Foundation</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
 
                 <Link
-                  href="/about"
+                  href="/contact"
                   className="w-40 sm:w-44 py-3.5 rounded-full bg-navy hover:bg-navy-dark text-white font-semibold text-sm sm:text-base transition-all hover:scale-[1.02] active:scale-98 flex items-center justify-center text-center"
                 >
-                  Learn More
+                  Get in Touch
                 </Link>
               </div>
 
               {/* Key Trust Highlights */}
               <div className="pt-8 border-t border-slate-200 grid grid-cols-3 gap-6 w-full max-w-xl">
                 <div>
-                  <div className="text-2xl sm:text-3xl font-extrabold text-primary font-heading">125K+</div>
-                  <div className="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-1">Lives Reached</div>
+                  <div className="text-2xl sm:text-3xl font-extrabold text-primary font-heading">CAC</div>
+                  <div className="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-1">Reg No. 9469157</div>
                 </div>
                 <div>
-                  <div className="text-2xl sm:text-3xl font-extrabold text-navy font-heading">84+</div>
-                  <div className="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-1">Communities</div>
+                  <div className="text-2xl sm:text-3xl font-extrabold text-navy font-heading">7 April</div>
+                  <div className="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-1">Established 2026</div>
                 </div>
                 <div>
-                  <div className="text-2xl sm:text-3xl font-extrabold text-dark font-heading">100%</div>
-                  <div className="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-1">Sustainable</div>
+                  <div className="text-2xl sm:text-3xl font-extrabold text-dark font-heading">Abuja &amp; Sokoto</div>
+                  <div className="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-1">Operating Offices</div>
                 </div>
               </div>
             </div>
 
-            {/* Right: Map of Africa/Nigeria with Photo Mask */}
+            {/* Right: Map / Hero visual */}
             <div className="lg:col-span-6 flex items-center justify-center relative">
               <AfricaHeroMap />
             </div>
@@ -225,7 +229,6 @@ export default function Home() {
             
             {/* Visual element: Multi-image collage with floating stat card */}
             <div className="lg:col-span-6 relative w-full max-w-xl mx-auto lg:max-w-none pr-2 sm:pr-6">
-              {/* Main background photo (top-left) */}
               <div className="relative w-[82%] sm:w-[80%] aspect-[4/3] rounded-xl overflow-hidden shadow-sm border border-slate-100 bg-slate-100">
                 <Image
                   src="/images/education.jpg"
@@ -236,24 +239,23 @@ export default function Home() {
                 />
               </div>
 
-              {/* Overlapping foreground photo (bottom-right) */}
               <div className="relative -mt-24 sm:-mt-28 ml-auto w-[68%] sm:w-[65%] aspect-[4/3] rounded-xl overflow-hidden shadow-md border-4 sm:border-8 border-white bg-slate-100 z-10">
                 <Image
                   src="/images/hero.jpg"
-                  alt="Community healthcare engagement across Africa"
+                  alt="Community healthcare engagement in Nigeria"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 40vw"
                 />
               </div>
 
-              {/* Floating Stat Badge (top-right overlapping corner) */}
-              <div className="absolute top-4 sm:top-6 right-0 sm:right-2 bg-navy text-white px-5 sm:px-6 py-4 sm:py-5 rounded-xl shadow-xs border border-white/20 z-20 text-center min-w-[140px] sm:min-w-[160px]">
-                <div className="text-3xl sm:text-4xl font-extrabold text-primary font-heading leading-none">
-                  10+
+              {/* Floating Stat Badge: CAC Registration */}
+              <div className="absolute top-4 sm:top-6 right-0 sm:right-2 bg-navy text-white px-5 sm:px-6 py-4 sm:py-5 rounded-xl shadow-xs border border-white/20 z-20 text-center min-w-[150px] sm:min-w-[170px]">
+                <div className="text-xl sm:text-2xl font-extrabold text-primary font-heading leading-tight">
+                  CAC 9469157
                 </div>
-                <div className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-200 mt-2 leading-tight">
-                  Years of Community Impact
+                <div className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-200 mt-1 leading-tight">
+                  Incorporated Trustees
                 </div>
               </div>
             </div>
@@ -265,35 +267,35 @@ export default function Home() {
               </span>
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy font-heading tracking-tight leading-[1.15]">
-                Pioneering Sustainable Healthcare and <span className="italic font-serif text-primary">Community Wellbeing.</span>
+                A foundation built around <span className="italic font-serif text-primary">people and their wellbeing.</span>
               </h2>
 
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
-                Liberty Health &amp; Wellbeing Foundation is a dedicated non-profit organization established to address urgent disparities in healthcare, promote holistic wellness, and foster community self-sufficiency across Africa.
+                Liberty Health &amp; Wellbeing Foundation is a registered Nigerian nonprofit organisation working to improve community health and wellbeing through prevention, education, inclusion and evidence-informed initiatives.
               </p>
 
               {/* Highlight Subtitle */}
               <p className="text-xs font-bold uppercase tracking-wider text-slate-800 pt-1">
-                Core Strategic Focus Areas:
+                Our Foundational Pillars:
               </p>
 
-              {/* 2x2 Feature Bullet Grid matching reference */}
+              {/* 2x2 Feature Bullet Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3.5 w-full">
                 <div className="flex items-center gap-2.5 text-slate-700 text-sm font-semibold">
                   <CheckCircle2 className="w-4.5 h-4.5 text-primary shrink-0" />
-                  <span>Grassroots Health &amp; Clinical Outreach</span>
+                  <span>Community Preventive Health</span>
                 </div>
                 <div className="flex items-center gap-2.5 text-slate-700 text-sm font-semibold">
                   <CheckCircle2 className="w-4.5 h-4.5 text-primary shrink-0" />
-                  <span>Sustainable Clean Water &amp; Sanitation</span>
+                  <span>Mental Health &amp; Health Equity</span>
                 </div>
                 <div className="flex items-center gap-2.5 text-slate-700 text-sm font-semibold">
                   <CheckCircle2 className="w-4.5 h-4.5 text-primary shrink-0" />
-                  <span>Youth &amp; Healthcare Training Modules</span>
+                  <span>Capacity Building &amp; Training</span>
                 </div>
                 <div className="flex items-center gap-2.5 text-slate-700 text-sm font-semibold">
                   <CheckCircle2 className="w-4.5 h-4.5 text-primary shrink-0" />
-                  <span>Ethical &amp; Transparent Governance</span>
+                  <span>Research, Monitoring &amp; Evidence</span>
                 </div>
               </div>
 
@@ -311,62 +313,48 @@ export default function Home() {
 
           </div>
 
-          {/* Bottom Full-Width Stats Strip matching reference design */}
+          {/* Bottom Full-Width Strip: Core Approach */}
           <div className="mt-16 sm:mt-20 bg-navy text-white py-10 sm:py-12 px-6 sm:px-10 lg:px-14 rounded-xl shadow-sm border border-navy-dark/40">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-8">
               
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/10 border border-white/15 flex items-center justify-center shrink-0 text-primary">
-                  <Users className="w-6 h-6 sm:w-7 sm:h-7" />
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-white/10 border border-white/15 flex items-center justify-center shrink-0 text-primary">
+                  <HeartPulse className="w-6 h-6" />
                 </div>
                 <div>
-                  <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white font-heading">
-                    125K+
+                  <div className="text-lg sm:text-xl font-bold text-white font-heading">
+                    Prevention Before Crisis
                   </div>
-                  <div className="text-xs sm:text-sm text-slate-200 font-medium mt-0.5">
-                    Lives Impacted
+                  <div className="text-xs sm:text-sm text-slate-300 font-normal mt-1 leading-relaxed">
+                    Promoting knowledge, early diagnosis, and access to practical health information.
                   </div>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/10 border border-white/15 flex items-center justify-center shrink-0 text-primary">
-                  <Globe2 className="w-6 h-6 sm:w-7 sm:h-7" />
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-white/10 border border-white/15 flex items-center justify-center shrink-0 text-primary">
+                  <Users className="w-6 h-6" />
                 </div>
                 <div>
-                  <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white font-heading">
-                    84+
+                  <div className="text-lg sm:text-xl font-bold text-white font-heading">
+                    Communities at the Centre
                   </div>
-                  <div className="text-xs sm:text-sm text-slate-200 font-medium mt-0.5">
-                    Communities Served
+                  <div className="text-xs sm:text-sm text-slate-300 font-normal mt-1 leading-relaxed">
+                    Working directly with communities and local partners to address genuine, localized needs.
                   </div>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/10 border border-white/15 flex items-center justify-center shrink-0 text-primary">
-                  <GraduationCap className="w-6 h-6 sm:w-7 sm:h-7" />
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-white/10 border border-white/15 flex items-center justify-center shrink-0 text-primary">
+                  <ShieldCheck className="w-6 h-6" />
                 </div>
                 <div>
-                  <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white font-heading">
-                    65+
+                  <div className="text-lg sm:text-xl font-bold text-white font-heading">
+                    Evidence that Guides Action
                   </div>
-                  <div className="text-xs sm:text-sm text-slate-200 font-medium mt-0.5">
-                    Training Workshops
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/10 border border-white/15 flex items-center justify-center shrink-0 text-primary">
-                  <ShieldCheck className="w-6 h-6 sm:w-7 sm:h-7" />
-                </div>
-                <div>
-                  <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white font-heading">
-                    100%
-                  </div>
-                  <div className="text-xs sm:text-sm text-slate-200 font-medium mt-0.5">
-                    Sustainable Initiatives
+                  <div className="text-xs sm:text-sm text-slate-300 font-normal mt-1 leading-relaxed">
+                    Using research, monitoring, and community experience to guide initiatives as they grow.
                   </div>
                 </div>
               </div>
@@ -376,7 +364,7 @@ export default function Home() {
 
         </div>
 
-        {/* Organic Curved Wave Divider into Mission & Vision (Canvas) */}
+        {/* Organic Curved Wave Divider */}
         <div className="w-full overflow-hidden leading-none -mb-px">
           <svg
             viewBox="0 0 1440 120"
@@ -412,7 +400,7 @@ export default function Home() {
               Mission &amp; Vision
             </h2>
             <p className="text-slate-600 mt-3 text-base sm:text-lg">
-              The driving principles behind every program, partnership, and community engagement we lead across Africa.
+              The driving principles behind our preventive health, community engagement, and sustainable initiatives across Nigeria.
             </p>
           </div>
 
@@ -438,7 +426,7 @@ export default function Home() {
                   Our Mission
                 </h3>
                 <p className="text-slate-200 text-sm sm:text-base mt-2 max-w-xl leading-relaxed font-normal">
-                  “To improve health and wellbeing by providing innovative solutions, promoting education, and supporting sustainable initiatives that empower individuals and strengthen communities across Africa.”
+                  “To improve community health and wellbeing by delivering preventive, inclusive, and evidence-informed health programmes that address priority health needs in underserved populations.”
                 </p>
               </div>
             </div>
@@ -454,10 +442,10 @@ export default function Home() {
                   Grassroots Action
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-navy font-heading mt-1 mb-2 tracking-tight">
-                  Empowerment First
+                  Communities First
                 </h3>
                 <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                  True wellbeing begins when local leaders are equipped to champion preventive healthcare, health literacy, and systemic community self-sufficiency.
+                  Equipping individuals, caregivers, and local partners with practical health education and preventive knowledge to foster lasting community self-reliance.
                 </p>
               </div>
             </div>
@@ -476,7 +464,7 @@ export default function Home() {
                   Sustainable Futures
                 </h3>
                 <p className="text-white/95 text-sm sm:text-base leading-relaxed font-light">
-                  Addressing the deeper determinants of health—clean water, education, and economic dignity—ensuring interventions outlast funding cycles.
+                  Addressing the deeper determinants of wellbeing through health education, inclusion, and partnerships designed to endure and grow over time.
                 </p>
               </div>
             </div>
@@ -497,7 +485,7 @@ export default function Home() {
                     Our Vision
                   </h3>
                   <p className="text-slate-200 text-sm sm:text-base leading-relaxed font-normal max-w-md">
-                    “To contribute to a healthier, empowered and more sustainable Africa where individuals and communities have the opportunity to thrive.”
+                    “A Nigeria where individuals and communities have equitable access to health knowledge, preventive care, and support systems that enable healthier and more fulfilling lives.”
                   </p>
                 </div>
               </div>
@@ -506,7 +494,7 @@ export default function Home() {
               <div className="relative w-full sm:w-5/12 h-56 sm:h-full min-h-[220px] sm:min-h-[340px] shrink-0 overflow-hidden">
                 <Image
                   src="/images/africa-hero-children.jpg"
-                  alt="A healthier, empowered Africa"
+                  alt="A healthier, empowered Nigeria"
                   fill
                   className="object-cover object-top sm:object-center"
                   sizes="(max-width: 640px) 100vw, 30vw"
@@ -552,114 +540,132 @@ export default function Home() {
       </section>
 
       {/* =========================================
-          SECTION 1.D: OUR FOCUS AREAS (6-CARD GRID)
+          SECTION 1.D: OUR FOCUS AREAS (4 STRATEGIC PRIORITIES)
       ========================================= */}
       <section id="focus-areas" className="pt-10 sm:pt-14 pb-0 bg-white relative overflow-hidden">
         <div className="max-w-[1440px] 2xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20 lg:pb-24">
           
-          {/* Header matching reference typography */}
+          {/* Header */}
           <div className="max-w-3xl mx-auto text-center mb-14 sm:mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-primary font-heading">
-              Strategic Pillars
+              Strategic Priorities
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy font-heading tracking-tight mt-2 leading-[1.15]">
-              Targeted Impact Across <span className="text-primary">Our Focus Areas</span>
+              Targeted Action Across <span className="text-primary">Our Four Focus Areas</span>
             </h2>
             <p className="text-slate-600 mt-4 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-normal">
-              Empowering communities with targeted health, educational, and sustainable initiatives designed to foster enduring resilience across Africa.
+              Empowering Nigerian communities with preventive healthcare, education, inclusion, and evidence-informed programmes designed for sustainable wellbeing.
             </p>
           </div>
 
-          {/* 6-Card Grid (3 columns x 2 rows) matching reference layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 w-full">
+          {/* 4-Card Strategic Focus Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6 w-full">
             
-            {/* Card 1: Health & Clinical Care */}
-            <div className="group rounded-xl p-8 sm:p-9 bg-canvas border border-slate-200/80 hover:shadow-xs hover:border-slate-300 hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between">
+            {/* Card 1: Community Preventive Health */}
+            <div className="group rounded-xl p-7 sm:p-8 bg-canvas border border-slate-200/80 hover:bg-white hover:shadow-md hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
               <div>
-                <div className="w-12 h-12 rounded-full bg-primary-light border border-badge-gold-border flex items-center justify-center text-primary mb-6 group-hover:scale-105 transition-transform">
-                  <Activity className="w-6 h-6" />
+                <div className="flex items-center justify-between mb-5">
+                  <div className="w-12 h-12 rounded-full bg-primary-light border border-badge-gold-border flex items-center justify-center text-primary group-hover:scale-105 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                    <Activity className="w-6 h-6" />
+                  </div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-primary bg-primary-light/80 border border-badge-gold-border px-3 py-1 rounded-full">
+                    Priority 01
+                  </span>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-navy font-heading mb-3 tracking-tight">
-                  Health &amp; Clinical Care
+                <h3 className="text-xl font-bold text-navy font-heading mb-3 tracking-tight group-hover:text-primary transition-colors">
+                  Community Preventive Health
                 </h3>
-                <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                  Promoting healthier individuals through direct access to essential medicine, maternal-child health screening, preventative checkups, and frontline community clinics.
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Promoting health awareness, practical health education, and disease prevention to help communities identify and mitigate risks before crises arise.
                 </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-slate-200/70 flex items-center justify-between text-xs font-semibold text-navy">
+                <span>Awareness &amp; Prevention</span>
+                <Link href="/mission-vision#focus-1" className="text-primary inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                  <span>Learn More</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
             </div>
 
-            {/* Card 2: Education & Health Literacy */}
-            <div className="group rounded-xl p-8 sm:p-9 bg-canvas border border-slate-200/80 hover:shadow-xs hover:border-slate-300 hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between">
+            {/* Card 2: Mental Health & Health Equity */}
+            <div className="group rounded-xl p-7 sm:p-8 bg-canvas border border-slate-200/80 hover:bg-white hover:shadow-md hover:border-blue/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
               <div>
-                <div className="w-12 h-12 rounded-full bg-blue-light border border-badge-blue-border flex items-center justify-center text-blue mb-6 group-hover:scale-105 transition-transform">
-                  <GraduationCap className="w-6 h-6" />
+                <div className="flex items-center justify-between mb-5">
+                  <div className="w-12 h-12 rounded-full bg-blue-light border border-badge-blue-border flex items-center justify-center text-blue group-hover:scale-105 group-hover:bg-blue group-hover:text-white transition-all duration-300">
+                    <Heart className="w-6 h-6" />
+                  </div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-blue bg-blue-light/80 border border-badge-blue-border px-3 py-1 rounded-full">
+                    Priority 02
+                  </span>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-navy font-heading mb-3 tracking-tight">
-                  Education &amp; Health Literacy
+                <h3 className="text-xl font-bold text-navy font-heading mb-3 tracking-tight group-hover:text-blue transition-colors">
+                  Mental Health &amp; Health Equity
                 </h3>
-                <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                  Creating opportunities for individuals to gain actionable healthcare skills, public hygiene training, community health advocacy, and educational empowerment.
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Advocating for mental wellbeing and systematically confronting the social, informational, and economic barriers that impede equitable access to care.
                 </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-slate-200/70 flex items-center justify-between text-xs font-semibold text-navy">
+                <span>Inclusion &amp; Access</span>
+                <Link href="/mission-vision#focus-2" className="text-blue inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                  <span>Learn More</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
             </div>
 
-            {/* Card 3: Community Development */}
-            <div className="group rounded-xl p-8 sm:p-9 bg-canvas border border-slate-200/80 hover:shadow-xs hover:border-slate-300 hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between">
+            {/* Card 3: Capacity Building */}
+            <div className="group rounded-xl p-7 sm:p-8 bg-canvas border border-slate-200/80 hover:bg-white hover:shadow-md hover:border-navy/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
               <div>
-                <div className="w-12 h-12 rounded-full bg-navy-light border border-navy/15 flex items-center justify-center text-navy mb-6 group-hover:scale-105 transition-transform">
-                  <Building2 className="w-6 h-6" />
+                <div className="flex items-center justify-between mb-5">
+                  <div className="w-12 h-12 rounded-full bg-navy-light border border-navy/15 flex items-center justify-center text-navy group-hover:scale-105 group-hover:bg-navy group-hover:text-white transition-all duration-300">
+                    <GraduationCap className="w-6 h-6" />
+                  </div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-navy bg-navy-light border border-navy/15 px-3 py-1 rounded-full">
+                    Priority 03
+                  </span>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-navy font-heading mb-3 tracking-tight">
-                  Community Development
+                <h3 className="text-xl font-bold text-navy font-heading mb-3 tracking-tight group-hover:text-primary transition-colors">
+                  Capacity Building
                 </h3>
-                <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                  Supporting grassroots infrastructure, local healthcare facilities, civic resilience, and safe social support networks that drive lasting positive systemic change.
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Strengthening community knowledge and developing the skills and capabilities of local health workers, educators, and partner organisations.
                 </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-slate-200/70 flex items-center justify-between text-xs font-semibold text-navy">
+                <span>Skills &amp; Training</span>
+                <Link href="/mission-vision#focus-3" className="text-navy hover:text-primary inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                  <span>Learn More</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
             </div>
 
-            {/* Card 4: Clean Water & Sanitation */}
-            <div className="group rounded-xl p-8 sm:p-9 bg-canvas border border-slate-200/80 hover:shadow-xs hover:border-slate-300 hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between">
+            {/* Card 4: Research, Monitoring & Evidence */}
+            <div className="group rounded-xl p-7 sm:p-8 bg-canvas border border-slate-200/80 hover:bg-white hover:shadow-md hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
               <div>
-                <div className="w-12 h-12 rounded-full bg-primary-light border border-badge-gold-border flex items-center justify-center text-primary mb-6 group-hover:scale-105 transition-transform">
-                  <Sprout className="w-6 h-6" />
+                <div className="flex items-center justify-between mb-5">
+                  <div className="w-12 h-12 rounded-full bg-primary-light border border-badge-gold-border flex items-center justify-center text-primary group-hover:scale-105 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                    <ShieldCheck className="w-6 h-6" />
+                  </div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-primary bg-primary-light/80 border border-badge-gold-border px-3 py-1 rounded-full">
+                    Priority 04
+                  </span>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-navy font-heading mb-3 tracking-tight">
-                  Clean Water &amp; Sanitation
+                <h3 className="text-xl font-bold text-navy font-heading mb-3 tracking-tight group-hover:text-primary transition-colors">
+                  Research &amp; Evidence
                 </h3>
-                <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                  Developing sustainable boreholes, solar-powered filtration hubs, and sanitation infrastructure that eliminate waterborne illnesses at the root source.
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Conducting health research, collecting grassroots data, and monitoring programme outcomes to guide future initiatives with sound empirical evidence.
                 </p>
               </div>
-            </div>
-
-            {/* Card 5: Youth & Women Enablement */}
-            <div className="group rounded-xl p-8 sm:p-9 bg-canvas border border-slate-200/80 hover:shadow-xs hover:border-slate-300 hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between">
-              <div>
-                <div className="w-12 h-12 rounded-full bg-blue-light border border-badge-blue-border flex items-center justify-center text-blue mb-6 group-hover:scale-105 transition-transform">
-                  <Users className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-navy font-heading mb-3 tracking-tight">
-                  Youth &amp; Women Enablement
-                </h3>
-                <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                  Equipping caregivers, mothers, and aspiring youth leaders with vocational competencies, community health ambassador roles, and economic dignity.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 6: Sustainable Initiatives */}
-            <div className="group rounded-xl p-8 sm:p-9 bg-canvas border border-slate-200/80 hover:shadow-xs hover:border-slate-300 hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between">
-              <div>
-                <div className="w-12 h-12 rounded-full bg-navy-light border border-navy/15 flex items-center justify-center text-navy mb-6 group-hover:scale-105 transition-transform">
-                  <ShieldCheck className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-navy font-heading mb-3 tracking-tight">
-                  Sustainable Initiatives
-                </h3>
-                <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                  Investing in solar cold-chains, self-sufficient clinic models, and transparent governance frameworks that endure far beyond temporary funding cycles.
-                </p>
+              <div className="mt-6 pt-4 border-t border-slate-200/70 flex items-center justify-between text-xs font-semibold text-navy">
+                <span>Data &amp; Learning</span>
+                <Link href="/mission-vision#focus-4" className="text-primary inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                  <span>Learn More</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
             </div>
 
@@ -697,28 +703,30 @@ export default function Home() {
       </section>
 
       {/* =========================================
-          SECTION 1.E: IMPACT / PURPOSE SECTION (SIMPLE & REAL)
+          SECTION 1.E: INSTITUTIONAL READINESS & COMMITMENTS
       ========================================= */}
       <section className="pt-16 sm:pt-20 pb-0 bg-navy-deep text-white relative overflow-hidden">
         <div className="max-w-[1440px] 2xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24 relative z-10">
-           <div className="mb-16">
-         
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-heading tracking-tight leading-[1.15]">
-                  Creating Meaningful, Real Impact Across <span className="text-primary">Africa</span>
-                </h2>
-                <p className="text-slate-300 mt-3 text-sm sm:text-base leading-relaxed font-normal">
-                  Every metric reflects real families supported, active solar water filtration hubs running, and local healthcare workers empowered on the ground.
-                </p>
-              </div>
+          <div className="max-w-3xl mb-14 sm:mb-16">
+            <span className="text-xs font-bold uppercase tracking-widest text-primary font-heading block mb-2.5">
+              Institutional Foundation &amp; Readiness
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-heading tracking-tight leading-[1.15]">
+              Committed to Measurable, <span className="text-primary">Evidence-Informed Healthcare</span>
+            </h2>
+            <p className="text-slate-300 mt-3.5 text-sm sm:text-base lg:text-lg leading-relaxed font-normal">
+              Registered in Nigeria as Incorporated Trustees (CAC No. 9469157), our Phase 1 operations establish solid governance, community-rooted programs, and sustainable partnerships across our Abuja and Sokoto operating hubs.
+            </p>
+          </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             
-            {/* Left: Authentic Real Field Photography */}
+            {/* Left: Authentic Field Photography */}
             <div className="lg:col-span-5 flex flex-col gap-4">
               <div className="relative aspect-[4/3] sm:aspect-[16/11] rounded-xl overflow-hidden border border-white/15 shadow-sm bg-slate-900 group">
                 <Image
                   src="/images/hero.jpg"
-                  alt="Frontline healthcare workers providing community medical care in Africa"
+                  alt="Community healthcare engagement in Nigeria"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 1024px) 100vw, 40vw"
@@ -727,13 +735,13 @@ export default function Home() {
                 
                 <div className="absolute bottom-5 left-5 right-5 text-white">
                   <span className="inline-block px-3 py-1 rounded-full bg-primary text-[10px] font-bold uppercase tracking-wider mb-2">
-                    Direct Field Operations
+                    Phase 1 Operational Hubs
                   </span>
                   <h3 className="text-base sm:text-lg font-bold font-heading text-white leading-snug">
-                    Grassroots Community Healthcare Outreach
+                    Headquarters Abuja &amp; Sokoto Office
                   </h3>
                   <p className="text-xs text-slate-200 mt-1 leading-relaxed">
-                    Preventative health screenings, clinical care, and clean water delivery in underserved regions.
+                    Establishing community health networks, local partner training, and evidence-informed baseline studies.
                   </p>
                 </div>
               </div>
@@ -742,19 +750,15 @@ export default function Home() {
               <div className="flex items-center justify-between p-4 rounded-xl bg-white border border-slate-100 shadow-xs text-xs text-navy">
                 <div className="flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-primary" />
-                  <span className="font-semibold text-navy">100% Community-Led Initiatives</span>
+                  <span className="font-semibold text-navy">Incorporated Trustees · CAC 9469157</span>
                 </div>
-                <span className="text-[11px] text-slate-500 font-medium">Audited Biannually</span>
+                <span className="text-[11px] text-slate-500 font-medium">Est. 7 April 2026</span>
               </div>
             </div>
 
-            
-
-            {/* Right: Section Header & Clean Real Metrics Grid */}
+            {/* Right: Section Header & Clean Institutional Metrics Grid */}
             <div className="lg:col-span-7 flex flex-col gap-6">
               
-             
-
               {/* 2x2 Clean Stats Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 pt-2">
                 
@@ -762,16 +766,16 @@ export default function Home() {
                 <div className="p-5 sm:p-6 rounded-xl bg-white border border-slate-100 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between">
                   <div className="flex items-center justify-between mb-3">
                     <div className="w-10 h-10 rounded-full bg-primary-light border border-badge-gold-border flex items-center justify-center text-primary">
-                      <HeartPulse className="w-5 h-5 text-primary" />
+                      <ShieldCheck className="w-5 h-5 text-primary" />
                     </div>
-                    <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Health</span>
+                    <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Statutory</span>
                   </div>
                   <div>
-                    <div className="text-3xl sm:text-4xl font-extrabold text-primary font-heading tracking-tight mb-1">
-                      125,000+
+                    <div className="text-2xl sm:text-3xl font-extrabold text-primary font-heading tracking-tight mb-1">
+                      CAC 9469157
                     </div>
-                    <div className="text-sm font-bold text-navy">People Reached</div>
-                    <p className="text-xs text-slate-600 mt-1">Direct healthcare services &amp; clinical screenings</p>
+                    <div className="text-sm font-bold text-navy">Incorporated Trustees</div>
+                    <p className="text-xs text-slate-600 mt-1">Legally established Nigerian nonprofit organization</p>
                   </div>
                 </div>
 
@@ -779,33 +783,33 @@ export default function Home() {
                 <div className="p-5 sm:p-6 rounded-xl bg-white border border-slate-100 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between">
                   <div className="flex items-center justify-between mb-3">
                     <div className="w-10 h-10 rounded-full bg-blue-light border border-badge-blue-border flex items-center justify-center text-blue">
-                      <Globe2 className="w-5 h-5 text-blue" />
+                      <Building2 className="w-5 h-5 text-blue" />
                     </div>
-                    <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Reach</span>
+                    <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Locations</span>
                   </div>
                   <div>
-                    <div className="text-3xl sm:text-4xl font-extrabold text-blue font-heading tracking-tight mb-1">
-                      84+
+                    <div className="text-2xl sm:text-3xl font-extrabold text-blue font-heading tracking-tight mb-1">
+                      2 Offices
                     </div>
-                    <div className="text-sm font-bold text-navy">Communities Served</div>
-                    <p className="text-xs text-slate-600 mt-1">Across 6 East, West &amp; Central African regions</p>
+                    <div className="text-sm font-bold text-navy">Abuja &amp; Sokoto Hubs</div>
+                    <p className="text-xs text-slate-600 mt-1">Headquarters in Jikwoyi, FCT &amp; field presence in Arkilla, Sokoto</p>
                   </div>
                 </div>
 
                 {/* Metric 3 */}
                 <div className="p-5 sm:p-6 rounded-xl bg-white border border-slate-100 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between">
                   <div className="flex items-center justify-between mb-3">
-                    <div className="w-10 h-10 rounded-full bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600">
-                      <Droplets className="w-5 h-5 text-emerald-600" />
+                    <div className="w-10 h-10 rounded-full bg-primary-light border border-badge-gold-border flex items-center justify-center text-primary">
+                      <HeartPulse className="w-5 h-5 text-primary" />
                     </div>
-                    <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Water &amp; Clinics</span>
+                    <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Strategy</span>
                   </div>
                   <div>
-                    <div className="text-3xl sm:text-4xl font-extrabold text-emerald-600 font-heading tracking-tight mb-1">
-                      36
+                    <div className="text-2xl sm:text-3xl font-extrabold text-primary font-heading tracking-tight mb-1">
+                      4 Priorities
                     </div>
-                    <div className="text-sm font-bold text-navy">Projects Completed</div>
-                    <p className="text-xs text-slate-600 mt-1">Solar boreholes, filtration hubs &amp; medical centers</p>
+                    <div className="text-sm font-bold text-navy">Strategic Focus Areas</div>
+                    <p className="text-xs text-slate-600 mt-1">Preventive health, mental health &amp; equity, capacity, research</p>
                   </div>
                 </div>
 
@@ -815,14 +819,14 @@ export default function Home() {
                     <div className="w-10 h-10 rounded-full bg-navy-light border border-navy/15 flex items-center justify-center text-navy">
                       <Users className="w-5 h-5 text-navy" />
                     </div>
-                    <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Volunteers</span>
+                    <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Partnerships</span>
                   </div>
                   <div>
-                    <div className="text-3xl sm:text-4xl font-extrabold text-navy font-heading tracking-tight mb-1">
-                      1,200+
+                    <div className="text-2xl sm:text-3xl font-extrabold text-navy font-heading tracking-tight mb-1">
+                      Multi-Sector
                     </div>
-                    <div className="text-sm font-bold text-navy">Active Volunteers</div>
-                    <p className="text-xs text-slate-600 mt-1">Certified doctors, nurses &amp; community advocates</p>
+                    <div className="text-sm font-bold text-navy">Open Collaborations</div>
+                    <p className="text-xs text-slate-600 mt-1">Healthcare workers, researchers, community groups &amp; donors</p>
                   </div>
                 </div>
 
@@ -832,16 +836,20 @@ export default function Home() {
               <div className="p-4 sm:p-5 rounded-xl bg-white border border-slate-100 shadow-xs flex items-center justify-between gap-4">
                 <div className="flex items-center gap-3.5">
                   <div className="w-10 h-10 rounded-full bg-primary-light border border-badge-gold-border flex items-center justify-center text-primary shrink-0">
-                    <GraduationCap className="w-5 h-5 text-primary" />
+                    <CheckCircle2 className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <div className="text-sm font-bold text-navy">52 Health &amp; Hygiene Educational Drives</div>
-                    <p className="text-xs text-slate-600">Preventative hygiene, nutrition &amp; youth health modules</p>
+                    <div className="text-sm font-bold text-navy">Evidence &amp; Community Participation First</div>
+                    <p className="text-xs text-slate-600">Every intervention is guided by community consultation and reliable baseline data</p>
                   </div>
                 </div>
-                <div className="text-2xl sm:text-3xl font-extrabold text-primary font-heading shrink-0 hidden sm:block">
-                  52
-                </div>
+                <Link
+                  href="/about"
+                  className="text-xs font-bold text-primary hover:text-navy shrink-0 inline-flex items-center gap-1 transition-colors"
+                >
+                  <span>Our Principles</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
 
             </div>
@@ -891,8 +899,14 @@ export default function Home() {
                 Whether through partnership, volunteering, support or collaboration, there are different ways to contribute to the work of Liberty Health &amp; Wellbeing Foundation.
               </p>
 
-              {/* Pathways Accordion with Auto-Advance Countdown Spinner */}
-              <div className="w-full space-y-3 pt-1">
+              {/* Pathways Accordion with Auto-Advance Countdown Spinner & Pause-on-Hover */}
+              <div
+                className="w-full space-y-3 pt-1"
+                onMouseEnter={() => setIsAccordionPaused(true)}
+                onMouseLeave={() => setIsAccordionPaused(false)}
+                onFocus={() => setIsAccordionPaused(true)}
+                onBlur={() => setIsAccordionPaused(false)}
+              >
                 {getInvolvedPathways.map((pathway) => {
                   const isOpen = selectedVolunteerTab === pathway.id;
                   return (
@@ -936,7 +950,7 @@ export default function Home() {
                         {isOpen ? (
                           <div 
                             className="relative w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center shrink-0"
-                            title={`Auto-advancing in ${secondsLeft}s`}
+                            title={isAccordionPaused ? "Paused while reading" : `Auto-advancing in ${secondsLeft}s`}
                           >
                             {/* Circular Countdown Spinner */}
                             <svg className="w-9 h-9 sm:w-10 sm:h-10 -rotate-90 transform" viewBox="0 0 36 36">
@@ -962,18 +976,18 @@ export default function Home() {
                                 strokeDasharray={87.96}
                                 strokeDashoffset={87.96 - (progress / 100) * 87.96}
                                 className={`transition-[stroke-dashoffset] duration-75 ease-linear ${
-                                  pathway.id === "volunteer"
+                                  pathway.id === "preventive"
                                     ? "text-primary"
-                                    : pathway.id === "partner"
-                                    ? "text-navy"
-                                    : "text-blue"
+                                    : pathway.id === "equity"
+                                    ? "text-blue"
+                                    : "text-navy"
                                 }`}
                               />
                             </svg>
                             {/* Center countdown number */}
                             <div className="absolute inset-0 flex items-center justify-center">
                               <span className="text-[10px] sm:text-[11px] font-bold font-mono text-navy leading-none">
-                                {secondsLeft}s
+                                {isAccordionPaused ? "II" : `${secondsLeft}s`}
                               </span>
                             </div>
                           </div>
@@ -1004,6 +1018,17 @@ export default function Home() {
                                   <span>{point}</span>
                                 </div>
                               ))}
+                            </div>
+
+                            {/* Direct Pathway Action Link */}
+                            <div className="mt-4 pt-3 border-t border-slate-200/50">
+                              <Link
+                                href={pathway.ctaLink}
+                                className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-navy hover:text-primary transition-colors group/cta"
+                              >
+                                <span>{pathway.ctaText}</span>
+                                <ArrowRight className="w-3.5 h-3.5 text-primary group-hover/cta:translate-x-0.5 transition-transform" />
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -1051,7 +1076,7 @@ export default function Home() {
                           fill
                           className="object-cover"
                           sizes="(max-width: 1024px) 100vw, 50vw"
-                          priority={item.id === "partner"}
+                          priority={item.id === "preventive"}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/40 to-transparent" />
                       </div>
@@ -1083,7 +1108,7 @@ export default function Home() {
                   <div className="mt-4 pt-4 border-t border-white/15 flex items-center justify-between text-xs text-slate-300">
                     <span className="flex items-center gap-1.5">
                       <ShieldCheck className="w-4 h-4 text-sky" />
-                      Verified Pan-African Initiative
+                      Incorporated Trustees · CAC 9469157
                     </span>
                     <Link 
                       href={currentPathway.ctaLink} 

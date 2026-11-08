@@ -73,27 +73,33 @@ export default function AfricaHeroMap() {
         {/* Nigeria Spotlight outline */}
         <path
           d={nigeriaPath}
-          fill="none"
+          fill="rgba(193, 142, 60, 0.15)"
           stroke="var(--color-primary)"
           strokeWidth="2.5"
           strokeDasharray="4 3"
         />
 
-        {/* Nigeria Location Pin */}
-        <g transform="translate(238.6, 242.5)">
+        {/* Sokoto Office Pin */}
+        <g transform="translate(214, 216)">
+          <circle r="4.5" fill="#3662A4" stroke="var(--color-surface)" strokeWidth="1.5" />
+          <circle r="9" fill="none" stroke="#3662A4" strokeWidth="1" opacity="0.6" />
+        </g>
+
+        {/* Abuja Headquarters Pin */}
+        <g transform="translate(242, 246)">
           <circle r="6" fill="var(--color-primary)" stroke="var(--color-surface)" strokeWidth="2" />
-          <circle r="13" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" opacity="0.5" />
+          <circle r="13" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" opacity="0.6" className="animate-pulse" />
         </g>
       </svg>
 
-      {/* Floating Info Tag for Nigeria / Africa Health Focus */}
-      <div className="absolute -bottom-3 sm:-bottom-5 left-1 sm:left-3 bg-surface/98 backdrop-blur-md border border-slate-200/90 rounded-xl px-3 py-2 text-slate-800 text-xs font-medium flex items-center gap-2.5 z-20 shadow-xs max-w-[220px] sm:max-w-[240px]">
-        <div className="w-8 h-8 rounded-full bg-navy flex items-center justify-center shrink-0 border border-navy-dark/20">
-          <Globe2 className="w-4 h-4 text-primary" />
+      {/* Floating Info Tag for Nigerian Headquarters & Sokoto Office */}
+      <div className="absolute -bottom-3 sm:-bottom-5 left-1 sm:left-3 bg-surface/98 backdrop-blur-md border border-slate-200/90 rounded-xl px-3.5 py-2.5 text-slate-800 text-xs font-medium flex items-center gap-3 z-20 shadow-xs max-w-[260px] sm:max-w-[280px]">
+        <div className="w-9 h-9 rounded-full bg-navy flex items-center justify-center shrink-0 border border-navy-dark/20">
+          <Globe2 className="w-4.5 h-4.5 text-primary" />
         </div>
         <div className="min-w-0">
-          <p className="font-bold text-navy-deep text-xs leading-tight">Pan-African Initiatives</p>
-          <p className="text-[10.5px] text-slate-500 leading-tight mt-0.5">Active Hub in Nigeria &amp; Regional Communities</p>
+          <p className="font-bold text-navy-deep text-xs leading-tight">Nigerian Nonprofit Foundation</p>
+          <p className="text-[10.5px] text-slate-500 leading-tight mt-0.5">Headquarters Abuja · Sokoto Office</p>
         </div>
       </div>
     </div>

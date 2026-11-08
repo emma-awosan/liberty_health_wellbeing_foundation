@@ -209,7 +209,7 @@ export function GrowthIllustration({ className = "" }: { className?: string }) {
           <circle cx="240" cy="40" r="2" fill="#AA7B2F" />
         </g>
         <text x="245" y="86" textAnchor="middle" fill="#C18E3C" fontSize="9" fontWeight="700" letterSpacing="0.02em">
-          Pan-African Hubs
+          Community Hubs
         </text>
 
         {/* Dynamic rising arrow at the crest */}

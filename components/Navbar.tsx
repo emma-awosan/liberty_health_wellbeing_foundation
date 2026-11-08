@@ -15,7 +15,7 @@ import {
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [expandedMenu, setExpandedMenu] = useState<string | null>("services");
+  const [expandedMenu, setExpandedMenu] = useState<string | null>("focus");
   const pathname = usePathname();
   const [prevPathname, setPrevPathname] = useState(pathname);
 
@@ -188,108 +188,56 @@ export default function Navbar() {
             }`} />
           </Link>
 
-          {/* Services Accordion */}
+          {/* Focus Areas Accordion */}
           <div className="py-0.5">
             <button
               type="button"
-              onClick={() => toggleSubmenu("services")}
+              onClick={() => toggleSubmenu("focus")}
               className="w-full flex items-center justify-between text-lg sm:text-xl font-normal tracking-tight py-2 text-white/90 hover:text-white transition-colors group"
             >
-              <span>Services</span>
-              {expandedMenu === "services" ? (
+              <span>Our Focus</span>
+              {expandedMenu === "focus" ? (
                 <ChevronDown className="w-4 h-4 text-slate-400 group-hover:text-white transition-colors" />
               ) : (
                 <ChevronRight className="w-4 h-4 text-slate-500 group-hover:text-white transition-transform group-hover:translate-x-0.5" />
               )}
             </button>
 
-            {/* Clean Minimal Submenu */}
-            {expandedMenu === "services" && (
-              <div className="mt-1 pl-1 space-y-3.5 animate-in fade-in slide-in-from-top-1 duration-150">
-                
-                {/* Category 1: Healthcare Missions */}
-                <div>
-                  <h4 className="text-xs sm:text-sm font-semibold text-white/90 tracking-wide mt-2 mb-1">
-                    Healthcare Missions -
-                  </h4>
-                  <div className="space-y-1 pl-2">
-                    <Link
-                      href="/#focus-areas"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="flex items-center justify-between py-1 text-sm text-slate-400 hover:text-white transition-colors group"
-                    >
-                      <span>Rural Medical Outreach</span>
-                      <ArrowUpRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </Link>
-                    <Link
-                      href="/#focus-areas"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="flex items-center justify-between py-1 text-sm text-slate-400 hover:text-white transition-colors group"
-                    >
-                      <span>Maternal &amp; Child Healthcare</span>
-                      <ArrowUpRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </Link>
-                    <Link
-                      href="/#focus-areas"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="flex items-center justify-between py-1 text-sm text-slate-400 hover:text-white transition-colors group"
-                    >
-                      <span>Preventative Screenings &amp; Care</span>
-                      <ArrowUpRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </Link>
-                  </div>
-                </div>
-
-                {/* Category 2: Community Wellbeing */}
-                <div>
-                  <h4 className="text-xs sm:text-sm font-semibold text-white/90 tracking-wide mt-2 mb-1">
-                    Community Wellbeing -
-                  </h4>
-                  <div className="space-y-1 pl-2">
-                    <Link
-                      href="/#focus-areas"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="flex items-center justify-between py-1 text-sm text-slate-400 hover:text-white transition-colors group"
-                    >
-                      <span>Clean Water &amp; Sanitation Hubs</span>
-                      <ArrowUpRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </Link>
-                    <Link
-                      href="/#focus-areas"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="flex items-center justify-between py-1 text-sm text-slate-400 hover:text-white transition-colors group"
-                    >
-                      <span>Health Literacy &amp; Hygiene</span>
-                      <ArrowUpRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </Link>
-                  </div>
-                </div>
-
-                {/* Category 3: Sustainable Models */}
-                <div>
-                  <h4 className="text-xs sm:text-sm font-semibold text-white/90 tracking-wide mt-2 mb-1">
-                    Sustainable Models -
-                  </h4>
-                  <div className="space-y-1 pl-2">
-                    <Link
-                      href="/#focus-areas"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="flex items-center justify-between py-1 text-sm text-slate-400 hover:text-white transition-colors group"
-                    >
-                      <span>Healthcare Infrastructure</span>
-                      <ArrowUpRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </Link>
-                    <Link
-                      href="/#focus-areas"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="flex items-center justify-between py-1 text-sm text-slate-400 hover:text-white transition-colors group"
-                    >
-                      <span>Community Empowerment Programs</span>
-                      <ArrowUpRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </Link>
-                  </div>
-                </div>
-
+            {/* Clean Focus Submenu */}
+            {expandedMenu === "focus" && (
+              <div className="mt-1 pl-1 space-y-2 animate-in fade-in slide-in-from-top-1 duration-150">
+                <Link
+                  href="/mission-vision#focus-1"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center justify-between py-1.5 text-sm text-slate-400 hover:text-white transition-colors group"
+                >
+                  <span>1. Community Preventive Health</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </Link>
+                <Link
+                  href="/mission-vision#focus-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center justify-between py-1.5 text-sm text-slate-400 hover:text-white transition-colors group"
+                >
+                  <span>2. Mental Health &amp; Health Equity</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </Link>
+                <Link
+                  href="/mission-vision#focus-3"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center justify-between py-1.5 text-sm text-slate-400 hover:text-white transition-colors group"
+                >
+                  <span>3. Capacity Building</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </Link>
+                <Link
+                  href="/mission-vision#focus-4"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center justify-between py-1.5 text-sm text-slate-400 hover:text-white transition-colors group"
+                >
+                  <span>4. Research, Monitoring &amp; Evidence</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </Link>
               </div>
             )}
           </div>

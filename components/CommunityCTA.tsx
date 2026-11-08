@@ -4,18 +4,24 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 interface CommunityCTAProps {
+  badge?: string;
   title?: string;
   subtitle?: string;
   primaryButtonText?: string;
   primaryButtonHref?: string;
+  secondaryButtonText?: string;
+  secondaryButtonHref?: string;
   className?: string;
 }
 
 export default function CommunityCTA({
+  badge = "Nigerian Nonprofit Foundation",
   title = "Ready to get started?",
-  subtitle = "Join healthcare professionals, institutional partners, donors, and grassroots advocates building lasting health resilience across Africa.",
-  primaryButtonText = "Get Started",
+  subtitle = "Join healthcare professionals, researchers, community organisations, and institutional partners working to advance health and wellbeing across Nigeria.",
+  primaryButtonText = "Get in Touch",
   primaryButtonHref = "/contact",
+  secondaryButtonText = "Our Focus Areas",
+  secondaryButtonHref = "/mission-vision#focus",
   className = "",
 }: CommunityCTAProps) {
   return (
@@ -81,6 +87,10 @@ export default function CommunityCTA({
           </div>
 
           {/* Center Content */}
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-light border border-badge-gold-border text-primary text-xs font-bold uppercase tracking-widest mb-4">
+            {badge}
+          </span>
+
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy font-heading tracking-tight leading-[1.14] max-w-xl">
             {title}
           </h2>
@@ -92,11 +102,19 @@ export default function CommunityCTA({
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3.5">
             <Link
               href={primaryButtonHref}
-              className="px-8 py-3.5 rounded-full bg-dark hover:bg-navy text-white font-semibold text-sm transition-all inline-flex items-center gap-2 hover:scale-[1.02] active:scale-98"
+              className="px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white font-bold text-sm transition-all inline-flex items-center gap-2 hover:scale-[1.02] active:scale-98 shadow-xs"
             >
               <span>{primaryButtonText}</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
+            {secondaryButtonText && secondaryButtonHref && (
+              <Link
+                href={secondaryButtonHref}
+                className="px-7 py-3.5 rounded-full bg-white hover:bg-slate-50 text-navy border border-slate-200/90 hover:border-navy/40 font-semibold text-sm transition-all inline-flex items-center gap-2 hover:scale-[1.02] active:scale-98"
+              >
+                <span>{secondaryButtonText}</span>
+              </Link>
+            )}
           </div>
 
         </div>

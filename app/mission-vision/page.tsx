@@ -16,121 +16,135 @@ import {
   Globe2 
 } from "lucide-react";
 
-export const metadata = {
-  title: "Mission & Vision | Liberty Health & Wellbeing Foundation",
-  description: "Learn about the core purpose, mission, vision, strategic pillars, and operational commitments of Liberty Health & Wellbeing Foundation across Africa.",
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Mission & Vision",
+  description:
+    "Explore the Mission, Vision, core approaches, and strategic focus areas of Liberty Health & Wellbeing Foundation (CAC No. 9469157) in Nigeria.",
+  alternates: {
+    canonical: "/mission-vision",
+  },
+  openGraph: {
+    title: "Mission & Vision | Liberty Health & Wellbeing Foundation",
+    description:
+      "Explore the foundational mission and vision of Liberty Health & Wellbeing Foundation in advancing preventive health and equity in Nigeria.",
+    url: "https://libertyhealthwellbeing.org/mission-vision",
+    images: [
+      {
+        url: "/images/hero.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Mission & Vision - Liberty Health & Wellbeing Foundation",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mission & Vision | Liberty Health & Wellbeing Foundation",
+    description:
+      "Our Mission and Vision for community health, preventive care, and equity across Nigeria.",
+    images: ["/images/hero.jpg"],
+  },
 };
 
 export default function MissionVisionPage() {
-  const pillars = [
+  const focusAreas = [
     {
       number: "01",
-      title: "Improving Wellbeing",
-      description: "Expanding direct access to preventative care, maternal-child health services, essential medical kits, and mental wellness resources to uplift baseline community health.",
+      tag: "PREVENTION",
+      title: "Community Preventive Health",
+      description: "Promoting health awareness, disease prevention, and practical health education to support healthier daily choices across underserved populations.",
       icon: Activity,
       colorClass: "text-primary",
       bgClass: "bg-primary-light",
-      directive: "Clinical Access & Screenings",
+      directive: "Early action & health awareness",
     },
     {
       number: "02",
-      title: "Empowering Individuals",
-      description: "Equipping youth, women, and local health workers with actionable medical competencies, public hygiene skills, and personal agency to champion family wellness.",
-      icon: Users,
+      tag: "EQUITY",
+      title: "Mental Health & Health Equity",
+      description: "Promoting mental wellbeing and systematically addressing socioeconomic and systemic barriers that prevent vulnerable people from accessing vital care.",
+      icon: Heart,
       colorClass: "text-blue",
       bgClass: "bg-blue-light",
-      directive: "Healthcare Ambassador Academies",
+      directive: "Inclusion & holistic wellness",
     },
     {
       number: "03",
-      title: "Strengthening Communities",
-      description: "Reinforcing grassroots clinic infrastructure, mobile emergency networks, and social support frameworks so remote settlements can withstand health crises.",
-      icon: Heart,
+      tag: "CAPACITY",
+      title: "Capacity Building",
+      description: "Strengthening community health literacy, developing local partner capabilities, and empowering grassroots health workers with actionable tools.",
+      icon: GraduationCap,
       colorClass: "text-navy",
       bgClass: "bg-navy-light",
-      directive: "Grassroots Clinical Logistics",
+      directive: "Knowledge sharing & empowerment",
     },
     {
       number: "04",
-      title: "Promoting Education",
-      description: "Demystifying public health facts, training village health educators, and deploying tailored community outreach modules addressing preventable endemic diseases.",
-      icon: GraduationCap,
+      tag: "EVIDENCE",
+      title: "Research, Monitoring & Evidence",
+      description: "Gathering field data, monitoring programme execution, and learning from community experiences to continuously inform and improve public health initiatives.",
+      icon: Sprout,
       colorClass: "text-sky",
       bgClass: "bg-sky-light",
-      directive: "Preventative Literacy Campaigns",
-    },
-    {
-      number: "05",
-      title: "Supporting Sustainable Initiatives",
-      description: "Investing in generational solutions including solar-powered vaccine refrigeration, deep-aquifer boreholes, and self-sufficient local clinic operating models.",
-      icon: Sprout,
-      colorClass: "text-primary",
-      bgClass: "bg-primary-light",
-      directive: "Renewable Solar Infrastructure",
-    },
-    {
-      number: "06",
-      title: "Building Partnerships",
-      description: "Uniting regional health ministries, medical universities, philanthropic donors, and traditional community leaders to scale impact and eliminate redundancies.",
-      icon: Handshake,
-      colorClass: "text-blue",
-      bgClass: "bg-blue-light",
-      directive: "Cross-Sector Collaborative Grants",
+      directive: "Data-led & evidence-guided",
     },
   ];
 
-  const commitments = [
+  const approaches = [
     {
-      title: "Community-Led Co-Design",
+      title: "Prevention Before Crisis",
+      tag: "Early Action",
+      description: "Promoting knowledge, early intervention, and reliable health information so communities can avert preventable health emergencies before they occur.",
+      icon: Activity,
+      highlight: "Knowledge & Early Action",
+    },
+    {
+      title: "Communities at the Centre",
       tag: "Local Ownership",
-      description: "Every clinic station, medical drive, and water project is planned and maintained in direct partnership with local village committees and community elders.",
+      description: "Collaborating directly with communities, local leaders, and grassroots stakeholders to understand real priorities and co-design tailored responses.",
       icon: Users,
-      highlight: "100% Locally Anchored",
+      highlight: "Community-Centred",
     },
     {
-      title: "Radical Stewardship",
-      tag: "Ethical Governance",
-      description: "Every dollar and donation is transparently tracked. We conduct biannual independent audits and publish measurable clinical outcome logs for public accountability.",
+      title: "Evidence that Guides Action",
+      tag: "Quality & Learning",
+      description: "Using research, field monitoring, and continuous learning to refine and enhance community initiatives as they grow and evolve.",
       icon: ShieldCheck,
-      highlight: "Biannually Audited",
+      highlight: "Evidence-Informed",
     },
     {
-      title: "Renewable & Solar Durability",
-      tag: "Green Healthcare",
-      description: "Our water filtration hubs and clinic cold-chains are powered 100% by solar energy, ensuring vital medicines stay viable regardless of municipal grid stability.",
-      icon: SunMedium,
-      highlight: "Zero Grid Dependency",
-    },
-    {
-      title: "Pan-African Health Equity",
-      tag: "Universal Dignity",
-      description: "We focus relentlessly on remote, underserved frontline settlements, ensuring quality healthcare is treated as an unconditional human right across Africa.",
-      icon: Globe2,
-      highlight: "Frontline Priority",
+      title: "Sustainable Partnerships",
+      tag: "Collaboration",
+      description: "Working alongside healthcare professionals, researchers, community organisations, and institutional partners to create lasting impact.",
+      icon: Handshake,
+      highlight: "Institutional Alliances",
     },
   ];
 
   return (
     <div className="flex flex-col w-full bg-canvas">
       {/* =========================================
-          HERO: MATCHING ABOUT PAGE HERO STYLING (NO BADGE)
+          HERO: STRATEGIC DIRECTION
       ========================================= */}
       <section className="relative overflow-hidden bg-gradient-to-b from-[#051320] via-[#071929] to-[#0a233a] text-white pt-36 sm:pt-44 lg:pt-48 pb-0">
-        {/* Subtle Brand Ambient Glows Matching About Page Hero */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="absolute top-10 right-10 w-96 h-96 bg-sky/5 rounded-full blur-3xl pointer-events-none"></div>
 
         <div className="relative max-w-5xl 2xl:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 pb-12 sm:pb-16 lg:pb-20">
+          <span className="inline-block text-xs font-bold uppercase tracking-widest text-primary font-heading mb-3">
+            Our Guiding Direction
+          </span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white font-heading tracking-tight leading-[1.12]">
-            Our Purpose, Mission &amp; Vision
+            Mission &amp; Vision
           </h1>
 
           <p className="text-base sm:text-lg text-slate-300 mt-5 max-w-3xl mx-auto leading-relaxed font-light">
-            “At Liberty Health &amp; Wellbeing Foundation, we believe that healthier individuals and empowered communities are essential to building a stronger, more sustainable future across Africa.”
+            Foundational guiding statements for Liberty Health &amp; Wellbeing Foundation (Incorporated Trustees · CAC No. 9469157).
           </p>
         </div>
 
-        {/* Dynamic Curved Wave Section Divider */}
         <HeroWaveDivider />
       </section>
 
@@ -145,16 +159,16 @@ export default function MissionVisionPage() {
               Strategic Blueprint
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy font-heading tracking-tight leading-[1.12]">
-              Our Mission &amp; Vision in Focus
+              Foundational Statements
             </h2>
             <p className="text-slate-600 mt-4 text-base sm:text-lg leading-relaxed max-w-2xl font-normal">
-              How our day-to-day operational mandate and our 2035 long-term destination align to create lasting systemic impact.
+              Our active operational mandate and our long-term aspiration for community healthcare in Nigeria.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
             
-            {/* Mission Card (Operational Mandate) */}
+            {/* Mission Card */}
             <div className="relative rounded-xl bg-canvas border border-primary/40 p-8 sm:p-12 shadow-xs flex flex-col justify-between group hover:border-primary transition-all duration-300">
               <div>
                 <div className="flex items-center justify-between mb-6">
@@ -162,44 +176,43 @@ export default function MissionVisionPage() {
                     <Target className="w-7 h-7" />
                   </div>
                   <span className="text-xs font-bold text-primary px-3 py-1.5 rounded-full bg-primary-light uppercase tracking-wider">
-                    Present Mandate
+                    Our Mandate
                   </span>
                 </div>
 
                 <span className="text-xs font-bold uppercase tracking-wider text-slate-500 font-heading block mb-1">
-                  Operational Roadmap
+                  Purpose &amp; Objective
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-bold text-navy font-heading tracking-tight">
                   Our Mission
                 </h3>
 
                 <blockquote className="my-6 text-lg sm:text-xl font-medium text-navy leading-relaxed italic border-l-4 border-primary pl-5 sm:pl-6 py-1">
-                  “To improve health and wellbeing by providing innovative solutions, promoting education, and supporting sustainable initiatives that empower individuals and strengthen communities across Africa.”
+                  “To improve community health and wellbeing by delivering preventive, inclusive, and evidence-informed health programmes that address priority health needs in underserved populations.”
                 </blockquote>
 
                 <p className="text-sm text-slate-600 leading-relaxed">
-                  This mission is not just a statement—it is our active operational mandate. Every grant deployed, clinical team mobilized, and medical post built is held to strict standards of frontline empowerment.
+                  Our mission guides every health awareness campaign, training module, and partnership. It focuses on tangible health equity and sustainable improvements in quality of life.
                 </p>
 
-                {/* Tangible Execution Pillars */}
                 <div className="mt-8 pt-6 border-t border-slate-200/80 space-y-3">
                   <div className="flex items-start gap-3 text-xs sm:text-sm text-slate-700">
                     <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                    <span><strong>Direct Clinical Access:</strong> Mobile dispensaries, medicine packs, and maternal checkups.</span>
+                    <span><strong>Preventive Health Delivery:</strong> Promoting early diagnosis and actionable health knowledge.</span>
                   </div>
                   <div className="flex items-start gap-3 text-xs sm:text-sm text-slate-700">
                     <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                    <span><strong>Actionable Education:</strong> Training local midwives, youth advocates, and community health teams.</span>
+                    <span><strong>Inclusive Care:</strong> Prioritizing vulnerable groups, mothers, and underserved populations.</span>
                   </div>
                   <div className="flex items-start gap-3 text-xs sm:text-sm text-slate-700">
                     <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                    <span><strong>Grassroots Infrastructure:</strong> Clean solar water hubs, sanitation posts, and clinic cold-chains.</span>
+                    <span><strong>Evidence-Informed:</strong> Grounding every programme in verified data and community learning.</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Vision Card (Long-Term Horizon) */}
+            {/* Vision Card */}
             <div className="relative rounded-xl bg-navy-deep text-white border border-blue/40 p-8 sm:p-12 shadow-xs flex flex-col justify-between group hover:border-blue transition-all duration-300">
               <div>
                 <div className="flex items-center justify-between mb-6">
@@ -207,7 +220,7 @@ export default function MissionVisionPage() {
                     <Compass className="w-7 h-7" />
                   </div>
                   <span className="text-xs font-bold text-sky px-3 py-1.5 rounded-full bg-white/10 uppercase tracking-wider">
-                    2035 Horizon
+                    Our Horizon
                   </span>
                 </div>
 
@@ -219,26 +232,25 @@ export default function MissionVisionPage() {
                 </h3>
 
                 <blockquote className="my-6 text-lg sm:text-xl font-medium text-sky leading-relaxed italic border-l-4 border-sky pl-5 sm:pl-6 py-1">
-                  “To contribute to a healthier, empowered and more sustainable Africa where individuals and communities have the opportunity to thrive.”
+                  “A Nigeria where individuals and communities have equitable access to health knowledge, preventive care, and support systems that enable healthier and more fulfilling lives.”
                 </blockquote>
 
                 <p className="text-sm text-slate-300 leading-relaxed font-light">
-                  We envision a continent where geographical remoteness or economic background never determines life expectancy. A thriving Africa powered by self-sufficient healthcare systems and local clinical champions.
+                  We look forward to communities equipped with knowledge, resilient primary support networks, and equal access to health literacy regardless of geography or background.
                 </p>
 
-                {/* Long-Term Horizon Milestones */}
                 <div className="mt-8 pt-6 border-t border-white/15 space-y-3">
                   <div className="flex items-start gap-3 text-xs sm:text-sm text-slate-200">
                     <CheckCircle2 className="w-4 h-4 text-sky shrink-0 mt-0.5" />
-                    <span><strong>Equitable Life Chances:</strong> Eradicating preventable maternal, neonatal, and infectious casualties.</span>
+                    <span><strong>Equitable Access:</strong> Removing barriers to health knowledge and preventive support.</span>
                   </div>
                   <div className="flex items-start gap-3 text-xs sm:text-sm text-slate-200">
                     <CheckCircle2 className="w-4 h-4 text-sky shrink-0 mt-0.5" />
-                    <span><strong>Institutional Autonomy:</strong> Regional clinic stations run and funded independently by local stakeholders.</span>
+                    <span><strong>Empowered Communities:</strong> Fostering self-reliance and local community health leadership.</span>
                   </div>
                   <div className="flex items-start gap-3 text-xs sm:text-sm text-slate-200">
                     <CheckCircle2 className="w-4 h-4 text-sky shrink-0 mt-0.5" />
-                    <span><strong>Interconnected Systems:</strong> Clean water, nutrition, and clinical care reinforcing generational dignity.</span>
+                    <span><strong>Fulfilling Lives:</strong> Linking health and wellbeing directly to broader human opportunity.</span>
                   </div>
                 </div>
               </div>
@@ -250,52 +262,52 @@ export default function MissionVisionPage() {
       </section>
 
       {/* =========================================
-          THE SIX STRATEGIC PILLARS (HOW WE EXECUTE)
+          THE FOUR STRATEGIC FOCUS AREAS
       ========================================= */}
       <section className="py-20 lg:py-28 bg-canvas">
         <div className="max-w-[1440px] 2xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="max-w-3xl mb-12 sm:mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-primary font-heading block mb-2 sm:mb-3">
-              Operational Execution
+              Strategic Priorities
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy font-heading tracking-tight leading-[1.12]">
-              The Six Strategic Pillars
+              Four Areas of Focus
             </h2>
             <p className="text-slate-600 mt-4 text-base sm:text-lg leading-relaxed max-w-2xl font-normal">
-              How our mission and vision transform into concrete, day-to-day community programs across Africa.
+              Our core programmatic priorities as we develop community-centred initiatives and partnerships across Nigeria.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {pillars.map((pillar) => {
-              const IconComponent = pillar.icon;
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
+            {focusAreas.map((area) => {
+              const IconComponent = area.icon;
               return (
                 <div
-                  key={pillar.title}
+                  key={area.title}
                   className="p-8 rounded-xl bg-white border border-slate-200/90 hover:border-slate-300 hover:shadow-xs transition-all duration-300 flex flex-col justify-between group"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-6">
-                      <div className={`w-12 h-12 rounded-full ${pillar.bgClass} flex items-center justify-center shrink-0 ${pillar.colorClass} group-hover:scale-105 transition-transform`}>
+                      <div className={`w-12 h-12 rounded-full ${area.bgClass} flex items-center justify-center shrink-0 ${area.colorClass} group-hover:scale-105 transition-transform`}>
                         <IconComponent className="w-6 h-6" />
                       </div>
-                      <span className="text-xs font-extrabold text-slate-400 font-mono tracking-wider">
-                        {pillar.number}
+                      <span className="text-[11px] font-extrabold text-primary font-mono tracking-wider">
+                        {area.number} / {area.tag}
                       </span>
                     </div>
 
                     <h3 className="text-xl font-bold text-navy font-heading mb-2.5">
-                      {pillar.title}
+                      {area.title}
                     </h3>
                     <p className="text-sm text-slate-600 leading-relaxed font-normal">
-                      {pillar.description}
+                      {area.description}
                     </p>
                   </div>
 
                   <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-semibold text-navy">
                     <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
-                    <span>{pillar.directive}</span>
+                    <span>{area.directive}</span>
                   </div>
                 </div>
               );
@@ -306,30 +318,29 @@ export default function MissionVisionPage() {
       </section>
 
       {/* =========================================
-          STRATEGIC COMMITMENTS & STANDARDS
-          (REPLACING DUPLICATE VALUES LIST FROM ABOUT PAGE)
+          OUR CORE APPROACH (HOW WE WORK)
       ========================================= */}
       <section className="py-20 lg:py-28 bg-white border-t border-slate-200/80">
         <div className="max-w-[1440px] 2xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="max-w-3xl mb-12 sm:mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-primary font-heading block mb-2 sm:mb-3">
-              Accountability &amp; Standards
+              Methodology
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy font-heading tracking-tight leading-[1.12]">
-              Our Commitments to Africa
+              Our Approach
             </h2>
             <p className="text-slate-600 mt-4 text-base sm:text-lg leading-relaxed max-w-2xl font-normal">
-              How we guarantee our healthcare interventions remain ethically grounded, culturally integrated, and enduring across all host communities.
+              How we approach community health challenges to ensure programmes remain grounded, evidence-informed, and sustainable.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
-            {commitments.map((com) => {
-              const IconComp = com.icon;
+            {approaches.map((app) => {
+              const IconComp = app.icon;
               return (
                 <div
-                  key={com.title}
+                  key={app.title}
                   className="p-7 rounded-xl bg-canvas border border-slate-200/90 hover:border-slate-300 hover:shadow-xs transition-all duration-300 flex flex-col justify-between group"
                 >
                   <div>
@@ -338,21 +349,21 @@ export default function MissionVisionPage() {
                         <IconComp className="w-5 h-5 text-primary" />
                       </div>
                       <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">
-                        {com.tag}
+                        {app.tag}
                       </span>
                     </div>
 
                     <h3 className="text-lg font-bold text-navy font-heading mb-2">
-                      {com.title}
+                      {app.title}
                     </h3>
                     <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                      {com.description}
+                      {app.description}
                     </p>
                   </div>
 
                   <div className="mt-6 pt-3.5 border-t border-slate-200/80 flex items-center gap-1.5 text-xs font-bold text-navy">
                     <ShieldCheck className="w-4 h-4 text-blue shrink-0" />
-                    <span>{com.highlight}</span>
+                    <span>{app.highlight}</span>
                   </div>
                 </div>
               );
@@ -366,10 +377,13 @@ export default function MissionVisionPage() {
           CLOSING CALL TO ACTION
       ========================================= */}
       <CommunityCTA 
-        title="Ready to partner with our mission?"
-        subtitle="Join healthcare professionals, institutional partners, donors, and grassroots advocates building lasting health resilience across Africa."
-        primaryButtonText="Get in Touch"
+        badge="Building Partnerships"
+        title="Building partnerships for healthier communities."
+        subtitle="We welcome conversations with healthcare professionals, researchers, community organisations and potential collaborators."
+        primaryButtonText="Contact the Foundation"
         primaryButtonHref="/contact"
+        secondaryButtonText="Explore Focus Areas"
+        secondaryButtonHref="/#focus-areas"
       />
 
     </div>

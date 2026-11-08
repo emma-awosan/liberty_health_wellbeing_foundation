@@ -31,16 +31,22 @@ export default function Footer() {
             (MATCHING REFERENCE BANNER STRUCTURE)
         ========================================= */}
         <div className="bg-navy-deep text-white rounded-xl p-8 sm:p-12 lg:p-14 relative overflow-hidden mb-16 lg:mb-20 border border-navy-dark shadow-sm">
+          {/* Subtle Ambient Brand Accents */}
+          <div className="absolute -top-20 -right-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-sky/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             {/* Left Column: Heading & Descriptive Copy */}
             <div className="lg:col-span-7 flex flex-col gap-3">
+              <span className="text-xs font-bold uppercase tracking-widest text-primary font-heading">
+                Field Updates &amp; Insights
+              </span>
               <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-heading tracking-tight leading-tight">
-                Subscribe our newsletter
+                Subscribe to Our Newsletter
               </h3>
               <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl font-normal">
-                Subscribe to our newsletter and be the first to receive insights, field updates, and expert tips on optimizing community health and wellbeing.
+                Be the first to receive quarterly impact reports, field mission updates, and insights on advancing community health and wellbeing across Africa.
               </p>
             </div>
 
@@ -79,8 +85,8 @@ export default function Footer() {
 
                 <p className="text-[11px] text-slate-400 mt-2.5">
                   By subscribing you agree to our{" "}
-                  <Link href="/privacy" className="underline text-slate-300 hover:text-white transition-colors">
-                    Privacy Policy
+                  <Link href="/mission-vision" className="underline text-slate-300 hover:text-white transition-colors">
+                    Ethical &amp; Data Privacy Standards
                   </Link>
                 </p>
               </div>
@@ -108,19 +114,24 @@ export default function Footer() {
             </Link>
 
             <p className="text-slate-500 text-sm leading-relaxed max-w-sm">
-              Committed to improving health and wellbeing, empowering individuals and strengthening communities across Africa through sustainable initiatives.
+              A Nigerian nonprofit organisation committed to improving community health and wellbeing through prevention, education, inclusion and evidence-informed initiatives.
             </p>
+
+            {/* Official Registration Badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-navy/5 border border-slate-200 text-xs text-navy font-medium">
+              <ShieldCheck className="w-4 h-4 text-primary shrink-0" />
+              <span>Incorporated Trustees · CAC No. 9469157</span>
+            </div>
 
             {/* Direct Contact Snippets */}
             <div className="flex flex-col gap-1.5 text-xs text-slate-500 pt-1">
-              <div className="flex items-center gap-2">
+              <a href="mailto:contact@libertyhealthwellbeing.org" className="flex items-center gap-2 hover:text-primary transition-colors">
                 <Mail className="w-3.5 h-3.5 text-primary shrink-0" />
                 <span>contact@libertyhealthwellbeing.org</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-primary shrink-0" />
-                <span>+234 (0) 800-LIBERTY</span>
-              </div>
+              </a>
+              <span className="text-[11px] text-slate-400 italic">
+                Official telephone lines awaiting carrier verification.
+              </span>
             </div>
 
             {/* Social Media Links */}
@@ -129,7 +140,7 @@ export default function Footer() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-full bg-white border border-slate-200 text-slate-500 focus:outline-none flex items-center justify-center"
+                className="w-9 h-9 rounded-full bg-white border border-slate-200 text-slate-500 hover:text-navy hover:border-navy hover:bg-slate-50 hover:-translate-y-0.5 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 flex items-center justify-center"
                 aria-label="LinkedIn"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -140,7 +151,7 @@ export default function Footer() {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-full bg-white border border-slate-200 text-slate-500 focus:outline-none flex items-center justify-center"
+                className="w-9 h-9 rounded-full bg-white border border-slate-200 text-slate-500 hover:text-navy hover:border-navy hover:bg-slate-50 hover:-translate-y-0.5 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 flex items-center justify-center"
                 aria-label="Twitter"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -151,7 +162,7 @@ export default function Footer() {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-full bg-white border border-slate-200 text-slate-500 focus:outline-none flex items-center justify-center"
+                className="w-9 h-9 rounded-full bg-white border border-slate-200 text-slate-500 hover:text-navy hover:border-navy hover:bg-slate-50 hover:-translate-y-0.5 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 flex items-center justify-center"
                 aria-label="Facebook"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -162,7 +173,7 @@ export default function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-full bg-white border border-slate-200 text-slate-500 focus:outline-none flex items-center justify-center"
+                className="w-9 h-9 rounded-full bg-white border border-slate-200 text-slate-500 hover:text-navy hover:border-navy hover:bg-slate-50 hover:-translate-y-0.5 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 flex items-center justify-center"
                 aria-label="Instagram"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -175,101 +186,82 @@ export default function Footer() {
           {/* Right Columns: Focus Areas, Support/Organization, Legal */}
           <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
             
-            {/* Column 1: Features / Focus Areas */}
+            {/* Focus Areas */}
             <div className="flex flex-col gap-3.5">
               <h4 className="text-navy font-bold text-sm tracking-wider uppercase font-heading">
-                Features
+                Strategic Focus
               </h4>
               <ul className="flex flex-col gap-2.5 text-sm text-slate-600">
                 <li>
                   <Link href="/#focus-areas" className="hover:text-primary transition-colors">
-                    Clinical Outreach
+                    Community Preventive Health
                   </Link>
                 </li>
                 <li>
                   <Link href="/#focus-areas" className="hover:text-primary transition-colors">
-                    Health Literacy
+                    Mental Health &amp; Health Equity
                   </Link>
                 </li>
                 <li>
                   <Link href="/#focus-areas" className="hover:text-primary transition-colors">
-                    Community Growth
+                    Capacity Building &amp; Training
                   </Link>
                 </li>
                 <li>
                   <Link href="/#focus-areas" className="hover:text-primary transition-colors">
-                    Clean Water Hubs
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/#focus-areas" className="hover:text-primary transition-colors">
-                    Sustainable Models
+                    Research, Monitoring &amp; Evidence
                   </Link>
                 </li>
               </ul>
             </div>
 
-            {/* Column 2: Support / Organization */}
+            {/* Foundation */}
             <div className="flex flex-col gap-3.5">
               <h4 className="text-navy font-bold text-sm tracking-wider uppercase font-heading">
-                Support
+                Foundation
               </h4>
               <ul className="flex flex-col gap-2.5 text-sm text-slate-600">
                 <li>
                   <Link href="/about" className="hover:text-primary transition-colors">
-                    About Us
+                    About the Foundation
                   </Link>
                 </li>
                 <li>
                   <Link href="/mission-vision" className="hover:text-primary transition-colors">
-                    Mission & Vision
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/#get-involved" className="hover:text-primary transition-colors">
-                    Get Involved
+                    Mission &amp; Vision
                   </Link>
                 </li>
                 <li>
                   <Link href="/contact" className="hover:text-primary transition-colors">
-                    Help & FAQs
+                    Partnership Enquiries
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="hover:text-primary transition-colors">
-                    Contact
+                  <Link href="/contact#offices" className="hover:text-primary transition-colors">
+                    Abuja &amp; Sokoto Offices
                   </Link>
                 </li>
               </ul>
             </div>
 
-            {/* Column 3: Legal */}
+            {/* Offices & Legal */}
             <div className="flex flex-col gap-3.5 col-span-2 sm:col-span-1">
               <h4 className="text-navy font-bold text-sm tracking-wider uppercase font-heading">
-                Legal
+                Operating Offices
               </h4>
-              <ul className="flex flex-col gap-2.5 text-sm text-slate-600">
-                <li>
-                  <Link href="/privacy" className="hover:text-primary transition-colors">
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/terms" className="hover:text-primary transition-colors">
-                    Terms of Services
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/cookies" className="hover:text-primary transition-colors">
-                    Cookies
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/governance" className="hover:text-primary transition-colors">
-                    Governance
-                  </Link>
-                </li>
-              </ul>
+              <div className="flex flex-col gap-3 text-xs text-slate-600">
+                <div>
+                  <strong className="text-navy font-semibold block">Headquarters · Abuja</strong>
+                  <span>Plot 89, Vitus Mbaogu St, Jikwoyi, FCT</span>
+                </div>
+                <div>
+                  <strong className="text-navy font-semibold block">Sokoto Office</strong>
+                  <span>01 Federal Layout, Arkilla, Sokoto</span>
+                </div>
+                <div className="pt-1 text-[11px] text-slate-400">
+                  Incorporated Trustees · CAC No. 9469157
+                </div>
+              </div>
             </div>
 
           </div>
@@ -280,11 +272,11 @@ export default function Footer() {
             BOTTOM: COPYRIGHT & CREDITS
         ========================================= */}
         <div className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-          <p>© 2026 Liberty Health & Wellbeing Foundation. All rights reserved.</p>
+          <p>© 2026 Liberty Health &amp; Wellbeing Foundation. Better Health. Better Lives. Stronger Communities.</p>
           <div className="flex items-center gap-6">
             <span className="text-primary font-medium flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-primary" />
-              Registered Pan-African Non-Profit Organization
+              Incorporated Trustees · CAC 9469157 (Est. 7 April 2026)
             </span>
           </div>
         </div>
