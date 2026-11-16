@@ -31,63 +31,63 @@ export default function CommunityCTA({
           
           {/* Floating Avatars - Left Side */}
           <div className="hidden sm:block absolute top-8 sm:top-10 left-6 sm:left-10 lg:left-14 w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-full overflow-hidden ring-4 ring-white shadow-sm hover:scale-105 transition-transform duration-300">
-            <Image src="/images/avatars/avatar-1.jpg" alt="Doctor" fill className="object-cover" />
+            <Image src="/images/avatars/avatar-1.jpg" alt="Doctor" fill sizes="80px" className="object-cover" />
           </div>
 
           <div className="hidden sm:block absolute top-1/2 -translate-y-12 left-3 sm:left-6 lg:left-10 w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-full overflow-hidden ring-4 ring-white shadow-sm hover:scale-105 transition-transform duration-300">
-            <Image src="/images/avatars/avatar-2.jpg" alt="Clinical specialist" fill className="object-cover" />
+            <Image src="/images/avatars/avatar-2.jpg" alt="Clinical specialist" fill sizes="80px" className="object-cover" />
           </div>
 
           <div className="hidden sm:block absolute bottom-8 sm:bottom-10 left-6 sm:left-10 lg:left-14 w-11 h-11 sm:w-13 sm:h-13 lg:w-14 lg:h-14 rounded-full overflow-hidden ring-4 ring-white shadow-sm hover:scale-105 transition-transform duration-300">
-            <Image src="/images/avatars/avatar-3.jpg" alt="Community volunteer" fill className="object-cover" />
+            <Image src="/images/avatars/avatar-3.jpg" alt="Community volunteer" fill sizes="80px" className="object-cover" />
           </div>
 
           <div className="hidden md:block absolute bottom-12 left-28 sm:left-36 lg:left-52 w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden ring-4 ring-white shadow-xs hover:scale-105 transition-transform duration-300">
-            <Image src="/images/avatars/avatar-4.jpg" alt="Health coordinator" fill className="object-cover" />
+            <Image src="/images/avatars/avatar-4.jpg" alt="Health coordinator" fill sizes="80px" className="object-cover" />
           </div>
 
           {/* Floating Avatars - Right Side */}
           <div className="hidden sm:block absolute top-8 sm:top-10 right-6 sm:right-10 lg:right-14 w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-full overflow-hidden ring-4 ring-white shadow-sm hover:scale-105 transition-transform duration-300">
-            <Image src="/images/avatars/avatar-5.jpg" alt="Nurse practitioner" fill className="object-cover" />
+            <Image src="/images/avatars/avatar-5.jpg" alt="Nurse practitioner" fill sizes="80px" className="object-cover" />
           </div>
 
           <div className="hidden lg:block absolute top-10 right-28 sm:right-36 lg:right-52 w-9 h-9 sm:w-11 sm:h-11 rounded-full overflow-hidden ring-4 ring-white shadow-xs hover:scale-105 transition-transform duration-300">
-            <Image src="/images/avatars/avatar-4.jpg" alt="Advocate" fill className="object-cover" />
+            <Image src="/images/avatars/avatar-4.jpg" alt="Advocate" fill sizes="80px" className="object-cover" />
           </div>
 
           <div className="hidden sm:block absolute top-1/2 -translate-y-12 right-3 sm:right-6 lg:right-10 w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-full overflow-hidden ring-4 ring-white shadow-sm hover:scale-105 transition-transform duration-300">
-            <Image src="/images/avatars/avatar-6.jpg" alt="Health director" fill className="object-cover" />
+            <Image src="/images/avatars/avatar-6.jpg" alt="Health director" fill sizes="80px" className="object-cover" />
           </div>
 
           <div className="hidden sm:block absolute bottom-8 sm:bottom-10 right-6 sm:right-10 lg:right-14 w-11 h-11 sm:w-13 sm:h-13 lg:w-14 lg:h-14 rounded-full overflow-hidden ring-4 ring-white shadow-sm hover:scale-105 transition-transform duration-300">
-            <Image src="/images/avatars/avatar-3.jpg" alt="Field partner" fill className="object-cover" />
+            <Image src="/images/avatars/avatar-3.jpg" alt="Field partner" fill sizes="80px" className="object-cover" />
           </div>
 
           <div className="hidden md:block absolute bottom-12 right-28 sm:right-36 lg:right-52 w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden ring-4 ring-white shadow-xs hover:scale-105 transition-transform duration-300">
-            <Image src="/images/avatars/avatar-2.jpg" alt="Medical mission team" fill className="object-cover" />
+            <Image src="/images/avatars/avatar-2.jpg" alt="Medical mission team" fill sizes="80px" className="object-cover" />
           </div>
 
           {/* Mobile-only avatar row */}
           <div className="flex sm:hidden items-center -space-x-2.5 mb-5">
             <div className="w-10 h-10 rounded-full overflow-hidden ring-2 ring-white shadow-xs relative">
-              <Image src="/images/avatars/avatar-1.jpg" alt="Member" fill className="object-cover" />
+              <Image src="/images/avatars/avatar-1.jpg" alt="Member" fill sizes="48px" className="object-cover" />
             </div>
             <div className="w-10 h-10 rounded-full overflow-hidden ring-2 ring-white shadow-xs relative">
-              <Image src="/images/avatars/avatar-2.jpg" alt="Member" fill className="object-cover" />
+              <Image src="/images/avatars/avatar-2.jpg" alt="Member" fill sizes="48px" className="object-cover" />
             </div>
             <div className="w-10 h-10 rounded-full overflow-hidden ring-2 ring-white shadow-xs relative">
-              <Image src="/images/avatars/avatar-3.jpg" alt="Member" fill className="object-cover" />
+              <Image src="/images/avatars/avatar-3.jpg" alt="Member" fill sizes="48px" className="object-cover" />
             </div>
             <div className="w-10 h-10 rounded-full overflow-hidden ring-2 ring-white shadow-xs relative">
-              <Image src="/images/avatars/avatar-5.jpg" alt="Member" fill className="object-cover" />
+              <Image src="/images/avatars/avatar-5.jpg" alt="Member" fill sizes="48px" className="object-cover" />
             </div>
             <div className="w-10 h-10 rounded-full overflow-hidden ring-2 ring-white shadow-xs relative">
-              <Image src="/images/avatars/avatar-6.jpg" alt="Member" fill className="object-cover" />
+              <Image src="/images/avatars/avatar-6.jpg" alt="Member" fill sizes="48px" className="object-cover" />
             </div>
           </div>
 
           {/* Center Content */}
-          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-light border border-badge-gold-border text-primary text-xs font-bold uppercase tracking-widest mb-4">
+          <span className="text-xs font-bold uppercase tracking-widest text-primary font-heading mb-3 block">
             {badge}
           </span>
 
@@ -102,7 +102,7 @@ export default function CommunityCTA({
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3.5">
             <Link
               href={primaryButtonHref}
-              className="px-8 py-3.5 rounded-full bg-primary hover:bg-primary-hover text-white font-bold text-sm transition-all inline-flex items-center gap-2 hover:scale-[1.02] active:scale-98 shadow-xs"
+              className="px-8 py-3.5 rounded-full bg-primary text-white font-bold text-sm inline-flex items-center gap-2 shadow-xs"
             >
               <span>{primaryButtonText}</span>
               <ArrowRight className="w-4 h-4" />
@@ -110,7 +110,7 @@ export default function CommunityCTA({
             {secondaryButtonText && secondaryButtonHref && (
               <Link
                 href={secondaryButtonHref}
-                className="px-7 py-3.5 rounded-full bg-white hover:bg-slate-50 text-navy border border-slate-200/90 hover:border-navy/40 font-semibold text-sm transition-all inline-flex items-center gap-2 hover:scale-[1.02] active:scale-98"
+                className="px-7 py-3.5 rounded-full bg-white text-navy border border-slate-200/90 font-semibold text-sm inline-flex items-center gap-2"
               >
                 <span>{secondaryButtonText}</span>
               </Link>

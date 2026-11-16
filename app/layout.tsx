@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ScrollRevealObserver from "@/components/ScrollRevealObserver";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -100,13 +101,18 @@ const jsonLd = {
     "@type": "Country",
     name: "Nigeria",
   },
-  identifier: "CAC Registration No. 9469157",
+  identifier: "CAC Registration No. 9469157 | TIN: 2623366408281",
+  taxID: "2623366408281",
   foundingDate: "2026-04-07",
+  email: "emmanuel.awosan@libertyhealthwellbeing.org",
   knowsAbout: [
-    "Community Preventive Health",
-    "Mental Health & Health Equity",
-    "Health Education & Capacity Building",
-    "Research, Monitoring & Evidence",
+    "Mental Health & Wellbeing",
+    "Addiction & Gambling Awareness",
+    "Preventive Healthcare & Health Access",
+    "Women’s, Maternal & Child Health",
+    "Health Information & Community Resources",
+    "Research, Policy & Advocacy",
+    "Global Health & Partnerships",
   ],
   address: [
     {
@@ -134,6 +140,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`h-full scroll-smooth ${plusJakartaSans.variable} ${bricolageGrotesque.variable}`}
     >
       <head>
@@ -146,6 +153,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <ScrollRevealObserver />
       </body>
     </html>
   );

@@ -131,3 +131,212 @@ body::-webkit-scrollbar-thumb:hover {
   -ms-overflow-style: none !important;
   scrollbar-width: none !important;
 }
+
+/* =========================================
+   DIRECTIONAL CURTAIN-FILL BUTTONS &
+   ARCHITECTURAL MICRO-INTERACTIONS
+========================================= */
+
+/* Base setup for pill buttons (a.rounded-full & button.rounded-full) */
+a.rounded-full,
+button.rounded-full {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition:
+    background-color 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+a.rounded-full:hover,
+button.rounded-full:hover {
+  transform: translateY(-2px);
+}
+
+a.rounded-full:active,
+button.rounded-full:active {
+  transform: translateY(0) scale(0.985);
+}
+
+/* Directional curtain layer (enters from left, exits to right) */
+a.rounded-full.bg-primary::before,
+button.rounded-full.bg-primary::before,
+a.rounded-full.bg-navy::before,
+button.rounded-full.bg-navy::before,
+a.rounded-full.border::before,
+button.rounded-full.border::before,
+a.rounded-full.bg-white\/15::before,
+a.rounded-full.bg-slate-100::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* 1. Gold Primary Button -> sweeps Deep Navy fill on light sections */
+a.rounded-full.bg-primary::before,
+button.rounded-full.bg-primary::before {
+  background-color: var(--color-navy-deep);
+}
+
+a.rounded-full.bg-primary:hover,
+button.rounded-full.bg-primary:hover {
+  color: #FFFFFF !important;
+  box-shadow: 0 10px 22px -6px rgba(19, 34, 56, 0.28);
+}
+
+/* Gold Primary Button inside dark navy sections/navbar -> sweeps burnished deep gold */
+.bg-navy-deep a.rounded-full.bg-primary::before,
+.bg-navy-deep button.rounded-full.bg-primary::before,
+.bg-navy a.rounded-full.bg-primary::before,
+.bg-navy button.rounded-full.bg-primary::before,
+header a.rounded-full.bg-primary::before {
+  background-color: #9A6D24;
+}
+
+/* 2. Navy Primary Button -> sweeps Brand Gold fill */
+a.rounded-full.bg-navy::before,
+button.rounded-full.bg-navy::before {
+  background-color: var(--color-primary);
+}
+
+a.rounded-full.bg-navy:hover,
+button.rounded-full.bg-navy:hover {
+  color: #FFFFFF !important;
+  box-shadow: 0 10px 22px -6px rgba(193, 142, 60, 0.32);
+}
+
+/* 3. Outlined & Subtle Buttons on Light Backgrounds -> sweeps Deep Navy + white text */
+a.rounded-full.border-slate-200::before,
+a.rounded-full.border-slate-200\/90::before,
+a.rounded-full.border-slate-300::before,
+a.rounded-full.border-navy\/20::before,
+a.rounded-full.bg-slate-100::before,
+button.rounded-full.border-slate-200::before,
+button.rounded-full.border-slate-300::before {
+  background-color: var(--color-navy-deep);
+}
+
+a.rounded-full.border-slate-200:hover,
+a.rounded-full.border-slate-200\/90:hover,
+a.rounded-full.border-slate-300:hover,
+a.rounded-full.border-navy\/20:hover,
+a.rounded-full.bg-slate-100:hover,
+button.rounded-full.border-slate-200:hover,
+button.rounded-full.border-slate-300:hover {
+  color: #FFFFFF !important;
+  border-color: var(--color-navy-deep);
+}
+
+/* 4. Outlined / Translucent Buttons on Dark Hero or Navbar -> sweeps warm gold fill */
+.bg-navy-deep a.rounded-full.border::before,
+.bg-navy a.rounded-full.border::before,
+a.rounded-full.bg-white\/15::before {
+  background-color: var(--color-primary);
+}
+
+.bg-navy-deep a.rounded-full.border:hover,
+.bg-navy a.rounded-full.border:hover,
+a.rounded-full.bg-white\/15:hover {
+  border-color: var(--color-primary);
+  color: #FFFFFF !important;
+}
+
+/* Trigger curtain sweep on hover / keyboard focus */
+a.rounded-full.bg-primary:hover::before,
+button.rounded-full.bg-primary:hover::before,
+a.rounded-full.bg-navy:hover::before,
+button.rounded-full.bg-navy:hover::before,
+a.rounded-full.border:hover::before,
+button.rounded-full.border:hover::before,
+a.rounded-full.bg-white\/15:hover::before,
+a.rounded-full.bg-slate-100:hover::before,
+a.rounded-full.bg-primary:focus-visible::before,
+button.rounded-full.bg-primary:focus-visible::before,
+a.rounded-full.bg-navy:focus-visible::before,
+button.rounded-full.bg-navy:focus-visible::before {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+/* Icon glide micro-animation inside buttons & inline action links */
+a.rounded-full svg,
+button.rounded-full svg,
+main a.inline-flex svg {
+  transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), color 0.32s ease;
+}
+
+a.rounded-full:hover svg:last-child,
+button.rounded-full:hover svg:last-child,
+main a.inline-flex:hover svg:last-child {
+  transform: translate3d(4px, 0, 0);
+}
+
+a.rounded-full.bg-navy:hover svg {
+  color: #FFFFFF !important;
+}
+
+a.rounded-full:hover svg.lucide-arrow-up-right,
+button.rounded-full:hover svg.lucide-arrow-up-right,
+main a.inline-flex:hover svg.lucide-arrow-up-right {
+  transform: translate3d(3px, -3px, 0);
+}
+
+/* Architectural Grid Cell: Sliding 3px Gold Top Accent Line on Hover */
+section .grid > div.border-r.border-b:not(.bg-navy) {
+  position: relative;
+  transition: background-color 0.35s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+section .grid > div.border-r.border-b:not(.bg-navy)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+  z-index: 10;
+}
+
+section .grid > div.border-r.border-b:not(.bg-navy):hover {
+  background-color: #FCFDFE;
+}
+
+section .grid > div.border-r.border-b:not(.bg-navy):hover::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+/* Monospace index number subtle shift inside hovered grid cells & ledger rows */
+section .grid > div.border-r.border-b .font-mono,
+section .divide-y > div .font-mono {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+section .grid > div.border-r.border-b:hover .font-mono,
+section .divide-y > div:hover .font-mono {
+  transform: translate3d(4px, 0, 0);
+}
+
+/* Numbered Ledger Row subtle warm highlight on hover */
+section .divide-y > div {
+  transition: background-color 0.3s ease, padding-left 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+section .divide-y > div:hover {
+  background-color: rgba(251, 244, 232, 0.35);
+}

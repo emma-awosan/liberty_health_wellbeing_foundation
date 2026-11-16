@@ -4,17 +4,7 @@ import React, { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import CommunityCTA from "@/components/CommunityCTA";
 import HeroWaveDivider from "@/components/HeroWaveDivider";
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Clock, 
-  Send, 
-  CheckCircle2, 
-  ShieldCheck,
-  Building2,
-  Globe2
-} from "lucide-react";
+import { Send, CheckCircle2, ArrowUpRight } from "lucide-react";
 
 function ContactFormContent() {
   const searchParams = useSearchParams();
@@ -22,7 +12,7 @@ function ContactFormContent() {
     fullName: "",
     email: "",
     phone: "",
-    subject: "General Enquiry",
+    subject: "General Enquiries",
     message: "",
   });
 
@@ -30,11 +20,14 @@ function ContactFormContent() {
     const type = searchParams.get("type")?.toLowerCase();
     if (!type) return;
     if (type.includes("partner")) {
-      setFormData((prev) => ({ ...prev, subject: "Partnership" }));
+      setFormData((prev) => ({
+        ...prev,
+        subject: "Partnership & Collaboration Enquiries",
+      }));
     } else if (type.includes("volunteer")) {
-      setFormData((prev) => ({ ...prev, subject: "Volunteering" }));
-    } else if (type.includes("donat") || type.includes("support")) {
-      setFormData((prev) => ({ ...prev, subject: "Donation/Support" }));
+      setFormData((prev) => ({ ...prev, subject: "Volunteer Enquiries" }));
+    } else if (type.includes("donat") || type.includes("support") || type.includes("sponsor")) {
+      setFormData((prev) => ({ ...prev, subject: "Sponsorship Enquiries" }));
     }
   }, [searchParams]);
 
@@ -42,18 +35,16 @@ function ContactFormContent() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const subjects = [
-    "General Enquiry",
-    "Partnership",
-    "Volunteering",
-    "Donation/Support",
-    "Media",
-    "Other",
+    "General Enquiries",
+    "Partnership & Collaboration Enquiries",
+    "Sponsorship Enquiries",
+    "Volunteer Enquiries",
+    "Media / Speaking / Advocacy Enquiries",
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate real smooth submission
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
@@ -65,7 +56,7 @@ function ContactFormContent() {
       fullName: "",
       email: "",
       phone: "",
-      subject: "General Enquiry",
+      subject: "General Enquiries",
       message: "",
     });
     setSubmitted(false);
@@ -76,11 +67,7 @@ function ContactFormContent() {
       {/* =========================================
           4.A: PAGE HEADER
       ========================================= */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#051320] via-[#071929] to-[#0a233a] text-white pt-36 sm:pt-44 lg:pt-48 pb-0">
-        {/* Subtle Brand Ambient Glows Matching About Page Hero */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
-        <div className="absolute top-10 right-10 w-96 h-96 bg-sky/5 rounded-full blur-3xl pointer-events-none"></div>
-
+      <section className="relative overflow-hidden bg-navy-deep text-white pt-36 sm:pt-44 lg:pt-48 pb-0">
         <div className="relative max-w-5xl 2xl:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 pb-14 sm:pb-18 lg:pb-20">
           <span className="inline-block text-xs font-bold uppercase tracking-widest text-primary font-heading mb-3">
             Connect With Liberty Foundation
@@ -103,84 +90,105 @@ function ContactFormContent() {
       ========================================= */}
       <section className="pt-10 sm:pt-14 pb-20 lg:pb-28 bg-white" id="contact-form">
         <div className="max-w-[1440px] 2xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             
-            {/* 4.B: CONTACT INFORMATION */}
+            {/* 4.B: CONTACT INFORMATION — Architectural Directory Ledger */}
             <div className="lg:col-span-5 flex flex-col justify-between">
               <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-primary font-heading block mb-2 sm:mb-3">
+                <span className="text-xs font-bold uppercase tracking-widest text-primary font-heading block mb-2.5">
                   Contact Directory
                 </span>
-                <h2 className="text-2xl sm:text-3xl font-extrabold text-navy font-heading tracking-tight mb-4">
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-navy font-heading tracking-tight mb-3">
                   Official Channels
                 </h2>
-                <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                <p className="text-slate-600 text-sm leading-relaxed mb-7">
                   Our secretariat is open to healthcare professionals, researchers, community organisations, and institutional collaborators.
                 </p>
 
-                {/* Registration Callout */}
-                <div className="mb-6 p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-navy space-y-1">
-                  <div className="flex items-center gap-2 font-bold text-navy">
-                    <ShieldCheck className="w-4 h-4 text-primary shrink-0" />
-                    <span>Incorporated Trustees · CAC No. 9469157</span>
-                  </div>
-                  <p className="text-[11px] text-slate-500 pl-6">
-                    Established under Nigerian Law on 7 April 2026.
+                {/* Statutory Registration Bar */}
+                <div className="mb-8 border-l-2 border-primary pl-4 py-1">
+                  <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 font-heading">
+                    Statutory Registration · Nigeria
+                  </span>
+                  <p className="text-xs font-bold text-navy mt-1">
+                    CAC Reg No. 9469157 · Registered 7 April 2026 · TIN: 2623366408281
                   </p>
                 </div>
 
-                <div className="space-y-4 sm:space-y-5">
-                  {/* Email */}
-                  <div className="flex items-start gap-4 p-4.5 rounded-xl bg-white border border-slate-200 shadow-2xs hover:shadow-xs hover:-translate-y-0.5 transition-all duration-300 group">
-                    <div className="w-11 h-11 rounded-full bg-primary text-white flex items-center justify-center shrink-0 shadow-2xs group-hover:bg-primary-hover group-hover:scale-105 transition-all duration-300">
-                      <Mail className="w-5 h-5" />
+                {/* Numbered Contact Directory Ledger */}
+                <div className="border-t-2 border-navy divide-y divide-slate-200 border-b border-b-slate-200">
+                  {/* 01: Official Email */}
+                  <div className="py-5 grid grid-cols-1 sm:grid-cols-12 gap-2 sm:gap-4 items-baseline">
+                    <div className="sm:col-span-4 flex items-baseline gap-2.5">
+                      <span className="text-xs font-black font-mono text-primary">01</span>
+                      <span className="text-[11px] font-bold uppercase tracking-widest text-slate-500 font-heading">
+                        Official Email
+                      </span>
                     </div>
-                    <div>
-                      <h3 className="text-[11px] font-bold uppercase tracking-wider text-slate-400 font-heading">Official Email</h3>
-                      <a href="mailto:contact@libertyhealthwellbeing.org" className="text-sm font-semibold text-navy hover:text-primary transition-colors block mt-0.5">
+                    <div className="sm:col-span-8 space-y-1">
+                      <a
+                        href="mailto:emmanuel.awosan@libertyhealthwellbeing.org"
+                        className="inline-flex items-center gap-1.5 text-sm font-bold text-navy hover:text-primary transition-colors break-all"
+                      >
+                        <span>emmanuel.awosan@libertyhealthwellbeing.org</span>
+                        <ArrowUpRight className="w-3.5 h-3.5 text-primary shrink-0" />
+                      </a>
+                      <a
+                        href="mailto:contact@libertyhealthwellbeing.org"
+                        className="block text-xs text-slate-500 hover:text-navy transition-colors"
+                      >
                         contact@libertyhealthwellbeing.org
                       </a>
-                      <a href="mailto:partnerships@libertyhealthwellbeing.org" className="text-xs text-slate-500 hover:text-primary transition-colors block mt-0.5">
-                        partnerships@libertyhealthwellbeing.org
-                      </a>
                     </div>
                   </div>
 
-                  {/* Address: Headquarters Abuja */}
-                  <div className="flex items-start gap-4 p-4.5 rounded-xl bg-white border border-slate-200 shadow-2xs hover:shadow-xs hover:-translate-y-0.5 transition-all duration-300 group">
-                    <div className="w-11 h-11 rounded-full bg-primary text-white flex items-center justify-center shrink-0 shadow-2xs group-hover:bg-primary-hover group-hover:scale-105 transition-all duration-300">
-                      <MapPin className="w-5 h-5" />
+                  {/* 02: Headquarters — Abuja */}
+                  <div className="py-5 grid grid-cols-1 sm:grid-cols-12 gap-2 sm:gap-4 items-baseline">
+                    <div className="sm:col-span-4 flex items-baseline gap-2.5">
+                      <span className="text-xs font-black font-mono text-primary">02</span>
+                      <span className="text-[11px] font-bold uppercase tracking-widest text-slate-500 font-heading">
+                        Headquarters
+                      </span>
                     </div>
-                    <div>
-                      <h3 className="text-[11px] font-bold uppercase tracking-wider text-slate-400 font-heading">Headquarters · Abuja</h3>
-                      <p className="text-sm font-semibold text-navy mt-0.5">
-                        Plot 89, Vitus Mbaogu Street, Jikwoyi, FCT, Nigeria
+                    <div className="sm:col-span-8">
+                      <p className="text-sm font-bold text-navy">
+                        Abuja, Federal Capital Territory
+                      </p>
+                      <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">
+                        Plot 89, Vitus Mbaogu Street, Jikwoyi, FCT, Abuja, Nigeria.
                       </p>
                     </div>
                   </div>
 
-                  {/* Address: Sokoto Office */}
-                  <div className="flex items-start gap-4 p-4.5 rounded-xl bg-white border border-slate-200 shadow-2xs hover:shadow-xs hover:-translate-y-0.5 transition-all duration-300 group">
-                    <div className="w-11 h-11 rounded-full bg-primary text-white flex items-center justify-center shrink-0 shadow-2xs group-hover:bg-primary-hover group-hover:scale-105 transition-all duration-300">
-                      <Building2 className="w-5 h-5" />
+                  {/* 03: Secondary Address — Sokoto */}
+                  <div className="py-5 grid grid-cols-1 sm:grid-cols-12 gap-2 sm:gap-4 items-baseline">
+                    <div className="sm:col-span-4 flex items-baseline gap-2.5">
+                      <span className="text-xs font-black font-mono text-primary">03</span>
+                      <span className="text-[11px] font-bold uppercase tracking-widest text-slate-500 font-heading">
+                        Sokoto Office
+                      </span>
                     </div>
-                    <div>
-                      <h3 className="text-[11px] font-bold uppercase tracking-wider text-slate-400 font-heading">Sokoto Office</h3>
-                      <p className="text-sm font-semibold text-navy mt-0.5">
-                        01 Federal Layout, Arkilla, Sokoto, Nigeria
+                    <div className="sm:col-span-8">
+                      <p className="text-sm font-bold text-navy">
+                        Secondary Address · Sokoto State
+                      </p>
+                      <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">
+                        01 Federal Layout, Arkilla, Sokoto, Nigeria.
                       </p>
                     </div>
                   </div>
 
-                  {/* Phone Status Notice */}
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-amber-50/70 border border-amber-200/80 text-xs text-amber-900">
-                    <div className="w-8 h-8 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 mt-0.5">
-                      <Phone className="w-4 h-4" />
+                  {/* 04: Telephone Correspondence Notice */}
+                  <div className="py-5 grid grid-cols-1 sm:grid-cols-12 gap-2 sm:gap-4 items-baseline">
+                    <div className="sm:col-span-4 flex items-baseline gap-2.5">
+                      <span className="text-xs font-black font-mono text-primary">04</span>
+                      <span className="text-[11px] font-bold uppercase tracking-widest text-slate-500 font-heading">
+                        Telephone
+                      </span>
                     </div>
-                    <div>
-                      <h3 className="font-bold uppercase tracking-wider text-[10px] text-amber-800">Telephone Lines</h3>
-                      <p className="mt-0.5 text-amber-950">
-                        Official telephone lines will be published following hosting and telecom verification. Please reach out via email or the form.
+                    <div className="sm:col-span-8">
+                      <p className="text-xs text-slate-600 leading-relaxed">
+                        Official telephone lines will be published following hosting and telecom verification. Please correspond via official email or the inquiry form.
                       </p>
                     </div>
                   </div>
@@ -188,16 +196,16 @@ function ContactFormContent() {
               </div>
 
               {/* 4.E: SOCIAL MEDIA */}
-              <div className="mt-8 pt-6 border-t border-slate-200/80">
-                <h3 className="text-[11px] font-bold uppercase tracking-wider text-slate-400 font-heading mb-3">
-                  Connect on Social Media
+              <div className="mt-8 pt-6">
+                <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 font-heading mb-3">
+                  Official Social Channels
                 </h3>
                 <div className="flex items-center gap-2.5">
                   <a
                     href="https://linkedin.com"
                     target="_blank"
                     rel="noreferrer"
-                    className="w-9 h-9 rounded-full bg-white border border-slate-200 text-slate-600 hover:text-navy hover:border-navy hover:bg-slate-50 hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                    className="w-9 h-9 bg-white border border-slate-200 text-slate-600 hover:text-navy hover:border-navy transition-colors flex items-center justify-center"
                     aria-label="LinkedIn"
                   >
                     <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -208,7 +216,7 @@ function ContactFormContent() {
                     href="https://twitter.com"
                     target="_blank"
                     rel="noreferrer"
-                    className="w-9 h-9 rounded-full bg-white border border-slate-200 text-slate-600 hover:text-navy hover:border-navy hover:bg-slate-50 hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                    className="w-9 h-9 bg-white border border-slate-200 text-slate-600 hover:text-navy hover:border-navy transition-colors flex items-center justify-center"
                     aria-label="Twitter"
                   >
                     <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -219,7 +227,7 @@ function ContactFormContent() {
                     href="https://facebook.com"
                     target="_blank"
                     rel="noreferrer"
-                    className="w-9 h-9 rounded-full bg-white border border-slate-200 text-slate-600 hover:text-navy hover:border-navy hover:bg-slate-50 hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                    className="w-9 h-9 bg-white border border-slate-200 text-slate-600 hover:text-navy hover:border-navy transition-colors flex items-center justify-center"
                     aria-label="Facebook"
                   >
                     <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -230,7 +238,7 @@ function ContactFormContent() {
                     href="https://instagram.com"
                     target="_blank"
                     rel="noreferrer"
-                    className="w-9 h-9 rounded-full bg-white border border-slate-200 text-slate-600 hover:text-navy hover:border-navy hover:bg-slate-50 hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                    className="w-9 h-9 bg-white border border-slate-200 text-slate-600 hover:text-navy hover:border-navy transition-colors flex items-center justify-center"
                     aria-label="Instagram"
                   >
                     <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -243,44 +251,44 @@ function ContactFormContent() {
 
             {/* 4.C: CONTACT FORM */}
             <div className="lg:col-span-7">
-              <div className="bg-white p-8 sm:p-10 rounded-xl border border-slate-200/90 shadow-xs relative">
+              <div className="bg-white border border-slate-200 border-t-4 border-t-navy p-8 sm:p-10">
                 
                 {submitted ? (
                   <div className="py-12 px-4 text-center flex flex-col items-center">
-                    <div className="w-16 h-16 rounded-full bg-blue-light text-blue flex items-center justify-center mb-5 animate-bounce">
-                      <CheckCircle2 className="w-8 h-8 text-primary" />
-                    </div>
+                    <CheckCircle2 className="w-10 h-10 text-primary mb-4" />
                     <h3 className="text-2xl font-bold text-navy font-heading">
-                      Message Received!
+                      Message Received
                     </h3>
                     <p className="text-slate-600 text-sm mt-3 max-w-md leading-relaxed">
                       Thank you for contacting Liberty Health & Wellbeing Foundation. A member of our coordination team will review your inquiry under <strong>{formData.subject}</strong> and reach out shortly.
                     </p>
                     <button
                       onClick={handleReset}
-                      className="mt-8 px-6 py-2.5 rounded-full bg-navy text-white text-xs font-semibold hover:bg-navy-dark transition-colors"
+                      className="mt-8 px-6 py-2.5 rounded-full bg-navy text-white text-xs font-semibold cursor-pointer"
                     >
                       Send Another Message
                     </button>
                   </div>
                 ) : (
                   <div>
-                    <div className="mb-6">
-                      <span className="text-xs font-bold uppercase tracking-widest text-primary font-heading block mb-1">
-                        Direct Transmission
+                    <div className="pb-6 mb-7 border-b border-slate-200 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+                      <div>
+                        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary font-heading block mb-1">
+                          Direct Secretariat Correspondence
+                        </span>
+                        <h2 className="text-2xl font-extrabold text-navy font-heading">
+                          Send Us a Message
+                        </h2>
+                      </div>
+                      <span className="text-[11px] font-mono text-slate-400">
+                        RESPONSE TIME · 24–48 HRS
                       </span>
-                      <h2 className="text-2xl font-bold text-navy font-heading mt-1">
-                        Send Us a Message
-                      </h2>
-                      <p className="text-xs text-slate-500 mt-1">
-                        Fill out the details below and our regional coordination office will respond within 24-48 business hours.
-                      </p>
                     </div>
 
                     <form onSubmit={handleSubmit} className="space-y-5">
                       {/* Full Name */}
                       <div>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                        <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1.5">
                           Full Name <span className="text-red-500">*</span>
                         </label>
                         <input
@@ -289,14 +297,14 @@ function ContactFormContent() {
                           value={formData.fullName}
                           onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                           placeholder="e.g. Dr. Ngozi Okafor"
-                          className="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent transition-all"
+                          className="w-full px-4 py-3 bg-canvas border border-slate-200 text-slate-900 text-sm focus:outline-none focus:border-primary focus:bg-white transition-colors"
                         />
                       </div>
 
                       {/* Email & Phone Row */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div>
-                          <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                          <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1.5">
                             Email Address <span className="text-red-500">*</span>
                           </label>
                           <input
@@ -305,33 +313,33 @@ function ContactFormContent() {
                             value={formData.email}
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                             placeholder="you@organization.org"
-                            className="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent transition-all"
+                            className="w-full px-4 py-3 bg-canvas border border-slate-200 text-slate-900 text-sm focus:outline-none focus:border-primary focus:bg-white transition-colors"
                           />
                         </div>
 
                         <div>
-                          <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                          <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1.5">
                             Phone Number
                           </label>
                           <input
                             type="tel"
                             value={formData.phone}
                             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                            placeholder="+234 ... / +254 ..."
-                            className="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent transition-all"
+                            placeholder="+234 ... / +44 ..."
+                            className="w-full px-4 py-3 bg-canvas border border-slate-200 text-slate-900 text-sm focus:outline-none focus:border-primary focus:bg-white transition-colors"
                           />
                         </div>
                       </div>
 
                       {/* Subject Selection */}
                       <div>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                        <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1.5">
                           Subject Category <span className="text-red-500">*</span>
                         </label>
                         <select
                           value={formData.subject}
                           onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                          className="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent transition-all"
+                          className="w-full px-4 py-3 bg-canvas border border-slate-200 text-slate-900 text-sm focus:outline-none focus:border-primary focus:bg-white transition-colors"
                         >
                           {subjects.map((subj) => (
                             <option key={subj} value={subj}>
@@ -343,7 +351,7 @@ function ContactFormContent() {
 
                       {/* Message */}
                       <div>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                        <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1.5">
                           Message <span className="text-red-500">*</span>
                         </label>
                         <textarea
@@ -352,16 +360,16 @@ function ContactFormContent() {
                           value={formData.message}
                           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                           placeholder="Tell us about your organization, inquiry, proposal, or interest in volunteering..."
-                          className="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent transition-all resize-none"
+                          className="w-full px-4 py-3 bg-canvas border border-slate-200 text-slate-900 text-sm focus:outline-none focus:border-primary focus:bg-white transition-colors resize-none"
                         ></textarea>
                       </div>
 
                       {/* Submit */}
-                      <div>
+                      <div className="pt-1">
                         <button
                           type="submit"
                           disabled={isSubmitting}
-                          className="w-full py-4 rounded-full bg-primary hover:bg-primary-hover text-white font-bold text-sm transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                          className="w-full py-4 rounded-full bg-primary text-white font-bold text-sm flex items-center justify-center gap-2 disabled:opacity-50 cursor-pointer"
                         >
                           {isSubmitting ? (
                             <span>Submitting Message...</span>
@@ -374,10 +382,9 @@ function ContactFormContent() {
                         </button>
                       </div>
 
-                      <div className="flex items-center justify-center gap-1.5 text-xs text-slate-500 pt-2">
-                        <ShieldCheck className="w-3.5 h-3.5 text-blue" />
-                        <span>All inquiries are kept confidential under foundation ethics.</span>
-                      </div>
+                      <p className="text-[11px] text-slate-400 text-center pt-1">
+                        All inquiries are handled in strict confidence under Foundation governance standards.
+                      </p>
                     </form>
                   </div>
                 )}
@@ -390,49 +397,62 @@ function ContactFormContent() {
       </section>
 
       {/* =========================================
-          4.D: LOCATION & REGIONAL PRESENCE
+          4.D: LOCATION & REGIONAL PRESENCE — Architectural 2-Column Matrix
       ========================================= */}
       <section className="py-20 lg:py-24 bg-canvas border-t border-slate-200/80" id="offices">
         <div className="max-w-[1440px] 2xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-14">
-            <span className="text-xs font-bold uppercase tracking-widest text-primary font-heading block mb-2">
-              Geographic Scope · Nigeria
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-navy font-heading tracking-tight">
-              Our Office Locations
-            </h2>
-            <p className="text-slate-600 mt-3 text-base">
-              Coordinating community health and wellbeing programmes across Nigeria.
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-widest text-primary font-heading block mb-2">
+                Geographic Scope · Nigeria
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-navy font-heading tracking-tight">
+                Our Office Locations
+              </h2>
+            </div>
+            <p className="text-slate-600 text-sm max-w-md leading-relaxed">
+              Coordinating national non-profit governance, institutional partnerships, and community health outreach across Nigeria.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 border-t border-l border-slate-200 bg-white">
             {/* Hub 1: Abuja Headquarters */}
-            <div className="p-8 rounded-xl bg-white border border-slate-200 shadow-xs flex flex-col justify-between group hover:shadow-md transition-all duration-300">
-              <div>
-                <div className="flex items-center justify-between mb-5">
-                  <div className="w-12 h-12 rounded-full bg-primary-light text-primary border border-badge-gold-border flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-                    <Building2 className="w-6 h-6" />
+            <div className="border-r border-b border-slate-200 flex flex-col justify-between">
+              <div className="h-1 w-full bg-navy" />
+              <div className="p-8 sm:p-10 flex-1 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-baseline justify-between gap-4 pb-5 mb-6 border-b border-slate-100">
+                    <span className="text-2xl font-black font-mono text-primary">01</span>
+                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 font-heading">
+                      Headquarters · Abuja, FCT
+                    </span>
                   </div>
-                  <span className="text-xs font-bold text-primary px-3 py-1.5 rounded-full bg-primary-light uppercase tracking-wider">
-                    Headquarters
-                  </span>
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-navy font-heading tracking-tight">
+                    Headquarters — Abuja
+                  </h3>
+                  <p className="text-sm text-slate-600 mt-3 leading-relaxed">
+                    Coordinates national non-profit governance, institutional partnerships, strategic capacity building, and preventive health advocacy.
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-navy font-heading">
-                  Headquarters · Abuja
-                </h3>
-                <p className="text-sm text-slate-600 mt-2 leading-relaxed">
-                  Coordinates national non-profit governance, institutional partnerships, strategic capacity building, and preventive health advocacy.
-                </p>
-                <div className="mt-6 pt-5 border-t border-slate-200/80 text-xs text-slate-600 space-y-2.5">
-                  <div className="flex items-start gap-2.5">
-                    <MapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                    <span>Plot 89, Vitus Mbaogu Street, Jikwoyi, FCT, Nigeria</span>
+
+                <div className="mt-8 pt-6 border-t border-slate-200 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                  <div>
+                    <span className="block text-[10px] font-bold uppercase tracking-widest text-slate-400 font-heading mb-1">
+                      Street Address
+                    </span>
+                    <p className="text-navy font-semibold leading-relaxed">
+                      Plot 89, Vitus Mbaogu Street, Jikwoyi, FCT, Abuja, Nigeria.
+                    </p>
                   </div>
-                  <div className="flex items-center gap-2.5">
-                    <Mail className="w-4 h-4 text-primary shrink-0" />
-                    <a href="mailto:contact@libertyhealthwellbeing.org" className="hover:text-primary transition-colors">
-                      contact@libertyhealthwellbeing.org
+                  <div>
+                    <span className="block text-[10px] font-bold uppercase tracking-widest text-slate-400 font-heading mb-1">
+                      Official Email
+                    </span>
+                    <a
+                      href="mailto:emmanuel.awosan@libertyhealthwellbeing.org"
+                      className="text-navy font-semibold hover:text-primary transition-colors break-all"
+                    >
+                      emmanuel.awosan@libertyhealthwellbeing.org
                     </a>
                   </div>
                 </div>
@@ -440,30 +460,41 @@ function ContactFormContent() {
             </div>
 
             {/* Hub 2: Sokoto Office */}
-            <div className="p-8 rounded-xl bg-white border border-slate-200 shadow-xs flex flex-col justify-between group hover:shadow-md transition-all duration-300">
-              <div>
-                <div className="flex items-center justify-between mb-5">
-                  <div className="w-12 h-12 rounded-full bg-blue-light text-blue border border-badge-blue-border flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-                    <Globe2 className="w-6 h-6" />
+            <div className="border-r border-b border-slate-200 flex flex-col justify-between">
+              <div className="h-1 w-full bg-primary" />
+              <div className="p-8 sm:p-10 flex-1 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-baseline justify-between gap-4 pb-5 mb-6 border-b border-slate-100">
+                    <span className="text-2xl font-black font-mono text-primary">02</span>
+                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 font-heading">
+                      Secondary Address · Sokoto
+                    </span>
                   </div>
-                  <span className="text-xs font-bold text-blue px-3 py-1.5 rounded-full bg-blue-light uppercase tracking-wider">
-                    Regional Office
-                  </span>
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-navy font-heading tracking-tight">
+                    Sokoto Office
+                  </h3>
+                  <p className="text-sm text-slate-600 mt-3 leading-relaxed">
+                    Directs regional community outreach, health awareness programmes, and grassroots partnerships in northern communities.
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-navy font-heading">
-                  Sokoto Office
-                </h3>
-                <p className="text-sm text-slate-600 mt-2 leading-relaxed">
-                  Directs regional community outreach, health awareness programmes, and grassroots partnerships in northern communities.
-                </p>
-                <div className="mt-6 pt-5 border-t border-slate-200/80 text-xs text-slate-600 space-y-2.5">
-                  <div className="flex items-start gap-2.5">
-                    <MapPin className="w-4 h-4 text-blue shrink-0 mt-0.5" />
-                    <span>01 Federal Layout, Arkilla, Sokoto, Nigeria</span>
+
+                <div className="mt-8 pt-6 border-t border-slate-200 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                  <div>
+                    <span className="block text-[10px] font-bold uppercase tracking-widest text-slate-400 font-heading mb-1">
+                      Street Address
+                    </span>
+                    <p className="text-navy font-semibold leading-relaxed">
+                      01 Federal Layout, Arkilla, Sokoto, Nigeria.
+                    </p>
                   </div>
-                  <div className="flex items-center gap-2.5">
-                    <Mail className="w-4 h-4 text-blue shrink-0" />
-                    <a href="mailto:contact@libertyhealthwellbeing.org" className="hover:text-blue transition-colors">
+                  <div>
+                    <span className="block text-[10px] font-bold uppercase tracking-widest text-slate-400 font-heading mb-1">
+                      Correspondence
+                    </span>
+                    <a
+                      href="mailto:contact@libertyhealthwellbeing.org"
+                      className="text-navy font-semibold hover:text-primary transition-colors break-all"
+                    >
                       contact@libertyhealthwellbeing.org
                     </a>
                   </div>
