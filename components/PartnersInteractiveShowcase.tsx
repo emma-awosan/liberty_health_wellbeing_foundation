@@ -15,6 +15,7 @@ import {
   ArrowRight,
   Layers,
   MapPin,
+  ExternalLink,
 } from "lucide-react";
 
 export default function PartnersInteractiveShowcase() {
@@ -22,15 +23,16 @@ export default function PartnersInteractiveShowcase() {
   const [viewMode, setViewMode] = useState<"deck" | "stack">("deck");
   const touchStartX = useRef<number | null>(null);
 
-  const TOTAL_PARTNERS = 4;
+  const TOTAL_PARTNERS = 5;
 
   useEffect(() => {
     const handleHash = () => {
       const hash = window.location.hash.replace("#", "");
       if (hash === "wuracare-mci") setActivePartnerIdx(0);
       if (hash === "60-sec-with-doc") setActivePartnerIdx(1);
-      if (hash === "titan-sales") setActivePartnerIdx(2);
-      if (hash === "balyson-medical-initiative") setActivePartnerIdx(3);
+      if (hash === "marlix-healthcare") setActivePartnerIdx(2);
+      if (hash === "titan-sales") setActivePartnerIdx(3);
+      if (hash === "balyson-medical-initiative") setActivePartnerIdx(4);
     };
     handleHash();
     window.addEventListener("hashchange", handleHash);
@@ -63,16 +65,24 @@ export default function PartnersInteractiveShowcase() {
       image: "/images/60 seconds with doc.jpeg",
     },
     {
-      id: "titan-sales",
+      id: "marlix-healthcare",
       index: "03",
-      shortName: "Titan Sales",
-      fullName: "Titan Sales",
+      shortName: "Marlix Healthcare Ltd",
+      fullName: "Marlix Healthcare Ltd",
+      category: "Official Healthcare Partner",
+      image: "/images/Marlix Healthcare Ltd.png",
+    },
+    {
+      id: "titan-sales",
+      index: "04",
+      shortName: "Titan Sales Limited",
+      fullName: "Titan Sales Limited",
       category: "Strategic Technology & Digital Growth Partner",
-      image: null,
+      image: "/images/TITAN SALES LIMITED.jpeg",
     },
     {
       id: "balyson-medical-initiative",
-      index: "04",
+      index: "05",
       shortName: "Balyson Medical Initiative",
       fullName: "Balyson Medical Initiative",
       category: "Humanitarian Medical Assistance & Community Healthcare Partner",
@@ -86,7 +96,7 @@ export default function PartnersInteractiveShowcase() {
         <div
           key="wuracare-mci"
           id="wuracare-mci"
-          style={isStickyStack ? { top: "96px" } : undefined}
+          style={isStickyStack ? { top: "92px" } : undefined}
           className={`${
             isStickyStack ? "lg:sticky" : "relative z-10"
           } rounded-2xl bg-white border border-slate-200 overflow-hidden`}
@@ -95,7 +105,7 @@ export default function PartnersInteractiveShowcase() {
           <div className="bg-navy text-white px-6 sm:px-8 py-3.5 flex flex-wrap items-center justify-between gap-4 border-b border-white/10">
             <div className="flex items-center gap-3">
               <span className="text-xs font-mono font-bold text-primary">
-                PARTNER 01 / 04
+                PARTNER 01 / 05
               </span>
               <span className="text-white/25">|</span>
               <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-white font-heading">
@@ -215,7 +225,7 @@ export default function PartnersInteractiveShowcase() {
         <div
           key="60-sec-with-doc"
           id="60-sec-with-doc"
-          style={isStickyStack ? { top: "120px" } : undefined}
+          style={isStickyStack ? { top: "112px" } : undefined}
           className={`${
             isStickyStack ? "lg:sticky" : "relative z-10"
           } rounded-2xl bg-white border border-slate-200 overflow-hidden`}
@@ -224,7 +234,7 @@ export default function PartnersInteractiveShowcase() {
           <div className="bg-navy text-white px-6 sm:px-8 py-3.5 flex flex-wrap items-center justify-between gap-4 border-b border-white/10">
             <div className="flex items-center gap-3">
               <span className="text-xs font-mono font-bold text-primary">
-                PARTNER 02 / 04
+                PARTNER 02 / 05
               </span>
               <span className="text-white/25">|</span>
               <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-white font-heading">
@@ -352,9 +362,9 @@ export default function PartnersInteractiveShowcase() {
     if (idx === 2) {
       return (
         <div
-          key="titan-sales"
-          id="titan-sales"
-          style={isStickyStack ? { top: "144px" } : undefined}
+          key="marlix-healthcare"
+          id="marlix-healthcare"
+          style={isStickyStack ? { top: "132px" } : undefined}
           className={`${
             isStickyStack ? "lg:sticky" : "relative z-10"
           } rounded-2xl bg-white border border-slate-200 overflow-hidden`}
@@ -363,7 +373,162 @@ export default function PartnersInteractiveShowcase() {
           <div className="bg-navy text-white px-6 sm:px-8 py-3.5 flex flex-wrap items-center justify-between gap-4 border-b border-white/10">
             <div className="flex items-center gap-3">
               <span className="text-xs font-mono font-bold text-primary">
-                PARTNER 03 / 04
+                PARTNER 03 / 05
+              </span>
+              <span className="text-white/25">|</span>
+              <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-white font-heading">
+                Official Healthcare Partner
+              </span>
+            </div>
+            <span className="text-[11px] font-mono uppercase tracking-wider text-slate-300">
+              Confirmed Strategic Partner
+            </span>
+          </div>
+
+          <div className="p-6 sm:p-8 lg:p-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+              {/* Left Column */}
+              <div className="lg:col-span-4 flex flex-col items-start text-left">
+                <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-slate-200/80 bg-slate-50 mb-5">
+                  <Image
+                    src="/images/Marlix Healthcare Ltd.png"
+                    alt="Marlix Healthcare Ltd — Official Healthcare Partner"
+                    fill
+                    className="object-contain p-4"
+                    sizes="(max-width: 1024px) 100vw, 360px"
+                  />
+                </div>
+
+                <div className="border-l-2 border-primary pl-3 mb-2">
+                  <span className="block text-xs font-bold uppercase tracking-widest text-primary font-heading">
+                    Official Healthcare Partner
+                  </span>
+                </div>
+                <h3 className="text-2xl font-extrabold text-navy font-heading">
+                  Marlix Healthcare Ltd
+                </h3>
+                <p className="text-xs font-semibold text-slate-500 mt-1">
+                  Preventive Medicine, Outpatient Care &amp; Community Outreach
+                </p>
+
+                <div className="mt-5 w-full space-y-3 text-left bg-canvas p-4 rounded-xl border border-slate-200/80 text-xs">
+                  <div className="flex items-center gap-3">
+                    <div className="relative w-12 h-12 rounded-full overflow-hidden border border-primary/40 bg-slate-100 shrink-0">
+                      <Image
+                        src="/images/Dr. Valentine.jpeg"
+                        alt="Dr. Okwuchukwu Valentine C."
+                        fill
+                        sizes="48px"
+                        className="object-cover object-top"
+                      />
+                    </div>
+                    <div>
+                      <span className="font-bold text-navy block">
+                        CEO / Managing Director:
+                      </span>
+                      <span className="text-slate-700 font-semibold block">
+                        Dr. Okwuchukwu Valentine C.
+                      </span>
+                      <span className="text-slate-500 text-[11px]">
+                        Qualifications: MBBS, MPH, Cli.Sono
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column */}
+              <div className="lg:col-span-8 flex flex-col gap-6 text-left">
+                <div>
+                  <h4 className="text-xs font-bold uppercase tracking-widest text-primary font-heading mb-2">
+                    About Marlix Healthcare Ltd
+                  </h4>
+                  <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
+                    Liberty Health &amp; Wellbeing Foundation is pleased to recognise <strong>Marlix Healthcare Ltd</strong> as an official healthcare partner. Marlix Healthcare Ltd is a healthcare organisation committed to improving access to quality healthcare through preventive medicine, early detection, outpatient medical services, community outreach and public health education.
+                  </p>
+                  <p className="text-slate-700 text-sm sm:text-base leading-relaxed mt-3">
+                    The partnership brings together a shared commitment to strengthening community health, improving healthcare awareness and supporting initiatives that promote better health outcomes.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="p-4 sm:p-5 rounded-xl bg-canvas border border-slate-200/80">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-primary block mb-1">
+                      Vision
+                    </span>
+                    <p className="text-xs sm:text-sm font-semibold text-navy italic">
+                      “Redefining access to quality healthcare, one community at a time.”
+                    </p>
+                  </div>
+                  <div className="p-4 sm:p-5 rounded-xl bg-canvas border border-slate-200/80">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-primary block mb-1">
+                      Motto
+                    </span>
+                    <p className="text-xs sm:text-sm font-semibold text-navy italic">
+                      “Better Health. A Healthier You.”
+                    </p>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="text-xs font-bold uppercase tracking-widest text-navy font-heading mb-3">
+                    Areas of Partnership and Collaboration
+                  </h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    {[
+                      "Preventive healthcare and disease awareness.",
+                      "Community medical outreach and health screening.",
+                      "Public health education and health promotion.",
+                      "Clinical education and sonography awareness.",
+                      "Community wellbeing programmes.",
+                      "Healthcare research and evidence-informed initiatives.",
+                      "Professional collaboration and capacity building.",
+                    ].map((item, i) => (
+                      <div
+                        key={i}
+                        className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 bg-canvas p-3 rounded-lg border border-slate-200/70"
+                      >
+                        <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="p-5 sm:p-6 rounded-xl bg-navy text-white border border-navy-dark">
+                  <h4 className="text-xs font-bold uppercase tracking-widest text-primary font-heading mb-2 flex items-center gap-2">
+                    <HeartHandshake className="w-4 h-4 text-primary" />
+                    <span>Our Shared Commitment</span>
+                  </h4>
+                  <p className="text-xs sm:text-sm text-slate-100 leading-relaxed">
+                    Through this partnership, Liberty Health &amp; Wellbeing Foundation and Marlix Healthcare Ltd aim to combine their expertise, resources and community engagement efforts to advance preventive healthcare and improve access to reliable health information.{" "}
+                    <strong className="text-primary">
+                      Advancing Global Health. Transforming Lives.
+                    </strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    if (idx === 3) {
+      return (
+        <div
+          key="titan-sales"
+          id="titan-sales"
+          style={isStickyStack ? { top: "152px" } : undefined}
+          className={`${
+            isStickyStack ? "lg:sticky" : "relative z-10"
+          } rounded-2xl bg-white border border-slate-200 overflow-hidden`}
+        >
+          {/* Top Architectural Index Bar */}
+          <div className="bg-navy text-white px-6 sm:px-8 py-3.5 flex flex-wrap items-center justify-between gap-4 border-b border-white/10">
+            <div className="flex items-center gap-3">
+              <span className="text-xs font-mono font-bold text-primary">
+                PARTNER 04 / 05
               </span>
               <span className="text-white/25">|</span>
               <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-white font-heading">
@@ -379,38 +544,74 @@ export default function PartnersInteractiveShowcase() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
               {/* Left Column */}
               <div className="lg:col-span-4 flex flex-col items-start text-left">
-                <div className="w-full aspect-[4/3] rounded-xl border border-slate-200/80 bg-navy text-white flex flex-col items-center justify-center p-6 mb-5">
-                  <Laptop className="w-12 h-12 text-primary mb-3" />
-                  <span className="text-2xl font-extrabold font-heading tracking-wider text-white">
-                    TITAN SALES
-                  </span>
-                  <span className="text-[11px] text-slate-300 uppercase tracking-widest mt-1">
-                    Technology &amp; Digital Growth
-                  </span>
+                <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-slate-200/80 bg-slate-50 mb-5">
+                  <Image
+                    src="/images/TITAN SALES LIMITED.jpeg"
+                    alt="Titan Sales Limited — Duncan Edemekong"
+                    fill
+                    className="object-contain p-4"
+                    sizes="(max-width: 1024px) 100vw, 360px"
+                  />
                 </div>
 
                 <div className="border-l-2 border-primary pl-3 mb-2">
                   <span className="block text-xs font-bold uppercase tracking-widest text-primary font-heading">
-                    Technology &amp; Digital Growth Partner
+                    Technology, Sales &amp; Digital Growth Partner
                   </span>
                 </div>
                 <h3 className="text-2xl font-extrabold text-navy font-heading">
-                  Titan Sales
+                  Titan Sales Limited
                 </h3>
-                <p className="text-xs font-semibold text-slate-500 mt-1">
-                  Primary Contact: <strong>Duncan, Owner</strong>
+                <p className="text-xs font-semibold text-slate-600 mt-1">
+                  Founder &amp; CEO: <strong>Mr. Duncan Edemekong</strong>
                 </p>
+
+                <div className="mt-5 w-full space-y-2.5 text-left bg-canvas p-4 rounded-xl border border-slate-200/80 text-xs">
+                  <div>
+                    <span className="font-bold text-navy block mb-0.5">
+                      Corporate Office:
+                    </span>
+                    <p className="text-slate-600 leading-relaxed">
+                      Suite 9, Und St, Plot 1121 Oladipo Diya St, Gudu, Abuja 900104, FCT, Nigeria
+                    </p>
+                  </div>
+                  <div className="pt-2 border-t border-slate-200/60 flex items-center justify-between">
+                    <span className="font-bold text-navy">Official Website:</span>
+                    <a
+                      href="https://titansales.ltd"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 font-bold text-primary hover:underline"
+                    >
+                      <span>titansales.ltd</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                </div>
               </div>
 
               {/* Right Column */}
               <div className="lg:col-span-8 flex flex-col gap-6 text-left">
                 <div>
                   <h4 className="text-xs font-bold uppercase tracking-widest text-primary font-heading mb-2">
-                    About Our Partner
+                    About Titan Sales Limited &amp; Our Story
                   </h4>
                   <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
-                    Titan Sales is a business led by Duncan collaborating with Liberty Health &amp; Wellbeing Foundation as a Strategic Technology &amp; Digital Growth Partner. The collaboration focuses on strengthening digital infrastructure, cross-border payment technology, and public health awareness outreach.
+                    Founded by <strong>Mr. Duncan Edemekong</strong> on the principles of innovation, customer-centricity, and excellence, <strong>Titan Sales Limited</strong> brings together a wealth of experience in strategic sales solutions, technology, and digital marketing.
                   </p>
+                  <p className="text-slate-700 text-sm sm:text-base leading-relaxed mt-3">
+                    Collaborating with Liberty Health &amp; Wellbeing Foundation as a Strategic Technology &amp; Digital Growth Partner, Titan Sales Limited supports digital infrastructure, cross-border payment technology, and public health awareness outreach.
+                  </p>
+                </div>
+
+                <div className="p-5 sm:p-6 rounded-xl bg-navy text-white border border-navy-dark">
+                  <h4 className="text-xs font-bold uppercase tracking-widest text-primary font-heading mb-2 flex items-center gap-2">
+                    <Laptop className="w-4 h-4 text-primary" />
+                    <span>Partner Mission Statement</span>
+                  </h4>
+                  <blockquote className="text-sm sm:text-base italic font-medium text-slate-100 leading-relaxed">
+                    “To empower organisations and businesses with strategic solutions that drive growth, foster loyalty, and build resilient brands—leveraging the latest technologies and industry insights.”
+                  </blockquote>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -420,10 +621,9 @@ export default function PartnersInteractiveShowcase() {
                       <span>FX Integration &amp; Payment Tech</span>
                     </div>
                     <ul className="space-y-1.5 text-xs sm:text-sm text-slate-600">
-                      <li>• Exploring international donation payment solutions.</li>
-                      <li>• Supporting suitable cross-border payment integrations.</li>
-                      <li>• Improving transaction administration and reporting.</li>
-                      <li>• Working with authorised payment &amp; FX providers.</li>
+                      <li>• International donation payment solutions.</li>
+                      <li>• Cross-border payment &amp; FX integrations.</li>
+                      <li>• Transaction administration and reporting.</li>
                     </ul>
                   </div>
 
@@ -433,19 +633,11 @@ export default function PartnersInteractiveShowcase() {
                       <span>E-Marketing &amp; Digital Visibility</span>
                     </div>
                     <ul className="space-y-1.5 text-xs sm:text-sm text-slate-600">
-                      <li>• Digital marketing strategy &amp; audience development.</li>
-                      <li>• Website visibility and search optimisation.</li>
-                      <li>• Public health awareness &amp; volunteer engagement.</li>
-                      <li>• Digital performance monitoring &amp; analytics.</li>
+                      <li>• Digital strategy &amp; audience development.</li>
+                      <li>• Website visibility &amp; search optimisation.</li>
+                      <li>• Public health awareness &amp; analytics.</li>
                     </ul>
                   </div>
-                </div>
-
-                <div className="pt-3 text-xs sm:text-sm text-slate-600 border-t border-slate-200/80 flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-primary shrink-0" />
-                  <span>
-                    <strong>Shared Direction:</strong> Building practical digital systems that support sustainable organisational growth and expand the reach of the Foundation&apos;s public health programmes.
-                  </span>
                 </div>
               </div>
             </div>
@@ -458,7 +650,7 @@ export default function PartnersInteractiveShowcase() {
       <div
         key="balyson-medical-initiative"
         id="balyson-medical-initiative"
-        style={isStickyStack ? { top: "168px" } : undefined}
+        style={isStickyStack ? { top: "172px" } : undefined}
         className={`${
           isStickyStack ? "lg:sticky" : "relative z-10"
         } rounded-2xl bg-white border border-slate-200 overflow-hidden`}
@@ -467,7 +659,7 @@ export default function PartnersInteractiveShowcase() {
         <div className="bg-navy text-white px-6 sm:px-8 py-3.5 flex flex-wrap items-center justify-between gap-4 border-b border-white/10">
           <div className="flex items-center gap-3">
             <span className="text-xs font-mono font-bold text-primary">
-              PARTNER 04 / 04
+              PARTNER 05 / 05
             </span>
             <span className="text-white/25">|</span>
             <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-white font-heading">
@@ -592,13 +784,13 @@ export default function PartnersInteractiveShowcase() {
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
           <div className="max-w-2xl">
             <span className="text-xs font-bold uppercase tracking-widest text-primary font-heading block mb-2">
-              01 · Confirmed Collaborations
+              01 · Official Strategic Alliances
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy font-heading tracking-tight leading-[1.12]">
               Confirmed Strategic Partners
             </h2>
             <p className="text-slate-600 mt-3 text-base sm:text-lg leading-relaxed font-normal">
-              Organisations actively collaborating with Liberty Health &amp; Wellbeing Foundation across maternal and child health, medical education, humanitarian medical assistance, community outreach, and digital technology.
+              Organisations actively collaborating with Liberty Health &amp; Wellbeing Foundation across maternal and child health, preventive healthcare, medical education, humanitarian medical assistance, and digital technology.
             </p>
           </div>
 
@@ -642,8 +834,8 @@ export default function PartnersInteractiveShowcase() {
           </div>
         </div>
 
-        {/* 4-Partner Interactive Selector Bar */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
+        {/* 5-Partner Interactive Selector Bar */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 mb-8">
           {partnerTabs.map((tab, idx) => {
             const isSelected = viewMode === "deck" && idx === activePartnerIdx;
             return (
@@ -658,20 +850,20 @@ export default function PartnersInteractiveShowcase() {
                     setActivePartnerIdx(idx);
                   }
                 }}
-                className={`text-left p-4 rounded-xl border transition-all cursor-pointer flex items-center gap-4 ${
+                className={`text-left p-3.5 rounded-xl border transition-all cursor-pointer flex items-center gap-3.5 ${
                   isSelected
                     ? "bg-navy text-white border-navy"
                     : "bg-white text-navy border-slate-200/80"
                 }`}
               >
-                <div className="relative w-12 h-12 rounded-lg overflow-hidden shrink-0 bg-slate-50 border border-slate-200/60 flex items-center justify-center">
+                <div className="relative w-11 h-11 rounded-lg overflow-hidden shrink-0 bg-slate-50 border border-slate-200/60 flex items-center justify-center">
                   {tab.image ? (
                     <Image
                       src={tab.image}
                       alt={tab.shortName}
                       fill
                       className="object-contain p-1"
-                      sizes="48px"
+                      sizes="44px"
                     />
                   ) : (
                     <Laptop
@@ -687,14 +879,14 @@ export default function PartnersInteractiveShowcase() {
                       isSelected ? "text-primary" : "text-slate-400"
                     }`}
                   >
-                    PARTNER {tab.index} / 04
+                    PARTNER {tab.index} / 05
                   </div>
                   <div
-                    className={`text-sm font-extrabold truncate font-heading ${
+                    className={`text-xs sm:text-sm font-extrabold truncate font-heading ${
                       isSelected ? "text-white" : "text-navy"
                     }`}
                   >
-                    {tab.fullName}
+                    {tab.shortName}
                   </div>
                   <div
                     className={`text-[11px] truncate ${
@@ -770,7 +962,7 @@ export default function PartnersInteractiveShowcase() {
           </div>
         ) : (
           <div className="relative space-y-12 pb-6">
-            {[0, 1, 2, 3].map((i) => renderPartnerCard(i, true))}
+            {[0, 1, 2, 3, 4].map((i) => renderPartnerCard(i, true))}
           </div>
         )}
       </div>

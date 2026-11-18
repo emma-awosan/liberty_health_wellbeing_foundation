@@ -87,9 +87,18 @@ export default function CommunityCTA({
           </div>
 
           {/* Center Content */}
-          <span className="text-xs font-bold uppercase tracking-widest text-primary font-heading mb-3 block">
-            {badge}
-          </span>
+          <div className="flex items-center justify-center gap-2 mb-3">
+            <Image
+              src="/images/favicon-black.png"
+              alt="Liberty Health & Wellbeing Foundation Emblem"
+              width={20}
+              height={20}
+              className="w-5 h-5 object-contain shrink-0"
+            />
+            <span className="text-xs font-bold uppercase tracking-widest text-primary font-heading">
+              {badge}
+            </span>
+          </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy font-heading tracking-tight leading-[1.14] max-w-xl">
             {title}

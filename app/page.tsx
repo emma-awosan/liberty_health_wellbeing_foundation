@@ -89,7 +89,7 @@ const getInvolvedPathways = [
       "Responsible businesses, healthcare institutions, and philanthropists are invited to join our Founding Sponsors Programme or partner on community health delivery.",
     points: [
       "Financial, programme, educational & in-kind sponsorship tracks",
-      "Active collaborations with WuraCare MCI, 60 Seconds With Doc, Titan Sales & Balyson Medical Initiative",
+      "Active collaborations with WuraCare MCI, 60 Seconds With Doc, Marlix Healthcare Ltd, Titan Sales Limited & Balyson Medical Initiative",
       "Ethical governance and transparent impact reporting",
     ],
     ctaText: "Explore Partnerships & Sponsorship",

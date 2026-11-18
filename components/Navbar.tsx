@@ -13,15 +13,24 @@ import {
   HeartHandshake,
 } from "lucide-react";
 
+const mediaSubLinks = [
+  { name: "News", href: "/media#news" },
+  { name: "Blog", href: "/media#blog" },
+  { name: "Events", href: "/media#events" },
+  { name: "Outreach Gallery", href: "/media#gallery" },
+];
+
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [expandedMenu, setExpandedMenu] = useState<string | null>("focus");
+  const [desktopMediaOpen, setDesktopMediaOpen] = useState(false);
   const pathname = usePathname();
   const [prevPathname, setPrevPathname] = useState(pathname);
 
   if (prevPathname !== pathname) {
     setPrevPathname(pathname);
     setMobileMenuOpen(false);
+    setDesktopMediaOpen(false);
   }
 
   const navLinks = [
@@ -52,7 +61,10 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setMobileMenuOpen(false);
+      if (e.key === "Escape") {
+        setMobileMenuOpen(false);
+        setDesktopMediaOpen(false);
+      }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
@@ -65,7 +77,10 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 inset-x-0 z-50 p-3 sm:p-4 lg:p-5 pointer-events-none transition-all duration-300">
       <div className="max-w-[1440px] 2xl:max-w-screen-2xl mx-auto">
-        <nav className="pointer-events-auto relative bg-navy-deep/95 backdrop-blur-xl border border-white/15 shadow-2xl shadow-black/25 rounded-full px-5 sm:px-7 py-2 sm:py-2.5 flex items-center justify-between transition-all">
+        <nav
+          aria-label="Primary Navigation"
+          className="pointer-events-auto relative bg-navy-deep/95 backdrop-blur-xl border border-white/15 shadow-2xl shadow-black/25 rounded-full px-5 sm:px-7 py-2 sm:py-2.5 flex items-center justify-between transition-all"
+        >
           {/* Left: Brand Logo */}
           <Link href="/" className="flex items-center group shrink-0">
             <Image
@@ -79,8 +94,71 @@ export default function Navbar() {
           </Link>
 
           {/* Center: Desktop Navigation Links */}
-          <div className="hidden xl:flex items-center gap-5 2xl:gap-7">
-            {navLinks.map((link) => {
+          <div className="hidden xl:flex items-center gap-4 2xl:gap-6">
+            {navLinks.slice(0, 5).map((link) => {
+              const active = isActive(link.href);
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={`relative py-1.5 text-xs lg:text-sm font-medium tracking-wide transition-colors ${
+                    active
+                      ? "text-white font-semibold after:absolute after:-bottom-1 after:inset-x-0 after:h-0.5 after:bg-primary after:rounded-full"
+                      : "text-slate-300 hover:text-white after:absolute after:-bottom-1 after:inset-x-0 after:h-0.5 after:bg-primary after:rounded-full after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200 after:origin-center"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
+
+            {/* Media Dropdown (News, Blog, Events, Outreach Gallery) */}
+            <div
+              className="relative"
+              onMouseEnter={() => setDesktopMediaOpen(true)}
+              onMouseLeave={() => setDesktopMediaOpen(false)}
+            >
+              <button
+                type="button"
+                onClick={() => setDesktopMediaOpen((prev) => !prev)}
+                aria-expanded={desktopMediaOpen}
+                aria-haspopup="true"
+                className={`relative py-1.5 text-xs lg:text-sm font-medium tracking-wide transition-colors inline-flex items-center gap-1 cursor-pointer ${
+                  isActive("/media")
+                    ? "text-white font-semibold after:absolute after:-bottom-1 after:inset-x-0 after:h-0.5 after:bg-primary after:rounded-full"
+                    : "text-slate-300 hover:text-white"
+                }`}
+              >
+                <span>Media</span>
+                <ChevronDown
+                  className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                    desktopMediaOpen ? "rotate-180 text-primary" : ""
+                  }`}
+                />
+              </button>
+
+              {desktopMediaOpen && (
+                <div className="absolute left-0 top-full pt-2.5 w-48 z-50">
+                  <div className="rounded-xl bg-white border border-slate-200 shadow-lg py-2 overflow-hidden">
+                    {mediaSubLinks.map((sub) => (
+                      <Link
+                        key={sub.name}
+                        href={sub.href}
+                        onClick={() => setDesktopMediaOpen(false)}
+                        className="flex items-center justify-between px-4 py-2.5 text-xs sm:text-sm font-semibold text-navy hover:bg-canvas hover:text-primary transition-colors"
+                      >
+                        <span>{sub.name}</span>
+                        <span className="text-[9px] font-mono uppercase tracking-wider text-slate-400">
+                          Soon
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {navLinks.slice(5).map((link) => {
               const active = isActive(link.href);
               return (
                 <Link
@@ -264,6 +342,44 @@ export default function Navbar() {
             </span>
             <ChevronRight className="w-4 h-4 text-slate-500 group-hover:text-white" />
           </Link>
+
+          {/* Media Accordion (News, Blog, Events, Outreach Gallery) */}
+          <div className="py-0.5">
+            <button
+              type="button"
+              onClick={() => toggleSubmenu("media")}
+              className="w-full flex items-center justify-between text-lg font-normal tracking-tight py-2 text-white/90 hover:text-white transition-colors group"
+            >
+              <span
+                className={
+                  pathname === "/media" ? "text-primary font-semibold" : ""
+                }
+              >
+                Media &amp; Outreach Gallery
+              </span>
+              {expandedMenu === "media" ? (
+                <ChevronDown className="w-4 h-4 text-slate-400 group-hover:text-white transition-colors" />
+              ) : (
+                <ChevronRight className="w-4 h-4 text-slate-500 group-hover:text-white" />
+              )}
+            </button>
+
+            {expandedMenu === "media" && (
+              <div className="mt-1 pl-2 space-y-1.5 border-l border-white/15 ml-1">
+                {mediaSubLinks.map((sub) => (
+                  <Link
+                    key={sub.name}
+                    href={sub.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex items-center justify-between py-1.5 text-xs sm:text-sm text-slate-300 hover:text-white transition-colors group"
+                  >
+                    <span>{sub.name}</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-primary" />
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
 
           <Link
             href="/donate"

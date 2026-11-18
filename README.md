@@ -13,7 +13,7 @@
 
 **Liberty Health & Wellbeing Foundation** is a registered Nigerian nonprofit organisation (**Incorporated Trustees, CAC Registration No. 9469157 · Registered 7 April 2026 · TIN: 2623366408281**) advancing preventive health, mental wellbeing, addiction awareness, health education, and equitable healthcare access for underserved communities.
 
-[Home](https://libertyhealthwellbeing.org) • [About Us](https://libertyhealthwellbeing.org/about) • [Meet the Team](https://libertyhealthwellbeing.org/team) • [Partners & Sponsors](https://libertyhealthwellbeing.org/partners) • [Mission & Vision](https://libertyhealthwellbeing.org/mission-vision) • [Opportunities](https://libertyhealthwellbeing.org/opportunities) • [Donate](https://libertyhealthwellbeing.org/donate) • [Contact](https://libertyhealthwellbeing.org/contact)
+[Home](https://libertyhealthwellbeing.org) • [About Us](https://libertyhealthwellbeing.org/about) • [Meet the Team](https://libertyhealthwellbeing.org/team) • [Partners & Sponsors](https://libertyhealthwellbeing.org/partners) • [Media & Gallery](https://libertyhealthwellbeing.org/media) • [Mission & Vision](https://libertyhealthwellbeing.org/mission-vision) • [Opportunities](https://libertyhealthwellbeing.org/opportunities) • [Donate](https://libertyhealthwellbeing.org/donate) • [Contact](https://libertyhealthwellbeing.org/contact)
 
 </div>
 

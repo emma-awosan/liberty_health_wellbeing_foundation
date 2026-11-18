@@ -24,9 +24,18 @@ export default function Footer() {
         <div className="bg-navy-deep text-white rounded-xl p-8 sm:p-12 lg:p-14 relative overflow-hidden mb-16 lg:mb-20 border border-navy-dark shadow-sm">
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-7 flex flex-col gap-3">
-              <span className="text-xs font-bold uppercase tracking-widest text-primary font-heading">
-                Advancing Global Health. Transforming Lives.
-              </span>
+              <div className="flex items-center gap-2.5">
+                <Image
+                  src="/images/favicon-white.png"
+                  alt="Liberty Health & Wellbeing Foundation Icon"
+                  width={22}
+                  height={22}
+                  className="w-5 h-5 object-contain shrink-0"
+                />
+                <span className="text-xs font-bold uppercase tracking-widest text-primary font-heading">
+                  Advancing Global Health. Transforming Lives.
+                </span>
+              </div>
               <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-heading tracking-tight leading-tight">
                 Subscribe to Our Updates
               </h3>
@@ -116,7 +125,7 @@ export default function Footer() {
             <div className="flex flex-col gap-1.5 text-xs text-slate-500 pt-1">
               <a
                 href="mailto:emmanuel.awosan@libertyhealthwellbeing.org"
-                className="flex items-center gap-2 hover:text-primary transition-colors font-semibold text-navy"
+                className="inline-flex items-center gap-2 hover:text-primary transition-colors font-semibold text-navy underline decoration-slate-300 hover:decoration-primary underline-offset-4 w-fit"
               >
                 <Mail className="w-3.5 h-3.5 text-primary shrink-0" />
                 <span>emmanuel.awosan@libertyhealthwellbeing.org</span>
@@ -133,11 +142,11 @@ export default function Footer() {
               <h4 className="text-navy font-bold text-sm tracking-wider uppercase font-heading">
                 Our Focus Areas
               </h4>
-              <ul className="flex flex-col gap-2 text-xs sm:text-sm text-slate-600">
+              <ul className="flex flex-col gap-2.5 text-xs sm:text-sm text-slate-600">
                 <li>
                   <Link
                     href="/mission-vision#focus"
-                    className="hover:text-primary transition-colors"
+                    className="hover:text-primary transition-colors underline decoration-slate-300/80 hover:decoration-primary underline-offset-4"
                   >
                     Mental Health &amp; Wellbeing
                   </Link>
@@ -145,7 +154,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/mission-vision#focus"
-                    className="hover:text-primary transition-colors"
+                    className="hover:text-primary transition-colors underline decoration-slate-300/80 hover:decoration-primary underline-offset-4"
                   >
                     Addiction &amp; Gambling Awareness
                   </Link>
@@ -153,7 +162,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/mission-vision#focus"
-                    className="hover:text-primary transition-colors"
+                    className="hover:text-primary transition-colors underline decoration-slate-300/80 hover:decoration-primary underline-offset-4"
                   >
                     Preventive Healthcare &amp; Access
                   </Link>
@@ -161,7 +170,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/mission-vision#focus"
-                    className="hover:text-primary transition-colors"
+                    className="hover:text-primary transition-colors underline decoration-slate-300/80 hover:decoration-primary underline-offset-4"
                   >
                     Women’s, Maternal &amp; Child Health
                   </Link>
@@ -169,7 +178,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/mission-vision#focus"
-                    className="hover:text-primary transition-colors"
+                    className="hover:text-primary transition-colors underline decoration-slate-300/80 hover:decoration-primary underline-offset-4"
                   >
                     Health Information &amp; Resources
                   </Link>
@@ -177,7 +186,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/mission-vision#research-policy"
-                    className="hover:text-primary transition-colors"
+                    className="hover:text-primary transition-colors underline decoration-slate-300/80 hover:decoration-primary underline-offset-4"
                   >
                     Research, Policy &amp; Advocacy
                   </Link>
@@ -185,7 +194,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/partners"
-                    className="hover:text-primary transition-colors"
+                    className="hover:text-primary transition-colors underline decoration-slate-300/80 hover:decoration-primary underline-offset-4"
                   >
                     Global Health &amp; Partnerships
                   </Link>
@@ -198,11 +207,11 @@ export default function Footer() {
               <h4 className="text-navy font-bold text-sm tracking-wider uppercase font-heading">
                 Foundation &amp; Support
               </h4>
-              <ul className="flex flex-col gap-2 text-xs sm:text-sm text-slate-600">
+              <ul className="flex flex-col gap-2.5 text-xs sm:text-sm text-slate-600">
                 <li>
                   <Link
                     href="/about"
-                    className="hover:text-primary transition-colors"
+                    className="hover:text-primary transition-colors underline decoration-slate-300/80 hover:decoration-primary underline-offset-4"
                   >
                     About Us &amp; Board of Trustees
                   </Link>
@@ -210,7 +219,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/team"
-                    className="hover:text-primary transition-colors"
+                    className="hover:text-primary transition-colors underline decoration-slate-300/80 hover:decoration-primary underline-offset-4"
                   >
                     Meet the Team
                   </Link>
@@ -218,15 +227,23 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/partners"
-                    className="hover:text-primary transition-colors"
+                    className="hover:text-primary transition-colors underline decoration-slate-300/80 hover:decoration-primary underline-offset-4"
                   >
                     Partners &amp; Founding Sponsors
                   </Link>
                 </li>
                 <li>
                   <Link
+                    href="/media"
+                    className="hover:text-primary transition-colors underline decoration-slate-300/80 hover:decoration-primary underline-offset-4"
+                  >
+                    Media, News &amp; Outreach Gallery
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/donate"
-                    className="hover:text-primary transition-colors font-semibold text-navy"
+                    className="hover:text-primary transition-colors font-semibold text-navy underline decoration-navy/30 hover:decoration-primary underline-offset-4"
                   >
                     ₦20,000,000 Fundraising Appeal
                   </Link>
@@ -234,7 +251,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/opportunities"
-                    className="hover:text-primary transition-colors font-semibold text-navy"
+                    className="hover:text-primary transition-colors font-semibold text-navy underline decoration-navy/30 hover:decoration-primary underline-offset-4"
                   >
                     Founding Volunteers (2026/2027)
                   </Link>
@@ -242,7 +259,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/opportunities#available-positions"
-                    className="hover:text-primary transition-colors"
+                    className="hover:text-primary transition-colors underline decoration-slate-300/80 hover:decoration-primary underline-offset-4"
                   >
                     Available Positions (5 Open)
                   </Link>
@@ -250,7 +267,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/contact"
-                    className="hover:text-primary transition-colors"
+                    className="hover:text-primary transition-colors underline decoration-slate-300/80 hover:decoration-primary underline-offset-4"
                   >
                     Contact Us
                   </Link>

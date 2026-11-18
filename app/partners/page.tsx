@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import type { Metadata } from "next";
 import { CheckCircle2, ShieldCheck, Briefcase, Award } from "lucide-react";
 import HeroWaveDivider from "@/components/HeroWaveDivider";
@@ -11,7 +10,7 @@ export const metadata: Metadata = {
   title:
     "Strategic Partners, Collaborations & Founding Sponsors · Liberty Health & Wellbeing Foundation",
   description:
-    "Explore our strategic partnerships (WuraCare MCI, 60 Seconds With Doc, Titan Sales, Balyson Medical Initiative), prospective collaborations (Marlix Healthcare Ltd), and the Founding Sponsors Programme.",
+    "Explore our official strategic partnerships (WuraCare MCI, 60 Seconds With Doc, Marlix Healthcare Ltd, Titan Sales Limited, Balyson Medical Initiative) and the Founding Sponsors Programme.",
   alternates: {
     canonical: "https://libertyhealthwellbeing.org/partners",
   },
@@ -19,7 +18,7 @@ export const metadata: Metadata = {
     title:
       "Strategic Partners & Founding Sponsors · Liberty Health & Wellbeing Foundation",
     description:
-      "Collaborating across healthcare, maternal-child health, medical education, technology, and corporate sponsorship to advance community health in Nigeria.",
+      "Collaborating across healthcare, maternal-child health, medical education, humanitarian outreach, technology, and corporate sponsorship to advance community health in Nigeria.",
     url: "https://libertyhealthwellbeing.org/partners",
     siteName: "Liberty Health & Wellbeing Foundation",
     type: "website",
@@ -79,145 +78,16 @@ export default function PartnersPage() {
       <PartnersInteractiveShowcase />
 
       {/* =========================================
-          SECTION 3: PROSPECTIVE PARTNER — CONFIRMATION PENDING
-      ========================================= */}
-      <section
-        id="prospective-collaborations"
-        className="py-16 sm:py-20 bg-white relative border-t border-slate-200/80"
-      >
-        <div className="max-w-[1440px] 2xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-10 sm:mb-12">
-            <span className="text-xs font-bold uppercase tracking-widest text-slate-500 font-heading block mb-2">
-              02 · Exploratory Discussions · Confirmation Pending
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-navy font-heading tracking-tight leading-[1.15]">
-              Prospective Partner — Confirmation Pending
-            </h2>
-            <p className="text-slate-600 mt-3 text-base sm:text-lg leading-relaxed font-normal">
-              Discussions and potential areas of collaboration are actively being developed. In accordance with our governance standards, prospective partners are not presented as confirmed institutional partners until formal agreements are finalised.
-            </p>
-          </div>
-
-          <div className="max-w-5xl rounded-2xl bg-canvas border border-slate-200 overflow-hidden">
-            {/* Architectural Top Header Bar */}
-            <div className="bg-slate-100 border-b border-slate-200 px-6 sm:px-8 py-3 flex flex-wrap items-center justify-between gap-3">
-              <span className="text-xs font-mono font-bold uppercase tracking-widest text-slate-600">
-                PROSPECTIVE COLLABORATION · MARLIX HEALTHCARE LTD
-              </span>
-              <span className="text-xs font-bold uppercase tracking-wider text-amber-800">
-                Status: Confirmation Pending
-              </span>
-            </div>
-
-            <div className="p-6 sm:p-8 lg:p-10 bg-white">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                {/* Logo / Brand Column */}
-                <div className="lg:col-span-4 flex flex-col items-start text-left">
-                  <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-canvas border border-slate-200/80 mb-4 p-4">
-                    <Image
-                      src="/images/Marlix Healthcare Ltd.png"
-                      alt="Marlix Healthcare Ltd"
-                      fill
-                      className="object-contain p-4"
-                      sizes="(max-width: 1024px) 100vw, 320px"
-                    />
-                  </div>
-                  <div className="border-l-2 border-amber-500 pl-3 py-0.5 text-left">
-                    <span className="text-xs font-bold uppercase tracking-wider text-amber-800 block font-heading">
-                      Prospective Partner — Confirmation Pending
-                    </span>
-                  </div>
-                </div>
-
-                {/* Details Column */}
-                <div className="lg:col-span-8 space-y-5 text-left">
-                  <div className="flex flex-wrap items-center justify-between gap-4">
-                    <div>
-                      <h3 className="text-2xl font-extrabold text-navy font-heading">
-                        Marlix Healthcare Ltd
-                      </h3>
-                      <p className="text-xs sm:text-sm font-semibold text-slate-600 mt-1">
-                        CEO / Managing Director:{" "}
-                        <strong>
-                          Dr. Okwuchukwu Valentine C. (MBBS, MPH, Cli.Sono)
-                        </strong>
-                      </p>
-                    </div>
-                    <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-primary/30 bg-slate-100 shrink-0">
-                      <Image
-                        src="/images/Dr. Valentine.jpeg"
-                        alt="Dr. Okwuchukwu Valentine C."
-                        fill
-                        sizes="56px"
-                        className="object-cover object-top"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="p-4 rounded-xl bg-canvas border border-slate-200/80">
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-primary block mb-1">
-                        Vision
-                      </span>
-                      <p className="text-xs sm:text-sm font-medium text-navy italic">
-                        “Redefining access to quality healthcare, one community at a time.”
-                      </p>
-                    </div>
-                    <div className="p-4 rounded-xl bg-canvas border border-slate-200/80">
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-primary block mb-1">
-                        Motto
-                      </span>
-                      <p className="text-xs sm:text-sm font-medium text-navy italic">
-                        “Better Health. A Healthier You.”
-                      </p>
-                    </div>
-                  </div>
-
-                  <div>
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-navy font-heading mb-2.5">
-                      Potential Areas of Collaboration Under Discussion:
-                    </h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm">
-                      {[
-                        "Preventive healthcare initiatives.",
-                        "Community medical outreach.",
-                        "Health screening awareness.",
-                        "Clinical education & sonography awareness.",
-                        "Public health partnerships.",
-                        "Community wellbeing programmes.",
-                      ].map((area, idx) => (
-                        <div
-                          key={idx}
-                          className="flex items-center gap-2.5 text-slate-700 bg-canvas p-3 rounded-lg border border-slate-200/70"
-                        >
-                          <span className="w-1.5 h-1.5 rounded-full bg-slate-400 shrink-0" />
-                          <span>{area}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <p className="text-xs text-slate-500 italic pt-1">
-                    * Note: Marlix Healthcare Ltd is presented as a prospective partner while formal partnership confirmation is pending.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================
-          SECTION 4: FOUNDING SPONSORS PROGRAMME
+          SECTION 3: FOUNDING SPONSORS PROGRAMME
       ========================================= */}
       <section
         id="sponsorship"
-        className="py-16 sm:py-24 bg-canvas relative border-t border-slate-200/80"
+        className="py-16 sm:py-24 bg-white relative border-t border-slate-200/80"
       >
         <div className="max-w-[1440px] 2xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-12 sm:mb-14">
             <span className="text-xs font-bold uppercase tracking-widest text-primary font-heading block mb-2">
-              03 · Institutional &amp; Philanthropic Sponsorship
+              02 · Institutional &amp; Philanthropic Sponsorship
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy font-heading tracking-tight leading-[1.12]">
               Founding Sponsors Programme

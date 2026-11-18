@@ -83,7 +83,27 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      {
+        url: "/images/favicon-black.png",
+        media: "(prefers-color-scheme: light)",
+        type: "image/png",
+        sizes: "512x512",
+      },
+      {
+        url: "/images/favicon-white.png",
+        media: "(prefers-color-scheme: dark)",
+        type: "image/png",
+        sizes: "512x512",
+      },
+      {
+        url: "/images/favicon-black.png",
+        type: "image/png",
+        sizes: "512x512",
+      },
+    ],
+    shortcut: "/images/favicon-black.png",
+    apple: "/images/favicon-black.png",
   },
 };
 
