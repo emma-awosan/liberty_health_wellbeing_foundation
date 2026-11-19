@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { CheckCircle2, Mail, ShieldCheck } from "lucide-react";
+import { CheckCircle2, Mail } from "lucide-react";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -20,7 +20,7 @@ export default function Footer() {
   return (
     <footer className="bg-canvas text-slate-600 pt-14 sm:pt-18 lg:pt-20 pb-12 border-t border-slate-200/70">
       <div className="max-w-[1440px] 2xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* TOP: FLOATING NEWSLETTER BANNER CARD */}
+        {/* TOP: NEWSLETTER BANNER CARD */}
         <div className="bg-navy-deep text-white rounded-xl p-8 sm:p-12 lg:p-14 relative overflow-hidden mb-16 lg:mb-20 border border-navy-dark shadow-sm">
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-7 flex flex-col gap-3">
@@ -110,19 +110,18 @@ export default function Footer() {
               Liberty Health &amp; Wellbeing Foundation is a Nigerian-registered nonprofit organisation committed to improving health, wellbeing and quality of life through preventive healthcare, public education, research, advocacy and community development.
             </p>
 
-            {/* Official Registration & Tax Badges */}
-            <div className="flex flex-wrap items-center gap-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-navy/5 border border-slate-200 text-xs text-navy font-medium">
-                <ShieldCheck className="w-4 h-4 text-primary shrink-0" />
-                <span>CAC Reg No. 9469157 (Est. 7 April 2026)</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-navy/5 border border-slate-200 text-xs text-navy font-medium">
-                <span>TIN: 2623366408281</span>
-              </div>
+            {/* Single Compact Legal Identity Block */}
+            <div className="border-l-2 border-primary pl-3.5 py-0.5 text-xs text-navy">
+              <span className="font-bold block">
+                Registered Incorporated Trustees (Nigeria)
+              </span>
+              <span className="text-slate-600">
+                CAC Reg. No. 9469157 · Registered 7 April 2026 · TIN: 2623366408281
+              </span>
             </div>
 
-            {/* Direct Contact Snippets */}
-            <div className="flex flex-col gap-1.5 text-xs text-slate-500 pt-1">
+            {/* Direct Contact */}
+            <div className="pt-1 text-xs">
               <a
                 href="mailto:emmanuel.awosan@libertyhealthwellbeing.org"
                 className="inline-flex items-center gap-2 hover:text-primary transition-colors font-semibold text-navy underline decoration-slate-300 hover:decoration-primary underline-offset-4 w-fit"
@@ -130,9 +129,6 @@ export default function Footer() {
                 <Mail className="w-3.5 h-3.5 text-primary shrink-0" />
                 <span>emmanuel.awosan@libertyhealthwellbeing.org</span>
               </a>
-              <span className="text-[11px] text-slate-400 italic">
-                Additional department emails (@libertyhealthwellbeing.org) in setup · Official phone number to be added upon confirmation.
-              </span>
             </div>
           </div>
 
@@ -202,10 +198,10 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Foundation & Get Involved */}
+            {/* Foundation & Engagement */}
             <div className="flex flex-col gap-3.5">
               <h4 className="text-navy font-bold text-sm tracking-wider uppercase font-heading">
-                Foundation &amp; Support
+                Foundation
               </h4>
               <ul className="flex flex-col gap-2.5 text-xs sm:text-sm text-slate-600">
                 <li>
@@ -229,7 +225,7 @@ export default function Footer() {
                     href="/partners"
                     className="hover:text-primary transition-colors underline decoration-slate-300/80 hover:decoration-primary underline-offset-4"
                   >
-                    Partners &amp; Founding Sponsors
+                    Strategic Partners
                   </Link>
                 </li>
                 <li>
@@ -238,14 +234,6 @@ export default function Footer() {
                     className="hover:text-primary transition-colors underline decoration-slate-300/80 hover:decoration-primary underline-offset-4"
                   >
                     Media, News &amp; Outreach Gallery
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/donate"
-                    className="hover:text-primary transition-colors font-semibold text-navy underline decoration-navy/30 hover:decoration-primary underline-offset-4"
-                  >
-                    ₦20,000,000 Fundraising Appeal
                   </Link>
                 </li>
                 <li>
@@ -275,7 +263,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Offices & Legal */}
+            {/* Offices */}
             <div className="flex flex-col gap-3.5 col-span-2 sm:col-span-1">
               <h4 className="text-navy font-bold text-sm tracking-wider uppercase font-heading">
                 Operating Locations
@@ -295,27 +283,16 @@ export default function Footer() {
                   </strong>
                   <span>01 Federal Layout, Arkilla, Sokoto, Nigeria.</span>
                 </div>
-                <div className="pt-1 text-[11px] text-slate-500 space-y-0.5">
-                  <div>CAC Registration No: 9469157</div>
-                  <div>Tax Identification No: 2623366408281</div>
-                  <div>Registered: 7 April 2026</div>
-                </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* BOTTOM: COPYRIGHT & CREDITS */}
+        {/* BOTTOM: COPYRIGHT */}
         <div className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
           <p>
             © 2026 Liberty Health &amp; Wellbeing Foundation. Advancing Global Health. Transforming Lives.
           </p>
-          <div className="flex items-center gap-6">
-            <span className="text-primary font-medium flex items-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-primary" />
-              CAC 9469157 · TIN 2623366408281
-            </span>
-          </div>
         </div>
       </div>
     </footer>

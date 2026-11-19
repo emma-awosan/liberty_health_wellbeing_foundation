@@ -806,8 +806,8 @@ export default function PartnersInteractiveShowcase() {
               <Layers className="w-3.5 h-3.5 text-primary" />
               <span>
                 {viewMode === "deck"
-                  ? "Switch to Scroll-Stack View"
-                  : "Switch to Swipe Deck View"}
+                  ? "View All Partners Expanded"
+                  : "Interactive Partner View"}
               </span>
             </button>
 

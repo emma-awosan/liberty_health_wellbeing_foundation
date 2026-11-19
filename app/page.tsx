@@ -9,7 +9,6 @@ import {
   CheckCircle2,
   Sparkles,
   Users,
-  Building2,
   Sprout,
   Globe2,
   ShieldCheck,
@@ -21,44 +20,17 @@ import {
   Baby,
   BookOpen,
   Scale,
-  HeartHandshake,
 } from "lucide-react";
 import AfricaHeroMap from "@/components/AfricaHeroMap";
 import CommunityCTA from "@/components/CommunityCTA";
 
 const getInvolvedPathways = [
   {
-    id: "donate" as const,
-    number: "01",
-    badge: "Fundraising Appeal",
-    title: "Support the ₦20,000,000 Fundraising Initiative",
-    subtitle: "Help Us Build Healthier Communities across Nigeria.",
-    description:
-      "Liberty Health & Wellbeing Foundation is raising ₦20,000,000 to support the establishment, development and delivery of its community health, education, research and wellbeing initiatives.",
-    points: [
-      "Community medical outreach and preventive health education",
-      "Maternal, women’s and child health awareness initiatives",
-      "Mental health, addiction and gambling harm awareness campaigns",
-    ],
-    ctaText: "Support Our Fundraising Appeal",
-    ctaLink: "/donate",
-    accentBorder: "border-primary/50",
-    accentBg: "bg-primary-light/50",
-    badgeBg: "bg-primary",
-    image: "/images/hero.jpg",
-    showcaseTag: "₦20,000,000 Target",
-    showcaseTitle: "Help Us Build Healthier Communities",
-    showcaseDesc:
-      "Support individual donations, programme sponsorships, and community outreach initiatives across Nigeria.",
-    stat: "₦20,000,000",
-    statLabel: "Fundraising Target",
-  },
-  {
     id: "volunteer" as const,
-    number: "02",
+    number: "01",
     badge: "2026/2027 Cohort",
     title: "Founding Volunteers Programme & Open Roles",
-    subtitle: "Contribute your clinical, research, media, or community skills.",
+    subtitle: "Contribute your clinical, research, editorial, or community skills.",
     description:
       "We invite passionate individuals, students, healthcare professionals, researchers, writers, creatives and community advocates to join our Founding Volunteers Cohort — 2026/2027.",
     points: [
@@ -68,9 +40,9 @@ const getInvolvedPathways = [
     ],
     ctaText: "Register as a Volunteer",
     ctaLink: "/opportunities",
-    accentBorder: "border-blue/40",
-    accentBg: "bg-blue-light/50",
-    badgeBg: "bg-blue",
+    accentBorder: "border-primary/50",
+    accentBg: "bg-primary-light/50",
+    badgeBg: "bg-primary",
     image: "/images/education.jpg",
     showcaseTag: "2026/2027 Cohort",
     showcaseTitle: "Join Our Founding Volunteers Programme",
@@ -80,30 +52,56 @@ const getInvolvedPathways = [
     statLabel: "Volunteer Cohort",
   },
   {
-    id: "sponsor" as const,
-    number: "03",
+    id: "partner" as const,
+    number: "02",
     badge: "Institutional Alliances",
-    title: "Founding Sponsors & Strategic Partnerships",
+    title: "Strategic Partnerships & Healthcare Collaborations",
     subtitle: "Collaborate with us across healthcare, research and technology.",
     description:
-      "Responsible businesses, healthcare institutions, and philanthropists are invited to join our Founding Sponsors Programme or partner on community health delivery.",
+      "Healthcare institutions, community organisations, researchers, and responsible businesses collaborate with the Foundation to strengthen preventive healthcare and public health education.",
     points: [
-      "Financial, programme, educational & in-kind sponsorship tracks",
       "Active collaborations with WuraCare MCI, 60 Seconds With Doc, Marlix Healthcare Ltd, Titan Sales Limited & Balyson Medical Initiative",
-      "Ethical governance and transparent impact reporting",
+      "Joint community medical outreaches, maternal-child health & health literacy",
+      "Ethical governance and evidence-informed programme delivery",
     ],
-    ctaText: "Explore Partnerships & Sponsorship",
+    ctaText: "Explore Strategic Partnerships",
     ctaLink: "/partners",
+    accentBorder: "border-blue/40",
+    accentBg: "bg-blue-light/50",
+    badgeBg: "bg-blue",
+    image: "/images/sustainability.jpg",
+    showcaseTag: "Strategic Partners",
+    showcaseTitle: "Institutional & Clinical Collaborations",
+    showcaseDesc:
+      "Building purposeful relationships across healthcare, technology, research, and community development.",
+    stat: "5 Partners",
+    statLabel: "Confirmed Alliances",
+  },
+  {
+    id: "research" as const,
+    number: "03",
+    badge: "Evidence & Policy",
+    title: "Research, Health Data & Public Health Advocacy",
+    subtitle: "Advancing locally relevant research and community health insights.",
+    description:
+      "Our multidisciplinary team conducts structured health data collection, social research, and policy analysis addressing health inequalities and the wider determinants of wellbeing.",
+    points: [
+      "Structured collection and analysis of community health data",
+      "Locally relevant research outputs and evidence briefs for advocacy",
+      "Multidisciplinary leadership across medicine, peacebuilding & digital health",
+    ],
+    ctaText: "Explore Our Focus & Research",
+    ctaLink: "/mission-vision#research-policy",
     accentBorder: "border-navy/40",
     accentBg: "bg-blue-light/40",
     badgeBg: "bg-navy",
-    image: "/images/sustainability.jpg",
-    showcaseTag: "Strategic Partners",
-    showcaseTitle: "Founding Sponsors Programme",
+    image: "/images/hero.jpg",
+    showcaseTag: "7 Focus Areas",
+    showcaseTitle: "Evidence-Informed Public Health",
     showcaseDesc:
-      "Building purposeful relationships across healthcare, technology, research, and community development.",
-    stat: "Founding",
-    statLabel: "Sponsors Track",
+      "Connecting clinical prevention, health data infrastructure, and community engagement across Nigeria.",
+    stat: "7 Areas",
+    statLabel: "Core Focus Mandate",
   },
 ];
 
@@ -159,10 +157,49 @@ const officialFocusAreas = [
   },
 ];
 
+const pilotProjectObjectives = [
+  {
+    index: "01",
+    title: "Lagos & Abuja Outreach Pilots",
+    detail:
+      "Supporting initial community medical outreach pilots across Lagos and Abuja.",
+  },
+  {
+    index: "02",
+    title: "Screening & Basic Clinical Supplies",
+    detail:
+      "Providing preventive health screening tools and essential basic clinical supplies for field outreach.",
+  },
+  {
+    index: "03",
+    title: "Community Health Education",
+    detail:
+      "Delivering accessible public health education and preventive literacy across our seven focus areas.",
+  },
+  {
+    index: "04",
+    title: "Structured Health Data Collection & Analysis",
+    detail:
+      "Implementing structured collection and analysis of community health data to guide interventions.",
+  },
+  {
+    index: "05",
+    title: "Locally Relevant Research Outputs",
+    detail:
+      "Producing evidence-informed research outputs tailored to local community health needs.",
+  },
+  {
+    index: "06",
+    title: "Evidence Briefs for Advocacy & Expansion",
+    detail:
+      "Developing practical evidence briefs for public health advocacy and future programme expansion.",
+  },
+];
+
 export default function Home() {
   const [selectedVolunteerTab, setSelectedVolunteerTab] = useState<
-    "donate" | "volunteer" | "sponsor"
-  >("donate");
+    "volunteer" | "partner" | "research"
+  >("volunteer");
   const [progress, setProgress] = useState(0);
   const [isAccordionPaused, setIsAccordionPaused] = useState(false);
 
@@ -193,7 +230,7 @@ export default function Home() {
   }, [selectedVolunteerTab, isAccordionPaused]);
 
   const handleSelectVolunteerTab = (
-    tabId: "donate" | "volunteer" | "sponsor"
+    tabId: "volunteer" | "partner" | "research"
   ) => {
     setSelectedVolunteerTab(tabId);
     setProgress(0);
@@ -202,10 +239,6 @@ export default function Home() {
   const currentPathway =
     getInvolvedPathways.find((p) => p.id === selectedVolunteerTab) ||
     getInvolvedPathways[0];
-  const secondsLeft = Math.max(
-    1,
-    Math.ceil((ACCORDION_DURATION * (1 - progress / 100)) / 1000)
-  );
 
   return (
     <div className="flex flex-col w-full bg-canvas">
@@ -236,10 +269,10 @@ export default function Home() {
               {/* CTAs */}
               <div className="flex flex-wrap items-center gap-4 pt-1">
                 <Link
-                  href="/donate"
+                  href="/mission-vision"
                   className="px-7 py-3.5 rounded-full bg-primary text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 text-center shadow-xs"
                 >
-                  <span>Support ₦20M Appeal</span>
+                  <span>Explore Our 7 Focus Areas</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
 
@@ -263,10 +296,10 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col justify-between min-w-0">
                   <div className="text-lg sm:text-xl xl:text-2xl font-extrabold text-navy font-heading whitespace-nowrap leading-tight">
-                    7 April 2026
+                    7 Focus Areas
                   </div>
                   <div className="text-[11px] sm:text-xs text-slate-500 font-semibold uppercase tracking-wider mt-1.5 leading-snug">
-                    Incorporated Trustees
+                    Preventive Mandate
                   </div>
                 </div>
                 <div className="flex flex-col justify-between min-w-0">
@@ -641,26 +674,26 @@ export default function Home() {
               </div>
             ))}
 
-            {/* 8th Card in Grid: Direct ₦20M Fundraising Callout */}
+            {/* 8th Cell in 4x2 Grid: Full Focus & Research Overview */}
             <div className="p-7 sm:p-9 bg-navy text-white border-r border-b border-navy-dark flex flex-col justify-between relative">
               <div className="absolute top-0 inset-x-0 h-0.5 bg-primary" />
               <div>
                 <div className="text-xs font-mono font-bold uppercase tracking-widest text-primary mb-6">
-                  ₦20,000,000 TARGET
+                  INTEGRATED MANDATE
                 </div>
                 <h3 className="text-xl font-extrabold text-white font-heading mb-3 tracking-tight">
-                  Help Us Build Healthier Communities
+                  Evidence-Informed Community Health
                 </h3>
                 <p className="text-slate-300 text-sm leading-relaxed">
-                  Support the establishment, development, and delivery of our seven community health, education, research, and wellbeing focus areas.
+                  Explore how our seven focus areas connect preventive medicine, public health research, and community empowerment across Nigeria.
                 </p>
               </div>
               <div className="mt-8 pt-4 border-t border-white/15">
                 <Link
-                  href="/donate"
+                  href="/mission-vision"
                   className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-primary"
                 >
-                  <span>Support the ₦20M Appeal</span>
+                  <span>Read Full Focus &amp; Research Mandate</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
@@ -695,175 +728,43 @@ export default function Home() {
       </section>
 
       {/* =========================================
-          SECTION 1.E: INSTITUTIONAL READINESS & ₦20M APPEAL
+          SECTION 1.E: SINGLE INFORMATIONAL ₦20,000,000 PROJECT OBJECTIVES SECTION
+          (Objectives only — no live donation buttons)
       ========================================= */}
       <section className="pt-16 sm:pt-20 pb-0 bg-navy-deep text-white relative overflow-hidden">
         <div className="max-w-[1440px] 2xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24 relative z-10">
-          <div className="max-w-3xl mb-14 sm:mb-16">
+          <div className="max-w-3xl mb-12 sm:mb-14">
             <span className="text-xs font-bold uppercase tracking-widest text-primary font-heading block mb-2.5">
-              Statutory Governance &amp; Fundraising Appeal
+              2026/2027 Pilot Programme · Informational Overview
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-heading tracking-tight leading-[1.15]">
-              Advancing Global Health.{" "}
-              <span className="text-primary">Transforming Lives.</span>
+              ₦20,000,000 Programme{" "}
+              <span className="text-primary">Objectives</span>
             </h2>
             <p className="text-slate-300 mt-3.5 text-sm sm:text-base lg:text-lg leading-relaxed font-normal">
-              Registered in Nigeria as Incorporated Trustees (CAC No. 9469157 · TIN: 2623366408281), our multidisciplinary team and strategic partners are building sustainable health programmes across Nigeria.
+              Our planned ₦20,000,000 programme framework is structured to establish initial outreach pilots, preventive screenings, health education, and locally relevant health data research across our seven core focus areas:
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-            <div className="lg:col-span-5 flex flex-col gap-4">
-              <div className="relative aspect-[4/3] sm:aspect-[16/11] rounded-xl overflow-hidden border border-white/15 shadow-sm bg-slate-900 group">
-                <Image
-                  src="/images/hero.jpg"
-                  alt="Community healthcare engagement in Nigeria"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy-deep/20 to-transparent" />
-
-                <div className="absolute bottom-5 left-5 right-5 text-white">
-                  <span className="block text-[11px] font-bold uppercase tracking-widest text-primary mb-1 font-heading">
-                    Operational Locations
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-white/15 bg-navy-dark/40">
+            {pilotProjectObjectives.map((obj) => (
+              <div
+                key={obj.index}
+                className="p-6 sm:p-8 border-r border-b border-white/15 flex flex-col justify-between"
+              >
+                <div>
+                  <span className="text-xs font-mono font-bold text-primary block mb-3">
+                    OBJECTIVE {obj.index}
                   </span>
-                  <h3 className="text-base sm:text-lg font-bold font-heading text-white leading-snug">
-                    Headquarters Abuja &amp; Sokoto Office
+                  <h3 className="text-lg sm:text-xl font-extrabold text-white font-heading mb-2">
+                    {obj.title}
                   </h3>
-                  <p className="text-xs text-slate-200 mt-1 leading-relaxed">
-                    Plot 89, Vitus Mbaogu Street, Jikwoyi, FCT, Abuja &amp; 01 Federal Layout, Arkilla, Sokoto.
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    {obj.detail}
                   </p>
                 </div>
               </div>
-
-              <div className="flex items-center justify-between p-4 rounded-xl bg-white border border-slate-100 shadow-xs text-xs text-navy">
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-primary" />
-                  <span className="font-semibold text-navy">
-                    CAC No. 9469157 · TIN: 2623366408281
-                  </span>
-                </div>
-                <span className="text-[11px] text-slate-500 font-medium">
-                  Est. 7 April 2026
-                </span>
-              </div>
-            </div>
-
-            <div className="lg:col-span-7 flex flex-col gap-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 pt-2">
-                <div className="p-5 sm:p-6 rounded-xl bg-white border border-slate-100 shadow-xs flex flex-col justify-between">
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="w-10 h-10 rounded-full bg-primary-light border border-badge-gold-border flex items-center justify-center text-primary">
-                      <ShieldCheck className="w-5 h-5 text-primary" />
-                    </div>
-                    <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">
-                      Statutory
-                    </span>
-                  </div>
-                  <div>
-                    <div className="text-2xl sm:text-3xl font-extrabold text-primary font-heading tracking-tight mb-1">
-                      CAC 9469157
-                    </div>
-                    <div className="text-sm font-bold text-navy">
-                      Incorporated Trustees
-                    </div>
-                    <p className="text-xs text-slate-600 mt-1">
-                      TIN: 2623366408281 · Registered 7 April 2026
-                    </p>
-                  </div>
-                </div>
-
-                <div className="p-5 sm:p-6 rounded-xl bg-white border border-slate-100 shadow-xs flex flex-col justify-between">
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="w-10 h-10 rounded-full bg-blue-light border border-badge-blue-border flex items-center justify-center text-blue">
-                      <HeartHandshake className="w-5 h-5 text-blue" />
-                    </div>
-                    <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">
-                      Fundraising Appeal
-                    </span>
-                  </div>
-                  <div>
-                    <div className="text-2xl sm:text-3xl font-extrabold text-blue font-heading tracking-tight mb-1">
-                      ₦20,000,000
-                    </div>
-                    <div className="text-sm font-bold text-navy">
-                      Official Fundraising Target
-                    </div>
-                    <p className="text-xs text-slate-600 mt-1">
-                      Supporting 8 planned areas of community health &amp; research
-                    </p>
-                  </div>
-                </div>
-
-                <div className="p-5 sm:p-6 rounded-xl bg-white border border-slate-100 shadow-xs flex flex-col justify-between">
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="w-10 h-10 rounded-full bg-primary-light border border-badge-gold-border flex items-center justify-center text-primary">
-                      <HeartPulse className="w-5 h-5 text-primary" />
-                    </div>
-                    <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">
-                      Strategy
-                    </span>
-                  </div>
-                  <div>
-                    <div className="text-2xl sm:text-3xl font-extrabold text-primary font-heading tracking-tight mb-1">
-                      7 Focus Areas
-                    </div>
-                    <div className="text-sm font-bold text-navy">
-                      Comprehensive Mandate
-                    </div>
-                    <p className="text-xs text-slate-600 mt-1">
-                      Mental health, addiction, maternal care, prevention &amp; policy
-                    </p>
-                  </div>
-                </div>
-
-                <div className="p-5 sm:p-6 rounded-xl bg-white border border-slate-100 shadow-xs flex flex-col justify-between">
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="w-10 h-10 rounded-full bg-navy-light border border-navy/15 flex items-center justify-center text-navy">
-                      <Users className="w-5 h-5 text-navy" />
-                    </div>
-                    <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">
-                      2026/2027 Cohort
-                    </span>
-                  </div>
-                  <div>
-                    <div className="text-2xl sm:text-3xl font-extrabold text-navy font-heading tracking-tight mb-1">
-                      Volunteers &amp; Roles
-                    </div>
-                    <div className="text-sm font-bold text-navy">
-                      Founding Volunteers Open
-                    </div>
-                    <p className="text-xs text-slate-600 mt-1">
-                      7 volunteering areas &amp; 5 available coordination positions
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-4 sm:p-5 rounded-xl bg-white border border-slate-100 shadow-xs flex items-center justify-between gap-4">
-                <div className="flex items-center gap-3.5">
-                  <div className="w-10 h-10 rounded-full bg-primary-light border border-badge-gold-border flex items-center justify-center text-primary shrink-0">
-                    <CheckCircle2 className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-bold text-navy">
-                      Support Our ₦20,000,000 Fundraising Initiative
-                    </div>
-                    <p className="text-xs text-slate-600">
-                      Donate, sponsor a campaign, partner, or volunteer with the Foundation
-                    </p>
-                  </div>
-                </div>
-                <Link
-                  href="/donate"
-                  className="text-xs font-bold text-primary hover:text-navy shrink-0 inline-flex items-center gap-1 transition-colors"
-                >
-                  <span>Donate / Support</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
@@ -896,7 +797,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 flex flex-col items-start gap-5">
               <span className="text-xs font-bold uppercase tracking-wider text-primary inline-block">
-                Donate · Sponsor · Partner · Volunteer
+                Volunteer · Partner · Collaborate
               </span>
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy font-heading tracking-tight">
@@ -904,7 +805,7 @@ export default function Home() {
               </h2>
 
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-                Explore how you can support our ₦20,000,000 Fundraising Initiative, join the 2026/2027 Founding Volunteers Cohort, or become a Founding Sponsor.
+                Explore how you can join the 2026/2027 Founding Volunteers Cohort, collaborate as an institutional partner, or contribute to our public health research initiatives.
               </p>
 
               <div
@@ -953,12 +854,8 @@ export default function Home() {
 
                         {isOpen ? (
                           <div
+                            aria-hidden="true"
                             className="relative w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center shrink-0"
-                            title={
-                              isAccordionPaused
-                                ? "Paused while reading"
-                                : `Auto-advancing in ${secondsLeft}s`
-                            }
                           >
                             <svg
                               className="w-9 h-9 sm:w-10 sm:h-10 -rotate-90 transform"
@@ -986,22 +883,23 @@ export default function Home() {
                                   87.96 - (progress / 100) * 87.96
                                 }
                                 className={`transition-[stroke-dashoffset] duration-75 ease-linear ${
-                                  pathway.id === "donate"
+                                  pathway.id === "volunteer"
                                     ? "text-primary"
-                                    : pathway.id === "volunteer"
+                                    : pathway.id === "partner"
                                     ? "text-blue"
                                     : "text-navy"
                                 }`}
                               />
                             </svg>
                             <div className="absolute inset-0 flex items-center justify-center">
-                              <span className="text-[10px] sm:text-[11px] font-bold font-mono text-navy leading-none">
-                                {isAccordionPaused ? "II" : `${secondsLeft}s`}
-                              </span>
+                              <ChevronDown className="w-4 h-4 text-navy rotate-180" />
                             </div>
                           </div>
                         ) : (
-                          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-100 flex items-center justify-center shrink-0 group-hover:bg-slate-200 text-slate-400 group-hover:text-navy transition-all duration-300">
+                          <div
+                            aria-hidden="true"
+                            className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-100 flex items-center justify-center shrink-0 group-hover:bg-slate-200 text-slate-400 group-hover:text-navy transition-all duration-300"
+                          >
                             <ChevronDown className="w-4 h-4 transition-transform duration-300 rotate-0" />
                           </div>
                         )}
@@ -1051,17 +949,17 @@ export default function Home() {
 
               <div className="pt-2 flex flex-wrap items-center gap-3.5">
                 <Link
-                  href="/donate"
+                  href="/opportunities"
                   className="px-8 py-3.5 rounded-full bg-primary text-white font-bold text-sm inline-flex items-center gap-2"
                 >
-                  <span>Support ₦20M Fundraising Appeal</span>
+                  <span>Volunteer &amp; Open Roles</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
-                  href="/opportunities"
+                  href="/partners"
                   className="px-6 py-3.5 rounded-full bg-slate-100 text-slate-700 font-semibold text-sm inline-flex items-center gap-2"
                 >
-                  <span>Volunteer &amp; Open Roles</span>
+                  <span>Strategic Partnerships</span>
                 </Link>
               </div>
             </div>
@@ -1086,7 +984,7 @@ export default function Home() {
                           fill
                           className="object-cover"
                           sizes="(max-width: 1024px) 100vw, 50vw"
-                          priority={item.id === "donate"}
+                          priority={item.id === "volunteer"}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/40 to-transparent" />
                       </div>
@@ -1126,7 +1024,7 @@ export default function Home() {
                       href={currentPathway.ctaLink}
                       className="text-primary hover:text-white font-semibold inline-flex items-center gap-1 transition-colors"
                     >
-                      <span>Take Action</span>
+                      <span>Learn More</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
@@ -1155,16 +1053,16 @@ export default function Home() {
       </section>
 
       {/* =========================================
-          SECTION 1.G: READY TO GET STARTED CTA
+          SECTION 1.G: CLOSING CALL TO ACTION
       ========================================= */}
       <CommunityCTA
         badge="Advancing Global Health. Transforming Lives."
-        title="Ready to partner, volunteer, or support our ₦20,000,000 appeal?"
-        subtitle="Connect with our team at emmanuel.awosan@libertyhealthwellbeing.org or explore our fundraising and volunteer programmes."
-        primaryButtonText="Support ₦20M Fundraising Appeal"
-        primaryButtonHref="/donate"
-        secondaryButtonText="Volunteer & Open Roles"
-        secondaryButtonHref="/opportunities"
+        title="Ready to collaborate or volunteer with our team?"
+        subtitle="Connect with our secretariat at emmanuel.awosan@libertyhealthwellbeing.org or explore our 2026/2027 Founding Volunteers Programme and partnership initiatives."
+        primaryButtonText="Volunteer & Open Roles"
+        primaryButtonHref="/opportunities"
+        secondaryButtonText="Contact Our Secretariat"
+        secondaryButtonHref="/contact"
       />
     </div>
   );

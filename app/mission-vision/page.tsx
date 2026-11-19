@@ -261,26 +261,26 @@ export default function MissionVisionPage() {
               </div>
             ))}
 
-            {/* 8th Cell in the 4x2 Architectural Grid: Direct ₦20M Fundraising Callout */}
+            {/* 8th Cell in the 4x2 Architectural Grid: Volunteer & Collaborate */}
             <div className="p-7 sm:p-9 bg-navy text-white border-r border-b border-navy-dark flex flex-col justify-between relative">
               <div className="absolute top-0 inset-x-0 h-0.5 bg-primary" />
               <div>
                 <div className="text-xs font-mono font-bold uppercase tracking-widest text-primary mb-6">
-                  ₦20,000,000 APPEAL
+                  COLLABORATIVE DELIVERY
                 </div>
                 <h3 className="text-xl font-extrabold text-white font-heading leading-snug mb-3">
                   Help Us Deliver These Seven Priorities
                 </h3>
                 <p className="text-sm text-slate-300 leading-relaxed font-normal">
-                  Support the establishment, development, and community delivery of our health education, outreach, and research initiatives across Nigeria.
+                  Join our 2026/2027 Founding Volunteers Cohort or collaborate as a healthcare or research partner across Nigeria.
                 </p>
               </div>
               <div className="mt-8 pt-4 border-t border-white/15">
                 <Link
-                  href="/donate"
+                  href="/opportunities"
                   className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-primary"
                 >
-                  <span>Support the Appeal</span>
+                  <span>Volunteer &amp; Collaborate</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
@@ -410,13 +410,13 @@ export default function MissionVisionPage() {
           CLOSING CALL TO ACTION
       ========================================= */}
       <CommunityCTA
-        badge="Support Our Programmes"
+        badge="Collaborate With Us"
         title="Help Us Build Healthier Communities"
-        subtitle="Support our ₦20,000,000 Fundraising Initiative or register for our 2026/2027 Founding Volunteers Programme."
-        primaryButtonText="Support ₦20M Fundraising Appeal"
-        primaryButtonHref="/donate"
-        secondaryButtonText="Volunteer With Us"
-        secondaryButtonHref="/opportunities"
+        subtitle="Register for our 2026/2027 Founding Volunteers Programme or connect with our secretariat on community health and research initiatives."
+        primaryButtonText="Volunteer With Us"
+        primaryButtonHref="/opportunities"
+        secondaryButtonText="Contact Our Secretariat"
+        secondaryButtonHref="/contact"
       />
     </div>
   );

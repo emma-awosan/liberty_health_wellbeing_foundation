@@ -279,11 +279,11 @@ export default function OpportunitiesPage() {
       <CommunityCTA
         badge="Explore the Foundation"
         title="Learn more about the people and programmes behind our work."
-        subtitle="Meet our multidisciplinary leadership team or support our ₦20,000,000 Fundraising Initiative."
+        subtitle="Meet our multidisciplinary leadership team or contact our secretariat for partnership enquiries."
         primaryButtonText="Meet the Team"
         primaryButtonHref="/team"
-        secondaryButtonText="Support Our Fundraising Appeal"
-        secondaryButtonHref="/donate"
+        secondaryButtonText="Contact Our Secretariat"
+        secondaryButtonHref="/contact"
       />
     </div>
   );

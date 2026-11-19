@@ -10,7 +10,6 @@ import {
   ChevronRight,
   ChevronDown,
   ArrowUpRight,
-  HeartHandshake,
 } from "lucide-react";
 
 const mediaSubLinks = [
@@ -22,7 +21,7 @@ const mediaSubLinks = [
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [expandedMenu, setExpandedMenu] = useState<string | null>("focus");
+  const [expandedMenu, setExpandedMenu] = useState<string | null>(null);
   const [desktopMediaOpen, setDesktopMediaOpen] = useState(false);
   const pathname = usePathname();
   const [prevPathname, setPrevPathname] = useState(pathname);
@@ -36,11 +35,10 @@ export default function Navbar() {
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
-    { name: "Meet the Team", href: "/team" },
-    { name: "Partners & Sponsors", href: "/partners" },
-    { name: "Focus & Research", href: "/mission-vision" },
+    { name: "Team", href: "/team" },
+    { name: "Focus Areas", href: "/mission-vision" },
+    { name: "Partners", href: "/partners" },
     { name: "Volunteer", href: "/opportunities" },
-    { name: "Contact", href: "/contact" },
   ];
 
   const isActive = (href: string) => {
@@ -93,8 +91,8 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Center: Desktop Navigation Links */}
-          <div className="hidden xl:flex items-center gap-4 2xl:gap-6">
+          {/* Center: Single Clean Desktop Navigation Structure */}
+          <div className="hidden xl:flex items-center gap-6 2xl:gap-8">
             {navLinks.slice(0, 5).map((link) => {
               const active = isActive(link.href);
               return (
@@ -148,9 +146,6 @@ export default function Navbar() {
                         className="flex items-center justify-between px-4 py-2.5 text-xs sm:text-sm font-semibold text-navy hover:bg-canvas hover:text-primary transition-colors"
                       >
                         <span>{sub.name}</span>
-                        <span className="text-[9px] font-mono uppercase tracking-wider text-slate-400">
-                          Soon
-                        </span>
                       </Link>
                     ))}
                   </div>
@@ -176,20 +171,13 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* Right: CTA Buttons */}
-          <div className="hidden sm:flex items-center gap-2.5 shrink-0">
+          {/* Right: Single Clear Action Button */}
+          <div className="hidden sm:flex items-center shrink-0">
             <Link
-              href="/opportunities"
-              className="inline-flex items-center justify-center px-4 lg:px-5 text-xs lg:text-sm font-semibold py-2 lg:py-2.5 rounded-full bg-white/15 text-white"
+              href="/contact"
+              className="inline-flex items-center justify-center px-6 py-2.5 text-xs lg:text-sm font-bold rounded-full bg-primary text-white"
             >
-              Volunteer
-            </Link>
-            <Link
-              href="/donate"
-              className="inline-flex items-center justify-center gap-2 px-5 lg:px-6 text-xs lg:text-sm font-bold py-2 lg:py-2.5 rounded-full bg-primary text-white"
-            >
-              <HeartHandshake className="w-4 h-4" />
-              <span>Donate (₦20M Appeal)</span>
+              Contact Us
             </Link>
           </div>
 
@@ -247,115 +235,37 @@ export default function Navbar() {
         </div>
 
         <div className="flex-1 overflow-y-auto px-6 py-5 space-y-2 no-scrollbar [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-          <Link
-            href="/"
-            onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center justify-between text-lg font-normal tracking-tight py-2 text-white/90 hover:text-white transition-colors group"
-          >
-            <span className={pathname === "/" ? "text-primary font-semibold" : ""}>
-              Home
-            </span>
-            <ChevronRight className="w-4 h-4 text-slate-500 group-hover:text-white" />
-          </Link>
-
-          <Link
-            href="/about"
-            onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center justify-between text-lg font-normal tracking-tight py-2 text-white/90 hover:text-white transition-colors group"
-          >
-            <span
-              className={
-                pathname === "/about" ? "text-primary font-semibold" : ""
-              }
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center justify-between text-base font-normal tracking-tight py-2.5 text-white/90 hover:text-white transition-colors group"
             >
-              About Us &amp; Board of Trustees
-            </span>
-            <ChevronRight className="w-4 h-4 text-slate-500 group-hover:text-white" />
-          </Link>
+              <span
+                className={
+                  isActive(link.href) ? "text-primary font-semibold" : ""
+                }
+              >
+                {link.name}
+              </span>
+              <ChevronRight className="w-4 h-4 text-slate-500 group-hover:text-white" />
+            </Link>
+          ))}
 
-          <Link
-            href="/team"
-            onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center justify-between text-lg font-normal tracking-tight py-2 text-white/90 hover:text-white transition-colors group"
-          >
-            <span
-              className={
-                pathname === "/team" ? "text-primary font-semibold" : ""
-              }
-            >
-              Meet the Team
-            </span>
-            <ChevronRight className="w-4 h-4 text-slate-500 group-hover:text-white" />
-          </Link>
-
-          {/* 7 Focus Areas Accordion */}
-          <div className="py-0.5">
-            <button
-              type="button"
-              onClick={() => toggleSubmenu("focus")}
-              className="w-full flex items-center justify-between text-lg font-normal tracking-tight py-2 text-white/90 hover:text-white transition-colors group"
-            >
-              <span>Our 7 Focus Areas</span>
-              {expandedMenu === "focus" ? (
-                <ChevronDown className="w-4 h-4 text-slate-400 group-hover:text-white transition-colors" />
-              ) : (
-                <ChevronRight className="w-4 h-4 text-slate-500 group-hover:text-white" />
-              )}
-            </button>
-
-            {expandedMenu === "focus" && (
-              <div className="mt-1 pl-1 space-y-1.5 animate-in fade-in slide-in-from-top-1 duration-150">
-                {[
-                  "1. Mental Health & Wellbeing",
-                  "2. Addiction & Gambling Awareness",
-                  "3. Preventive Healthcare & Access",
-                  "4. Women’s, Maternal & Child Health",
-                  "5. Health Information & Resources",
-                  "6. Research, Policy & Advocacy",
-                  "7. Global Health & Partnerships",
-                ].map((label, idx) => (
-                  <Link
-                    key={idx}
-                    href="/mission-vision#focus"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="flex items-center justify-between py-1 text-xs sm:text-sm text-slate-400 hover:text-white transition-colors group"
-                  >
-                    <span>{label}</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-white" />
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-
-          <Link
-            href="/partners"
-            onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center justify-between text-lg font-normal tracking-tight py-2 text-white/90 hover:text-white transition-colors group"
-          >
-            <span
-              className={
-                pathname === "/partners" ? "text-primary font-semibold" : ""
-              }
-            >
-              Partners &amp; Founding Sponsors
-            </span>
-            <ChevronRight className="w-4 h-4 text-slate-500 group-hover:text-white" />
-          </Link>
-
-          {/* Media Accordion (News, Blog, Events, Outreach Gallery) */}
+          {/* Media Accordion */}
           <div className="py-0.5">
             <button
               type="button"
               onClick={() => toggleSubmenu("media")}
-              className="w-full flex items-center justify-between text-lg font-normal tracking-tight py-2 text-white/90 hover:text-white transition-colors group"
+              className="w-full flex items-center justify-between text-base font-normal tracking-tight py-2.5 text-white/90 hover:text-white transition-colors group"
             >
               <span
                 className={
                   pathname === "/media" ? "text-primary font-semibold" : ""
                 }
               >
-                Media &amp; Outreach Gallery
+                Media
               </span>
               {expandedMenu === "media" ? (
                 <ChevronDown className="w-4 h-4 text-slate-400 group-hover:text-white transition-colors" />
@@ -365,7 +275,7 @@ export default function Navbar() {
             </button>
 
             {expandedMenu === "media" && (
-              <div className="mt-1 pl-2 space-y-1.5 border-l border-white/15 ml-1">
+              <div className="mt-1 pl-3 space-y-1.5 border-l border-white/15 ml-1">
                 {mediaSubLinks.map((sub) => (
                   <Link
                     key={sub.name}
@@ -381,66 +291,13 @@ export default function Navbar() {
             )}
           </div>
 
-          <Link
-            href="/donate"
-            onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center justify-between text-lg font-normal tracking-tight py-2 text-white/90 hover:text-white transition-colors group"
-          >
-            <span
-              className={
-                pathname === "/donate" ? "text-primary font-semibold" : ""
-              }
-            >
-              ₦20M Fundraising Appeal
-            </span>
-            <ChevronRight className="w-4 h-4 text-slate-500 group-hover:text-white" />
-          </Link>
-
-          <Link
-            href="/opportunities"
-            onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center justify-between text-lg font-normal tracking-tight py-2 text-white/90 hover:text-white transition-colors group"
-          >
-            <span
-              className={
-                pathname === "/opportunities" ? "text-primary font-semibold" : ""
-              }
-            >
-              Volunteer &amp; Open Positions
-            </span>
-            <ChevronRight className="w-4 h-4 text-slate-500 group-hover:text-white" />
-          </Link>
-
-          <Link
-            href="/contact"
-            onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center justify-between text-lg font-normal tracking-tight py-2 text-white/90 hover:text-white transition-colors group"
-          >
-            <span
-              className={
-                pathname === "/contact" ? "text-primary font-semibold" : ""
-              }
+          <div className="pt-4">
+            <Link
+              href="/contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full block text-center py-3 rounded-full bg-primary text-white text-xs font-bold tracking-wider uppercase"
             >
               Contact Us
-            </span>
-            <ChevronRight className="w-4 h-4 text-slate-500 group-hover:text-white" />
-          </Link>
-
-          <div className="pt-4 grid grid-cols-2 gap-2.5">
-            <Link
-              href="/opportunities"
-              onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center py-2.5 rounded-full bg-white/10 text-white text-xs font-semibold tracking-wider uppercase border border-white/10"
-            >
-              Volunteer
-            </Link>
-            <Link
-              href="/donate"
-              onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center py-2.5 rounded-full bg-primary text-white text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-1.5"
-            >
-              <HeartHandshake className="w-3.5 h-3.5" />
-              <span>Donate</span>
             </Link>
           </div>
         </div>

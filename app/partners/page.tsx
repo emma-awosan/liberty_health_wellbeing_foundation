@@ -226,10 +226,10 @@ export default function PartnersPage() {
       ========================================= */}
       <CommunityCTA
         badge="Partner With Us"
-        title="Interested in collaborating or supporting our ₦20,000,000 Fundraising Initiative?"
+        title="Interested in collaborating with our team?"
         subtitle="We invite healthcare professionals, digital innovators, civil society leaders, and corporate sponsors to build sustainable health solutions with us."
-        primaryButtonText="Support Our Fundraising Appeal"
-        primaryButtonHref="/donate"
+        primaryButtonText="Contact Our Secretariat"
+        primaryButtonHref="/contact"
         secondaryButtonText="Meet Our Team"
         secondaryButtonHref="/team"
       />

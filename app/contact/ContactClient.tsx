@@ -177,21 +177,6 @@ function ContactFormContent() {
                       </p>
                     </div>
                   </div>
-
-                  {/* 04: Telephone Correspondence Notice */}
-                  <div className="py-5 grid grid-cols-1 sm:grid-cols-12 gap-2 sm:gap-4 items-baseline">
-                    <div className="sm:col-span-4 flex items-baseline gap-2.5">
-                      <span className="text-xs font-black font-mono text-primary">04</span>
-                      <span className="text-[11px] font-bold uppercase tracking-widest text-slate-500 font-heading">
-                        Telephone
-                      </span>
-                    </div>
-                    <div className="sm:col-span-8">
-                      <p className="text-xs text-slate-600 leading-relaxed">
-                        Official telephone lines will be published following hosting and telecom verification. Please correspond via official email or the inquiry form.
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </div>
 

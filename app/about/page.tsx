@@ -6,14 +6,12 @@ import HeroWaveDivider from "@/components/HeroWaveDivider";
 import {
   HeartPulse,
   Users,
-  Stethoscope,
   Target,
   Compass,
   ShieldCheck,
   CheckCircle2,
   ArrowRight,
   Scale,
-  Award,
 } from "lucide-react";
 
 import type { Metadata } from "next";
@@ -167,12 +165,12 @@ export default function AboutPage() {
       </section>
 
       {/* =========================================
-          SECTION 2: ORGANISATIONAL OVERVIEW & REGISTRATION DETAILS
+          SECTION 2: ORGANISATIONAL MANDATE & REGISTRATION DETAILS
       ========================================= */}
       <section className="pt-10 sm:pt-14 lg:pt-18 pb-20 lg:py-28 bg-white">
         <div className="max-w-[1440px] 2xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-            {/* Left Narrative */}
+            {/* Left Narrative — Distinct Institutional Context */}
             <div className="lg:col-span-7 flex flex-col gap-5">
               <span className="text-xs font-bold uppercase tracking-widest text-primary font-heading">
                 About the Foundation
@@ -183,13 +181,13 @@ export default function AboutPage() {
               <div className="w-12 h-1 bg-primary rounded-full" />
 
               <p className="text-base text-slate-700 leading-relaxed font-normal">
-                <strong>Liberty Health &amp; Wellbeing Foundation</strong> is a Nigerian-registered nonprofit organisation committed to improving health, wellbeing and quality of life through preventive healthcare, public education, research, advocacy and community development.
+                Established to bridge the gap between clinical knowledge and community realities, the Foundation recognises that population health is shaped long before individuals reach a hospital. Mental wellbeing, behavioural and substance dependencies, maternal-child vulnerability, financial strain, and social inequalities all directly affect human dignity and life outcomes.
               </p>
               <p className="text-base text-slate-600 leading-relaxed font-normal">
-                The Foundation recognises that health extends beyond the absence of disease. Mental wellbeing, addiction, financial circumstances, social inequalities, healthcare access and institutional practices all influence the quality of people’s lives.
+                Operating across our Abuja Headquarters and Sokoto regional office, our multidisciplinary structure brings together medical doctors, specialist nurses, epidemiologists, peacebuilding scholars, health-data analysts, and editorial communicators.
               </p>
               <p className="text-base text-slate-600 leading-relaxed font-normal">
-                Our approach combines medical expertise, public health research, community engagement and strategic partnerships to address preventable health challenges and promote healthier, more resilient communities.
+                By integrating preventive health screenings, accessible public education, conflict-sensitive community outreach, and structured health data research, we work alongside healthcare institutions and community leaders to build healthier, more resilient communities.
               </p>
 
               {/* Statutory Registration Credentials Grid */}
@@ -275,7 +273,7 @@ export default function AboutPage() {
               </div>
 
               <div className="mt-8 pt-5 border-t border-slate-200/80 text-xs text-slate-500">
-                Proposed Tagline: <strong className="text-navy">Advancing Global Health. Transforming Lives.</strong>
+                Tagline: <strong className="text-navy">Advancing Global Health. Transforming Lives.</strong>
               </div>
             </div>
           </div>
@@ -422,14 +420,14 @@ export default function AboutPage() {
       </section>
 
       {/* =========================================
-          SECTION 6: LEADERSHIP & TEAM PREVIEW
+          SECTION 6: LEADERSHIP & TEAM PREVIEW (UNIQUE PROFILE LINKS)
       ========================================= */}
       <section className="py-20 lg:py-28 bg-white border-t border-slate-200/80">
         <div className="max-w-[1440px] 2xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 mb-12 sm:mb-16">
             <div className="max-w-2xl">
               <span className="text-xs font-bold uppercase tracking-widest text-primary font-heading block mb-2 sm:mb-3">
-                Operational Departments
+                Leadership &amp; Specialists
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy font-heading tracking-tight leading-[1.12]">
                 Meet Our Multidisciplinary Team
@@ -443,7 +441,7 @@ export default function AboutPage() {
               href="/team"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-navy text-white text-xs sm:text-sm font-semibold shrink-0"
             >
-              <span>Explore All Departments &amp; Profiles</span>
+              <span>View Full Team Directory</span>
               <ArrowRight className="w-4 h-4 text-primary" />
             </Link>
           </div>
@@ -476,7 +474,7 @@ export default function AboutPage() {
                   href="/team#founder-chairman"
                   className="text-xs font-bold text-navy group-hover:text-primary inline-flex items-center gap-1 transition-colors"
                 >
-                  <span>View Profile</span>
+                  <span>View Profile: Dr. Oluwasegun Awosan</span>
                   <ArrowRight className="w-3 h-3" />
                 </Link>
               </div>
@@ -509,7 +507,7 @@ export default function AboutPage() {
                   href="/team#governance-engagement"
                   className="text-xs font-bold text-primary group-hover:text-navy inline-flex items-center gap-1 transition-colors"
                 >
-                  <span>View Profile</span>
+                  <span>View Profile: Dr. Florence Awosan</span>
                   <ArrowRight className="w-3 h-3" />
                 </Link>
               </div>
@@ -542,7 +540,7 @@ export default function AboutPage() {
                   href="/team#dr-wuraola-awosan"
                   className="text-xs font-bold text-blue group-hover:text-navy inline-flex items-center gap-1 transition-colors"
                 >
-                  <span>View Profile</span>
+                  <span>View Profile: Dr. Wuraola Awosan</span>
                   <ArrowRight className="w-3 h-3" />
                 </Link>
               </div>
@@ -572,10 +570,10 @@ export default function AboutPage() {
               </div>
               <div className="mt-4 pt-3.5 border-t border-slate-200/70">
                 <Link
-                  href="/team#medical-clinical"
+                  href="/team#mariam-adebukola-ogunjobi"
                   className="text-xs font-bold text-blue group-hover:text-navy inline-flex items-center gap-1 transition-colors"
                 >
-                  <span>View Profile</span>
+                  <span>View Profile: Mariam Ogunjobi</span>
                   <ArrowRight className="w-3 h-3" />
                 </Link>
               </div>
@@ -605,10 +603,10 @@ export default function AboutPage() {
               </div>
               <div className="mt-4 pt-3.5 border-t border-slate-200/70">
                 <Link
-                  href="/team#medical-clinical"
+                  href="/team#dr-awosan-oluwagbenga"
                   className="text-xs font-bold text-blue group-hover:text-navy inline-flex items-center gap-1 transition-colors"
                 >
-                  <span>View Profile</span>
+                  <span>View Profile: Dr. Oluwagbenga Awosan</span>
                   <ArrowRight className="w-3 h-3" />
                 </Link>
               </div>
@@ -638,10 +636,10 @@ export default function AboutPage() {
               </div>
               <div className="mt-4 pt-3.5 border-t border-slate-200/70">
                 <Link
-                  href="/team#editorial"
+                  href="/team#bolaji-temitope-oyemade"
                   className="text-xs font-bold text-primary group-hover:text-navy inline-flex items-center gap-1 transition-colors"
                 >
-                  <span>View Profile</span>
+                  <span>View Profile: Bolaji Oyemade</span>
                   <ArrowRight className="w-3 h-3" />
                 </Link>
               </div>
@@ -654,13 +652,13 @@ export default function AboutPage() {
           SECTION 7: CLOSING CALL TO ACTION
       ========================================= */}
       <CommunityCTA
-        badge="Support Our Mission"
+        badge="Advancing Global Health. Transforming Lives."
         title="Join us in advancing global health and transforming lives."
-        subtitle="Explore our ₦20,000,000 Fundraising Initiative, Founding Volunteers Programme, or strategic partnership tracks."
-        primaryButtonText="Support Our Fundraising Appeal"
-        primaryButtonHref="/donate"
-        secondaryButtonText="Volunteer & Opportunities"
-        secondaryButtonHref="/opportunities"
+        subtitle="Explore our Founding Volunteers Programme, strategic partnership collaborations, or contact our secretariat."
+        primaryButtonText="Volunteer & Opportunities"
+        primaryButtonHref="/opportunities"
+        secondaryButtonText="Contact Our Secretariat"
+        secondaryButtonHref="/contact"
       />
     </div>
   );

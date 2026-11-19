@@ -48,12 +48,12 @@ export default function TeamPage() {
       </section>
 
       {/* =========================================
-          INTERACTIVE SCROLL-STACK & SWIPE DECK SHOWCASE
+          TEAM DIRECTORY SHOWCASE
       ========================================= */}
       <TeamInteractiveShowcase />
 
       {/* =========================================
-          F. INTERNATIONAL AMBASSADORS PROGRAMME
+          INTERNATIONAL AMBASSADORS PROGRAMME
       ========================================= */}
       <section id="ambassadors" className="py-16 sm:py-20 bg-canvas relative">
         <div className="max-w-[1440px] 2xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,11 +66,11 @@ export default function TeamPage() {
               International Ambassadors Programme
             </h2>
             <p className="text-slate-200 text-sm sm:text-base leading-relaxed mt-3 max-w-2xl">
-              The International Ambassadors Programme aims to connect Liberty Health &amp; Wellbeing Foundation with healthcare professionals, advocates and organisations internationally. Ambassadors help develop professional networks, encourage public health awareness and identify opportunities for collaborative global health initiatives.
+              The International Ambassadors Programme connects Liberty Health &amp; Wellbeing Foundation with healthcare professionals, advocates and organisations internationally to develop professional networks, encourage public health awareness and collaborate on global health initiatives.
             </p>
             <div className="mt-6 pt-5 border-t border-white/15 flex flex-wrap items-center justify-between gap-4">
               <span className="text-xs text-slate-300">
-                Appointments are published formally upon official confirmation and onboarding.
+                Connecting clinicians, researchers, and public health advocates across Nigeria, the UK, and internationally.
               </span>
               <Link
                 href="/contact?type=partnership"
@@ -93,8 +93,8 @@ export default function TeamPage() {
         subtitle="Explore expressions of interest for open operational positions or register for the Founding Volunteers Programme (2026/2027)."
         primaryButtonText="Explore Opportunities"
         primaryButtonHref="/opportunities"
-        secondaryButtonText="Support Our ₦20M Campaign"
-        secondaryButtonHref="/donate"
+        secondaryButtonText="Contact Our Secretariat"
+        secondaryButtonHref="/contact"
       />
     </div>
   );

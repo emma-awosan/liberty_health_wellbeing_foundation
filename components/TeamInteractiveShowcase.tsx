@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import {
   ShieldCheck,
   GraduationCap,
@@ -14,7 +13,6 @@ import {
   ArrowRight,
   ArrowLeft,
   CheckCircle2,
-  HeartPulse,
   Landmark,
 } from "lucide-react";
 
@@ -44,7 +42,7 @@ const executiveScrollStack: TeamMemberProfile[] = [
   {
     id: "founder-chairman",
     index: "01",
-    departmentCode: "DEPT A · EXECUTIVE STEWARDSHIP",
+    departmentCode: "Executive Leadership",
     departmentName: "Founder & Chairman",
     name: "Dr. Oluwasegun E. Awosan",
     role: "Founder & Chairman",
@@ -70,12 +68,11 @@ const executiveScrollStack: TeamMemberProfile[] = [
   {
     id: "governance-engagement",
     index: "02",
-    departmentCode: "GOVERNANCE & COMMUNITY ENGAGEMENT",
+    departmentCode: "Governance & Community Engagement",
     departmentName: "Peacebuilding & Outreach Safety",
     name: "Dr. Florence F. Awosan, PhD",
     role: "Secretary, Board of Trustees",
-    subRole:
-      "Head of Community Engagement, Peacebuilding & Outreach Safety",
+    subRole: "Head of Community Engagement, Peacebuilding & Outreach Safety",
     identityLine:
       "Peace Studies & Conflict Resolution Scholar · Researcher · Peacebuilding Practitioner",
     image: "/images/Dr. Florence F. Awosan, PhD img.jpeg",
@@ -105,7 +102,7 @@ const executiveScrollStack: TeamMemberProfile[] = [
   {
     id: "sharon-opeyemi-adesina",
     index: "03",
-    departmentCode: "ETHICS, GOVERNANCE & HR",
+    departmentCode: "Ethics, Governance & HR",
     departmentName: "Ethics, Governance & HR",
     name: "Sharon Opeyemi Adesina",
     role: "Ethics, Governance and HR",
@@ -134,10 +131,10 @@ const medicalTeam: TeamMemberProfile[] = [
   {
     id: "dr-wuraola-awosan",
     index: "01",
-    departmentCode: "DEPT B · MEDICAL & CLINICAL TEAM",
+    departmentCode: "Medical & Clinical Team",
     departmentName: "Medical & Public Health",
     name: "Dr. Wuraola Ruth Awosan",
-    role: "Medical & Public Health Team Member",
+    role: "Medical & Public Health Specialist",
     subRole:
       "Founder & Chairman, WuraCare Mothers and Children Initiative (WuraCare MCI)",
     image: "/images/Wura Awosan.jpeg",
@@ -159,11 +156,11 @@ const medicalTeam: TeamMemberProfile[] = [
   {
     id: "dr-awosan-oluwagbenga",
     index: "02",
-    departmentCode: "DEPT B · MEDICAL & CLINICAL TEAM",
-    departmentName: "Medical & Clinical",
+    departmentCode: "Medical & Clinical Team",
+    departmentName: "Preventive Medicine",
     name: "Dr. Awosan Oluwagbenga S.",
-    role: "Medical & Clinical Team Member",
-    subRole: "Preventive Medicine & Public Health",
+    role: "Medical Doctor — Preventive Medicine & Public Health",
+    subRole: "Preventive Medicine & Community Health",
     image: "/images/Awosan Gbenga.jpeg",
     qualifications: [
       "MBBS — Afe Babalola University, Ado-Ekiti (ABUAD)",
@@ -182,7 +179,7 @@ const medicalTeam: TeamMemberProfile[] = [
   {
     id: "mariam-adebukola-ogunjobi",
     index: "03",
-    departmentCode: "DEPT B · MEDICAL & CLINICAL TEAM",
+    departmentCode: "Medical & Clinical Team",
     departmentName: "Specialist Oncology Nursing",
     name: "Mariam Adebukola Ogunjobi",
     role: "Clinical Nurse Specialist — Breast Care Oncology",
@@ -208,10 +205,10 @@ const medicalTeam: TeamMemberProfile[] = [
   {
     id: "dr-ohaekwusi-blessing-chioma",
     index: "04",
-    departmentCode: "DEPT B · MEDICAL & CLINICAL TEAM",
+    departmentCode: "Medical & Clinical Team",
     departmentName: "Women’s & Children’s Health",
     name: "Dr. Ohaekwusi Blessing Chioma",
-    role: "Medical & Clinical Team Member",
+    role: "Medical Doctor — Women’s, Maternal & Child Health",
     subRole: "Women’s, Maternal & Child Health",
     image: "/images/Dr Blessing chioma img.jpeg",
     qualifications: [
@@ -230,10 +227,10 @@ const medicalTeam: TeamMemberProfile[] = [
   {
     id: "dr-okwuchukwu-valentine",
     index: "05",
-    departmentCode: "DEPT B · MEDICAL & CLINICAL TEAM",
+    departmentCode: "Medical & Clinical Team",
     departmentName: "Preventive Medicine & Sonography",
     name: "Dr. Okwuchukwu Valentine C.",
-    role: "Medical & Clinical Team Member",
+    role: "Medical Doctor — Preventive Medicine & Clinical Sonography",
     subRole: "CEO / Managing Director, Marlix Healthcare Ltd",
     image: "/images/Dr. Valentine.jpeg",
     qualifications: [
@@ -254,11 +251,11 @@ const medicalTeam: TeamMemberProfile[] = [
   {
     id: "dr-ayongo-vivian-terkumbur",
     index: "06",
-    departmentCode: "DEPT B · MEDICAL & CLINICAL TEAM",
+    departmentCode: "Medical & Clinical Team",
     departmentName: "Emergency & Preventive Medicine",
     name: "Dr. Ayongo Vivian Terkumbur",
     role: "Casualty & Emergency Medical Officer",
-    subRole: "Medical & Clinical Team · Trauma, Emergency & Preventive Care",
+    subRole: "Trauma, Emergency & Preventive Care",
     image: "/images/Dr Ayongo Vivian Terkumbur.jpeg",
     qualifications: [
       "Doctor of Medicine (MD) — Ivano-Frankivsk, Ukraine",
@@ -279,11 +276,11 @@ const operationalDepartments: TeamMemberProfile[] = [
   {
     id: "kolade-oyemade",
     index: "01",
-    departmentCode: "DEPT C · FINANCE DEPARTMENT",
+    departmentCode: "Finance Department",
     departmentName: "Finance Department",
     name: "Kolade Oyemade",
     role: "Head of Finance",
-    subRole: "Finance Department · Financial Planning & Resource Accountability",
+    subRole: "Financial Planning & Resource Accountability",
     image: "/images/Kolade Oyemade.jpeg",
     qualifications: [
       "Bachelor of Science (BSc) in Management — V. N. Karazin Kharkiv National University, Ukraine",
@@ -303,7 +300,7 @@ const operationalDepartments: TeamMemberProfile[] = [
       "Financial planning and budget development.",
       "Financial administration and record-keeping.",
       "Monitoring expenditure and resource allocation.",
-      "Supporting fundraising accountability and donor reporting.",
+      "Supporting financial accountability and reporting.",
       "Promoting transparency and responsible financial management.",
     ],
     tag: "Financial Governance · Investment & Stewardship",
@@ -311,7 +308,7 @@ const operationalDepartments: TeamMemberProfile[] = [
   {
     id: "bolaji-temitope-oyemade",
     index: "02",
-    departmentCode: "DEPT D · EDITORIAL & PUBLIC RELATIONS",
+    departmentCode: "Editorial & Public Relations",
     departmentName: "Editorial Department",
     name: "Bolaji Temitope Oyemade",
     role: "Chief Editor",
@@ -334,7 +331,7 @@ const operationalDepartments: TeamMemberProfile[] = [
   {
     id: "moses-bolawaye-adegbite",
     index: "03",
-    departmentCode: "DEPT D · EDITORIAL & PUBLIC RELATIONS",
+    departmentCode: "Editorial & Public Relations",
     departmentName: "Editorial Department",
     name: "Moses Bolawaye Adegbite",
     role: "Assistant Editor",
@@ -355,10 +352,10 @@ const operationalDepartments: TeamMemberProfile[] = [
   {
     id: "esther-verah-obodoakor",
     index: "04",
-    departmentCode: "DEPT D · EDITORIAL & PUBLIC RELATIONS",
-    departmentName: "Editorial Team",
+    departmentCode: "Editorial & Public Relations",
+    departmentName: "Editorial Department",
     name: "Esther Verah Obodoakor",
-    role: "Editorial Team Member",
+    role: "Editorial Specialist",
     subRole: "Reporting, Coordination & Public Information",
     image: "/images/esther.jpeg",
     qualifications: [
@@ -378,7 +375,7 @@ const operationalDepartments: TeamMemberProfile[] = [
   {
     id: "agbaje-favour",
     index: "05",
-    departmentCode: "DEPT E · COMMUNICATIONS & SOCIAL MEDIA",
+    departmentCode: "Communications & Social Media",
     departmentName: "Communications & Social Media",
     name: "Agbaje Favour",
     role: "Social Media Expert",
@@ -400,10 +397,10 @@ const operationalDepartments: TeamMemberProfile[] = [
   {
     id: "ademola-oke-oyewusi",
     index: "06",
-    departmentCode: "DEPT F · DATA, RESEARCH & DIGITAL HEALTH",
+    departmentCode: "Data, Research & Digital Health",
     departmentName: "Data & Digital Health",
     name: "Ademola Oke Oyewusi",
-    role: "Data and Digital Health Team Member",
+    role: "Data & Digital Health Specialist",
     subRole: "Health Data Systems, Social Research & Digital Infrastructure",
     image: "/images/Ademola Oke Oyewusi.jpeg",
     qualifications: [
@@ -422,10 +419,10 @@ const operationalDepartments: TeamMemberProfile[] = [
   {
     id: "joseph-tanko-john",
     index: "07",
-    departmentCode: "DEPT F · DATA, RESEARCH & DIGITAL HEALTH",
+    departmentCode: "Data, Research & Digital Health",
     departmentName: "Public Health Data & ICT4D",
     name: "Joseph Tanko John",
-    role: "Health Data and ICT4D Team Member",
+    role: "Health Data & ICT4D Specialist",
     subRole: "Public Health Data Systems & Field Digital Tools",
     image: "/images/Tanko John.jpeg",
     qualifications: [
@@ -457,12 +454,16 @@ export default function TeamInteractiveShowcase() {
       const medIndex = medicalTeam.findIndex((m) => m.id === hash);
       if (medIndex !== -1) {
         setActiveMedicalIdx(medIndex);
+        const el = document.getElementById("medical-clinical");
+        el?.scrollIntoView({ behavior: "smooth" });
         return;
       }
 
       const opsIndex = operationalDepartments.findIndex((o) => o.id === hash);
       if (opsIndex !== -1) {
         setActiveOpsIdx(opsIndex);
+        const el = document.getElementById("editorial");
+        el?.scrollIntoView({ behavior: "smooth" });
         return;
       }
 
@@ -511,31 +512,26 @@ export default function TeamInteractiveShowcase() {
   return (
     <div className="flex flex-col w-full">
       {/* =========================================================
-          PART 1: STICKY SCROLL-STACK — EXECUTIVE, GOVERNANCE & ETHICS
+          PART 1: EXECUTIVE LEADERSHIP, GOVERNANCE & ETHICS
       ========================================================= */}
       <section
         id="founder-chairman"
         className="py-16 sm:py-24 bg-white border-b border-slate-200/80"
       >
         <div className="max-w-[1440px] 2xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16">
-            <div className="max-w-2xl">
-              <span className="text-xs font-bold uppercase tracking-widest text-primary font-heading block mb-2">
-                01 · Executive, Governance &amp; Ethics Scroll-Stack
-              </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy font-heading tracking-tight leading-[1.12]">
-                Executive Leadership, Governance &amp; Ethics
-              </h2>
-              <p className="text-slate-600 mt-3 text-base sm:text-lg leading-relaxed font-normal">
-                Scroll through our statutory leadership cards highlighting our executive stewardship, peacebuilding governance, and data-protection ethics.
-              </p>
-            </div>
-            <div className="text-xs font-mono font-bold uppercase tracking-widest text-slate-400">
-              SCROLL STACK · 03 PROFILES
-            </div>
+          <div className="max-w-2xl mb-12 sm:mb-16">
+            <span className="text-xs font-bold uppercase tracking-widest text-primary font-heading block mb-2">
+              Institutional Stewardship
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy font-heading tracking-tight leading-[1.12]">
+              Executive Leadership, Governance &amp; Ethics
+            </h2>
+            <p className="text-slate-600 mt-3 text-base sm:text-lg leading-relaxed font-normal">
+              Meet our statutory trustees and governance leaders guiding the Foundation’s strategic direction, peacebuilding engagement, and ethical standards.
+            </p>
           </div>
 
-          {/* Sticky Scroll Stack Container */}
+          {/* Sticky Leadership Cards */}
           <div className="relative space-y-12 sm:space-y-16 pb-6">
             {executiveScrollStack.map((leader, idx) => (
               <div
@@ -552,17 +548,11 @@ export default function TeamInteractiveShowcase() {
                 }}
                 className="lg:sticky rounded-2xl bg-canvas border border-slate-200 transition-all duration-300 overflow-hidden"
               >
-                {/* Top Architectural Index Bar */}
+                {/* Top Header Bar */}
                 <div className="bg-navy text-white px-6 sm:px-8 py-3.5 flex items-center justify-between border-b border-white/10">
-                  <div className="flex items-center gap-3">
-                    <span className="text-xs font-mono font-bold text-primary">
-                      {leader.index} / 03
-                    </span>
-                    <span className="text-white/25">|</span>
-                    <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-white font-heading">
-                      {leader.departmentCode}
-                    </span>
-                  </div>
+                  <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-primary font-heading">
+                    {leader.departmentCode}
+                  </span>
                   <span className="text-[11px] font-medium text-slate-300 hidden sm:inline">
                     {leader.tag}
                   </span>
@@ -703,44 +693,37 @@ export default function TeamInteractiveShowcase() {
       </section>
 
       {/* =========================================================
-          PART 2: INTERACTIVE SWIPE & CARD-STACK DECK — MEDICAL TEAM
+          PART 2: MEDICAL & CLINICAL TEAM
       ========================================================= */}
       <section
         id="medical-clinical"
         className="py-16 sm:py-24 bg-canvas border-b border-slate-200/80 overflow-hidden"
       >
+        {/* Anchor targets for direct profile links */}
+        {medicalTeam.map((m) => (
+          <div key={m.id} id={m.id} />
+        ))}
         <div className="max-w-[1440px] 2xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header & Swipe Controls */}
+          {/* Header & Navigation Controls */}
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 sm:mb-10">
             <div className="max-w-2xl">
               <span className="text-xs font-bold uppercase tracking-widest text-primary font-heading block mb-2">
-                02 · Interactive Clinical Card Stack &amp; Swipe Deck
+                Clinical &amp; Public Health Leadership
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy font-heading tracking-tight leading-[1.12]">
                 Medical &amp; Clinical Team
               </h2>
               <p className="text-slate-600 mt-3 text-base sm:text-lg leading-relaxed font-normal">
-                Swipe or select a specialist below to explore our medical doctors, emergency physicians, clinical nurse specialists, and public health epidemiologists.
+                Select a specialist below to explore our medical doctors, emergency physicians, clinical nurse specialists, and public health epidemiologists.
               </p>
             </div>
 
-            {/* Deck Counter & Prev/Next Controls */}
-            <div className="flex items-center gap-4 shrink-0">
-              <div className="text-right mr-2">
-                <div className="text-xs font-mono font-bold uppercase tracking-widest text-slate-400">
-                  SPECIALIST DECK
-                </div>
-                <div className="text-lg font-extrabold font-mono text-navy">
-                  {activeMedical.index}{" "}
-                  <span className="text-slate-300 font-normal">
-                    / 0{medicalTeam.length}
-                  </span>
-                </div>
-              </div>
+            {/* Prev/Next Controls */}
+            <div className="flex items-center gap-2.5 shrink-0">
               <button
                 type="button"
                 onClick={handleMedPrev}
-                aria-label="Previous medical team member"
+                aria-label="Previous medical team profile"
                 className="w-11 h-11 rounded-full bg-white border border-slate-200 flex items-center justify-center text-navy cursor-pointer"
               >
                 <ArrowLeft className="w-4 h-4" />
@@ -748,7 +731,7 @@ export default function TeamInteractiveShowcase() {
               <button
                 type="button"
                 onClick={handleMedNext}
-                aria-label="Next medical team member"
+                aria-label="Next medical team profile"
                 className="w-11 h-11 rounded-full bg-primary text-white flex items-center justify-center cursor-pointer"
               >
                 <ArrowRight className="w-4 h-4" />
@@ -790,11 +773,11 @@ export default function TeamInteractiveShowcase() {
                   </div>
                   <div className="min-w-0">
                     <div
-                      className={`text-[10px] font-mono font-bold uppercase tracking-wider ${
+                      className={`text-[10px] font-bold uppercase tracking-wider ${
                         isSelected ? "text-primary" : "text-slate-400"
                       }`}
                     >
-                      {member.index} · {member.departmentName}
+                      {member.departmentName}
                     </div>
                     <div
                       className={`text-xs sm:text-sm font-bold truncate font-heading ${
@@ -809,7 +792,7 @@ export default function TeamInteractiveShowcase() {
             })}
           </div>
 
-          {/* Stacked Deck Visual Container (with Touch Swipe Support) */}
+          {/* Active Medical Profile Container */}
           <div
             data-no-sr
             className="relative"
@@ -824,28 +807,21 @@ export default function TeamInteractiveShowcase() {
               touchStartX.current = null;
             }}
           >
-            {/* Active Foreground Card */}
             <div
               key={activeMedical.id}
               className="relative z-10 rounded-2xl bg-white border border-slate-200 overflow-hidden"
             >
-              {/* Top Deck Bar */}
+              {/* Top Profile Header Bar */}
               <div className="bg-navy text-white px-6 sm:px-8 py-3.5 flex flex-wrap items-center justify-between gap-4 border-b border-white/10">
-                <div className="flex items-center gap-3">
-                  <span className="text-xs font-mono font-bold text-primary">
-                    CARD {activeMedical.index} OF 0{medicalTeam.length}
-                  </span>
-                  <span className="text-white/25">|</span>
-                  <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-white font-heading">
-                    {activeMedical.tag}
-                  </span>
-                </div>
+                <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-primary font-heading">
+                  {activeMedical.tag}
+                </span>
                 <button
                   type="button"
                   onClick={handleMedNext}
                   className="text-xs font-semibold text-slate-300 hover:text-primary inline-flex items-center gap-1.5 cursor-pointer"
                 >
-                  <span>Next: {nextMedical.name}</span>
+                  <span>Next Profile: {nextMedical.name}</span>
                   <ArrowRight className="w-3.5 h-3.5 text-primary" />
                 </button>
               </div>
@@ -949,7 +925,7 @@ export default function TeamInteractiveShowcase() {
                       )}
                     </div>
 
-                    {/* Bottom Card Deck Navigation Footer */}
+                    {/* Profile Navigation Footer */}
                     <div className="pt-5 border-t border-slate-200/80 flex items-center justify-between gap-4">
                       <div className="flex items-center gap-1.5">
                         {medicalTeam.map((m, dotIdx) => (
@@ -989,28 +965,11 @@ export default function TeamInteractiveShowcase() {
               </div>
             </div>
           </div>
-
-          {/* Note on Additional Medical Professionals */}
-          <div className="mt-6 p-5 rounded-xl bg-white border border-slate-200/80 flex items-center justify-between flex-wrap gap-4 text-xs sm:text-sm text-slate-600">
-            <div className="flex items-center gap-3">
-              <HeartPulse className="w-5 h-5 text-primary shrink-0" />
-              <span>
-                <strong>Expanding Clinical Network:</strong> The Foundation is developing a wider medical and nursing team. Additional members will be published as their profiles and qualifications are finalised.
-              </span>
-            </div>
-            <Link
-              href="/opportunities"
-              className="text-xs font-bold text-primary hover:text-navy inline-flex items-center gap-1 shrink-0"
-            >
-              <span>Join Our Clinical Network</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
         </div>
       </section>
 
       {/* =========================================================
-          PART 3: INTERACTIVE DEPARTMENTAL DECK — FINANCE, EDITORIAL, COMMUNICATIONS & DATA/DIGITAL HEALTH
+          PART 3: FINANCE, EDITORIAL, COMMUNICATIONS & DIGITAL HEALTH
       ========================================================= */}
       <section
         id="editorial"
@@ -1019,11 +978,14 @@ export default function TeamInteractiveShowcase() {
         <div id="communications" />
         <div id="finance" />
         <div id="data-digital-health" />
+        {operationalDepartments.map((o) => (
+          <div key={o.id} id={o.id} />
+        ))}
         <div className="max-w-[1440px] 2xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 sm:mb-10">
             <div className="max-w-2xl">
               <span className="text-xs font-bold uppercase tracking-widest text-primary font-heading block mb-2">
-                03 · Departmental Leadership Deck
+                Operational Departments
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy font-heading tracking-tight leading-[1.12]">
                 Finance, Editorial, Communications &amp; Digital Health
@@ -1033,22 +995,11 @@ export default function TeamInteractiveShowcase() {
               </p>
             </div>
 
-            <div className="flex items-center gap-3 shrink-0">
-              <div className="text-right mr-2">
-                <div className="text-xs font-mono font-bold uppercase tracking-widest text-slate-400">
-                  OPERATIONS DECK
-                </div>
-                <div className="text-lg font-extrabold font-mono text-navy">
-                  {activeOps.index}{" "}
-                  <span className="text-slate-300 font-normal">
-                    / 0{operationalDepartments.length}
-                  </span>
-                </div>
-              </div>
+            <div className="flex items-center gap-2.5 shrink-0">
               <button
                 type="button"
                 onClick={handleOpsPrev}
-                aria-label="Previous department member"
+                aria-label="Previous department profile"
                 className="w-11 h-11 rounded-full bg-canvas border border-slate-200 flex items-center justify-center text-navy cursor-pointer"
               >
                 <ArrowLeft className="w-4 h-4" />
@@ -1056,7 +1007,7 @@ export default function TeamInteractiveShowcase() {
               <button
                 type="button"
                 onClick={handleOpsNext}
-                aria-label="Next department member"
+                aria-label="Next department profile"
                 className="w-11 h-11 rounded-full bg-primary text-white flex items-center justify-center cursor-pointer"
               >
                 <ArrowRight className="w-4 h-4" />
@@ -1098,11 +1049,11 @@ export default function TeamInteractiveShowcase() {
                   </div>
                   <div className="min-w-0">
                     <div
-                      className={`text-[10px] font-mono font-bold uppercase tracking-wider truncate ${
+                      className={`text-[10px] font-bold uppercase tracking-wider truncate ${
                         isSelected ? "text-primary" : "text-slate-400"
                       }`}
                     >
-                      {member.index} · {member.departmentName}
+                      {member.departmentName}
                     </div>
                     <div
                       className={`text-xs sm:text-sm font-bold truncate font-heading ${
@@ -1135,15 +1086,9 @@ export default function TeamInteractiveShowcase() {
           >
             <div className="rounded-2xl bg-canvas border border-slate-200 overflow-hidden">
               <div className="bg-navy text-white px-6 sm:px-8 py-3.5 flex items-center justify-between border-b border-white/10">
-                <div className="flex items-center gap-3">
-                  <span className="text-xs font-mono font-bold text-primary">
-                    {activeOps.index} / 0{operationalDepartments.length}
-                  </span>
-                  <span className="text-white/25">|</span>
-                  <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-white font-heading">
-                    {activeOps.departmentCode}
-                  </span>
-                </div>
+                <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-primary font-heading">
+                  {activeOps.departmentCode}
+                </span>
                 <span className="text-[11px] font-medium text-slate-300 hidden sm:inline">
                   {activeOps.tag}
                 </span>
@@ -1170,7 +1115,7 @@ export default function TeamInteractiveShowcase() {
                           {activeOps.name}
                         </span>
                         <span className="text-xs font-semibold text-primary uppercase tracking-wider mt-1 text-center">
-                          {activeOps.role} · Appointment Confirmed
+                          {activeOps.role}
                         </span>
                       </div>
                     )}
@@ -1299,7 +1244,7 @@ export default function TeamInteractiveShowcase() {
                           onClick={handleOpsNext}
                           className="px-4 py-2 rounded-full bg-primary text-white text-xs font-bold inline-flex items-center gap-1.5 cursor-pointer"
                         >
-                          <span>Next Member</span>
+                          <span>Next Profile</span>
                           <ArrowRight className="w-3.5 h-3.5" />
                         </button>
                       </div>
