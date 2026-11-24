@@ -133,7 +133,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 /* =========================================
-   DIRECTIONAL CURTAIN-FILL BUTTONS &
+   HIGH-CONTRAST DIRECTIONAL CURTAIN-FILL BUTTONS &
    ARCHITECTURAL MICRO-INTERACTIONS
 ========================================= */
 
@@ -144,11 +144,11 @@ button.rounded-full {
   isolation: isolate;
   overflow: hidden;
   transition:
-    background-color 0.38s cubic-bezier(0.22, 1, 0.36, 1),
-    color 0.38s cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 0.38s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.38s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+    background-color 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 a.rounded-full:hover,
@@ -168,6 +168,8 @@ a.rounded-full.bg-navy::before,
 button.rounded-full.bg-navy::before,
 a.rounded-full.border::before,
 button.rounded-full.border::before,
+a.rounded-full.bg-white\/10::before,
+button.rounded-full.bg-white\/10::before,
 a.rounded-full.bg-white\/15::before,
 a.rounded-full.bg-slate-100::before {
   content: "";
@@ -176,12 +178,12 @@ a.rounded-full.bg-slate-100::before {
   z-index: -1;
   transform: scaleX(0);
   transform-origin: right center;
-  transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
   pointer-events: none;
   border-radius: inherit;
 }
 
-/* 1. Gold Primary Button -> sweeps Deep Navy fill on light sections */
+/* 1. Gold Primary Button on Light Sections -> Sweeps Deep Navy (#132238) + Pure White Text */
 a.rounded-full.bg-primary::before,
 button.rounded-full.bg-primary::before {
   background-color: var(--color-navy-deep);
@@ -189,20 +191,46 @@ button.rounded-full.bg-primary::before {
 
 a.rounded-full.bg-primary:hover,
 button.rounded-full.bg-primary:hover {
+  background-color: var(--color-navy-deep) !important;
   color: #FFFFFF !important;
-  box-shadow: 0 10px 22px -6px rgba(19, 34, 56, 0.28);
+  border-color: var(--color-navy-deep) !important;
+  box-shadow: 0 10px 24px -6px rgba(19, 34, 56, 0.35);
 }
 
-/* Gold Primary Button inside dark navy sections/navbar -> sweeps burnished deep gold */
+a.rounded-full.bg-primary:hover *,
+button.rounded-full.bg-primary:hover * {
+  color: #FFFFFF !important;
+}
+
+/* 2. Gold Primary Button inside Dark Navy Sections/Navbar -> Sweeps Crisp White (#FFFFFF) + Deep Navy Text */
 .bg-navy-deep a.rounded-full.bg-primary::before,
 .bg-navy-deep button.rounded-full.bg-primary::before,
 .bg-navy a.rounded-full.bg-primary::before,
 .bg-navy button.rounded-full.bg-primary::before,
 header a.rounded-full.bg-primary::before {
-  background-color: #9A6D24;
+  background-color: #FFFFFF;
 }
 
-/* 2. Navy Primary Button -> sweeps Brand Gold fill */
+.bg-navy-deep a.rounded-full.bg-primary:hover,
+.bg-navy-deep button.rounded-full.bg-primary:hover,
+.bg-navy a.rounded-full.bg-primary:hover,
+.bg-navy button.rounded-full.bg-primary:hover,
+header a.rounded-full.bg-primary:hover {
+  background-color: #FFFFFF !important;
+  color: var(--color-navy-deep) !important;
+  border-color: #FFFFFF !important;
+  box-shadow: 0 10px 24px -6px rgba(0, 0, 0, 0.35);
+}
+
+.bg-navy-deep a.rounded-full.bg-primary:hover *,
+.bg-navy-deep button.rounded-full.bg-primary:hover *,
+.bg-navy a.rounded-full.bg-primary:hover *,
+.bg-navy button.rounded-full.bg-primary:hover *,
+header a.rounded-full.bg-primary:hover * {
+  color: var(--color-navy-deep) !important;
+}
+
+/* 3. Navy Primary Button -> Sweeps Brand Gold (#C18E3C) + Pure White Text */
 a.rounded-full.bg-navy::before,
 button.rounded-full.bg-navy::before {
   background-color: var(--color-primary);
@@ -210,11 +238,18 @@ button.rounded-full.bg-navy::before {
 
 a.rounded-full.bg-navy:hover,
 button.rounded-full.bg-navy:hover {
+  background-color: var(--color-primary) !important;
   color: #FFFFFF !important;
-  box-shadow: 0 10px 22px -6px rgba(193, 142, 60, 0.32);
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 10px 24px -6px rgba(193, 142, 60, 0.4);
 }
 
-/* 3. Outlined & Subtle Buttons on Light Backgrounds -> sweeps Deep Navy + white text */
+a.rounded-full.bg-navy:hover *,
+button.rounded-full.bg-navy:hover * {
+  color: #FFFFFF !important;
+}
+
+/* 4. Outlined & Light Secondary Buttons -> Sweeps Deep Navy (#132238) + Pure White Text */
 a.rounded-full.border-slate-200::before,
 a.rounded-full.border-slate-200\/90::before,
 a.rounded-full.border-slate-300::before,
@@ -232,21 +267,43 @@ a.rounded-full.border-navy\/20:hover,
 a.rounded-full.bg-slate-100:hover,
 button.rounded-full.border-slate-200:hover,
 button.rounded-full.border-slate-300:hover {
+  background-color: var(--color-navy-deep) !important;
   color: #FFFFFF !important;
-  border-color: var(--color-navy-deep);
+  border-color: var(--color-navy-deep) !important;
+  box-shadow: 0 8px 20px -6px rgba(19, 34, 56, 0.25);
 }
 
-/* 4. Outlined / Translucent Buttons on Dark Hero or Navbar -> sweeps warm gold fill */
+a.rounded-full.border-slate-200:hover *,
+a.rounded-full.border-slate-200\/90:hover *,
+a.rounded-full.border-slate-300:hover *,
+a.rounded-full.border-navy\/20:hover *,
+a.rounded-full.bg-slate-100:hover *,
+button.rounded-full.border-slate-200:hover *,
+button.rounded-full.border-slate-300:hover * {
+  color: #FFFFFF !important;
+}
+
+/* 5. Outlined / Translucent Buttons inside Dark Navy Sections -> Sweeps Warm Brand Gold (#C18E3C) + White Text */
 .bg-navy-deep a.rounded-full.border::before,
 .bg-navy a.rounded-full.border::before,
+.bg-navy-deep button.rounded-full.bg-white\/10::before,
 a.rounded-full.bg-white\/15::before {
   background-color: var(--color-primary);
 }
 
 .bg-navy-deep a.rounded-full.border:hover,
 .bg-navy a.rounded-full.border:hover,
+.bg-navy-deep button.rounded-full.bg-white\/10:hover,
 a.rounded-full.bg-white\/15:hover {
-  border-color: var(--color-primary);
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: #FFFFFF !important;
+}
+
+.bg-navy-deep a.rounded-full.border:hover *,
+.bg-navy a.rounded-full.border:hover *,
+.bg-navy-deep button.rounded-full.bg-white\/10:hover *,
+a.rounded-full.bg-white\/15:hover * {
   color: #FFFFFF !important;
 }
 
@@ -257,6 +314,7 @@ a.rounded-full.bg-navy:hover::before,
 button.rounded-full.bg-navy:hover::before,
 a.rounded-full.border:hover::before,
 button.rounded-full.border:hover::before,
+.bg-navy-deep button.rounded-full.bg-white\/10:hover::before,
 a.rounded-full.bg-white\/15:hover::before,
 a.rounded-full.bg-slate-100:hover::before,
 a.rounded-full.bg-primary:focus-visible::before,
@@ -280,23 +338,28 @@ main a.inline-flex:hover svg:last-child {
   transform: translate3d(4px, 0, 0);
 }
 
-a.rounded-full.bg-navy:hover svg {
-  color: #FFFFFF !important;
-}
-
 a.rounded-full:hover svg.lucide-arrow-up-right,
 button.rounded-full:hover svg.lucide-arrow-up-right,
 main a.inline-flex:hover svg.lucide-arrow-up-right {
   transform: translate3d(3px, -3px, 0);
 }
 
-/* Architectural Grid Cell: Sliding 3px Gold Top Accent Line on Hover */
-section .grid > div.border-r.border-b:not(.bg-navy) {
+/* =========================================
+   ARCHITECTURAL GRID CELLS & LEDGER HOVER CONTRAST
+   (Theme-Aware for Light vs. Dark Sections)
+========================================= */
+
+section .grid > div.border-r.border-b,
+section .grid > article.border-r.border-b {
   position: relative;
-  transition: background-color 0.35s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-section .grid > div.border-r.border-b:not(.bg-navy)::after {
+section .grid > div.border-r.border-b::after,
+section .grid > article.border-r.border-b::after {
   content: "";
   position: absolute;
   top: 0;
@@ -306,37 +369,56 @@ section .grid > div.border-r.border-b:not(.bg-navy)::after {
   background-color: var(--color-primary);
   transform: scaleX(0);
   transform-origin: right center;
-  transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
   pointer-events: none;
   z-index: 10;
 }
 
-section .grid > div.border-r.border-b:not(.bg-navy):hover {
-  background-color: #FCFDFE;
-}
-
-section .grid > div.border-r.border-b:not(.bg-navy):hover::after {
+section .grid > div.border-r.border-b:hover::after,
+section .grid > article.border-r.border-b:hover::after {
   transform: scaleX(1);
   transform-origin: left center;
 }
 
+/* A. Light Section Grid Cells -> Warm Gold-Ivory Highlight with High-Contrast Navy Text */
+section:not(.bg-navy-deep):not(.bg-navy) .grid > div.border-r.border-b:not(.bg-navy):not(.bg-navy-deep):hover,
+section:not(.bg-navy-deep):not(.bg-navy) .grid > article.border-r.border-b:not(.bg-navy):not(.bg-navy-deep):hover {
+  background-color: #FBF4E8;
+}
+
+/* B. Dark Navy Section Grid Cells -> Illuminated Midnight Navy + Gold Tint (Preserves Crisp White Text!) */
+section.bg-navy-deep .grid > div.border-r.border-b:hover,
+section.bg-navy .grid > div.border-r.border-b:hover,
+.bg-navy-deep .grid > div.border-r.border-b:hover,
+div.border-r.border-b.bg-navy:hover {
+  background-color: #1D3557 !important;
+  box-shadow: inset 0 0 0 1px rgba(193, 142, 60, 0.45);
+}
+
 /* Monospace index number subtle shift inside hovered grid cells & ledger rows */
 section .grid > div.border-r.border-b .font-mono,
+section .grid > article.border-r.border-b .font-mono,
 section .divide-y > div .font-mono {
   display: inline-block;
   transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 section .grid > div.border-r.border-b:hover .font-mono,
+section .grid > article.border-r.border-b:hover .font-mono,
 section .divide-y > div:hover .font-mono {
   transform: translate3d(4px, 0, 0);
 }
 
-/* Numbered Ledger Row subtle warm highlight on hover */
-section .divide-y > div {
-  transition: background-color 0.3s ease, padding-left 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+/* Numbered Ledger Row High-Contrast Hover Highlight */
+section:not(.bg-navy-deep):not(.bg-navy) .divide-y > div {
+  transition: background-color 0.25s ease;
 }
 
-section .divide-y > div:hover {
-  background-color: rgba(251, 244, 232, 0.35);
+section:not(.bg-navy-deep):not(.bg-navy) .divide-y > div:hover {
+  background-color: #FBF4E8;
+}
+
+section.bg-navy-deep .divide-y > div:hover,
+section.bg-navy .divide-y > div:hover {
+  background-color: rgba(193, 142, 60, 0.14);
 }

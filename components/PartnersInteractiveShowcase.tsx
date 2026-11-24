@@ -852,8 +852,8 @@ export default function PartnersInteractiveShowcase() {
                 }}
                 className={`text-left p-3.5 rounded-xl border transition-all cursor-pointer flex items-center gap-3.5 ${
                   isSelected
-                    ? "bg-navy text-white border-navy"
-                    : "bg-white text-navy border-slate-200/80"
+                    ? "bg-navy text-white border-navy shadow-xs"
+                    : "bg-white text-navy border-slate-200/80 hover:border-primary hover:bg-primary-light/45"
                 }`}
               >
                 <div className="relative w-11 h-11 rounded-lg overflow-hidden shrink-0 bg-slate-50 border border-slate-200/60 flex items-center justify-center">

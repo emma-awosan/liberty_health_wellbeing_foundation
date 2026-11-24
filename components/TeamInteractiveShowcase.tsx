@@ -270,6 +270,29 @@ const medicalTeam: TeamMemberProfile[] = [
     mottoLabel: "Professional Philosophy",
     tag: "Emergency Medicine · Preventive Healthcare",
   },
+  {
+    id: "dr-daso-boma",
+    index: "07",
+    departmentCode: "Medical & Clinical Team",
+    departmentName: "General Surgery & Oncology",
+    name: "Dr. Daso Boma E. (MD)",
+    role: "Medical Officer — General Surgery & Oncology",
+    subRole: "General Surgery, Oncology & Preventive Care",
+    image: "/images/Dr Daso Boma E. (MD).jpeg",
+    qualifications: [
+      "Doctor of Medicine (MD) — Ivano-Frankivsk National Medical University",
+      "Registered Medical Practitioner — Medical and Dental Council of Nigeria (MDCN)",
+      "Registered Medical Practitioner — General Medical Council (GMC), United Kingdom",
+    ],
+    bio: [
+      "Dr. Daso Boma E. is a Medical Officer with experience across different levels of healthcare and in several states in Nigeria. He studied at Ivano-Frankivsk National Medical University.",
+      "Registered with the Medical and Dental Council of Nigeria and the General Medical Council in the UK, Dr. Boma is committed to improving access to quality healthcare, with professional interests in general surgery and oncology. At Liberty Health & Wellbeing Foundation, he contributes medical insight to community health initiatives and supports the Foundation’s work to expand access to health information and preventive care.",
+    ],
+    motivation: null,
+    motto: null,
+    mottoLabel: null,
+    tag: "General Surgery · Oncology · Preventive Care",
+  },
 ];
 
 const operationalDepartments: TeamMemberProfile[] = [
@@ -395,8 +418,32 @@ const operationalDepartments: TeamMemberProfile[] = [
     tag: "Nursing · Digital Health Communication",
   },
   {
-    id: "ademola-oke-oyewusi",
+    id: "ramatu-aliyu-magaji",
     index: "06",
+    departmentCode: "Data, Research & Digital Health",
+    departmentName: "Monitoring, Evaluation & Health Informatics",
+    name: "Ramatu Aliyu Magaji",
+    role: "Lead, Monitoring, Evaluation & Health Informatics",
+    subRole: "Africa CDC Public Health Informatics Fellow · Programme Officer, NACA",
+    image: "/images/Ramatu Aliyu Magaji.jpeg",
+    qualifications: [
+      "PhD in Statistics (In Progress) — University of Abuja",
+      "Master of Science (MSc) in Statistics",
+      "Africa CDC Public Health Informatics Fellow (Attached to Kenya Ministry of Health)",
+      "Programme Officer — National Agency for the Control of AIDS (NACA), Nigeria",
+    ],
+    bio: [
+      "Ramatu Aliyu Magaji is a public health professional and statistician with experience in monitoring and evaluation, public health research, strategic information and health information systems. She is an Africa CDC Public Health Informatics Fellow attached to Kenya’s Ministry of Health and a Programme Officer at Nigeria’s National Agency for the Control of AIDS (NACA).",
+      "Her work includes HIV programme monitoring, public health surveillance, data quality assessment, digital health initiatives and strengthening health information systems. At Liberty Health & Wellbeing Foundation, she supports the use of reliable data and evaluation to guide programmes, improve delivery and inform public health decisions.",
+    ],
+    motivation: null,
+    motto: null,
+    mottoLabel: null,
+    tag: "Monitoring & Evaluation · Health Informatics · Statistics",
+  },
+  {
+    id: "ademola-oke-oyewusi",
+    index: "07",
     departmentCode: "Data, Research & Digital Health",
     departmentName: "Data & Digital Health",
     name: "Ademola Oke Oyewusi",
@@ -418,7 +465,7 @@ const operationalDepartments: TeamMemberProfile[] = [
   },
   {
     id: "joseph-tanko-john",
-    index: "07",
+    index: "08",
     departmentCode: "Data, Research & Digital Health",
     departmentName: "Public Health Data & ICT4D",
     name: "Joseph Tanko John",
@@ -750,8 +797,8 @@ export default function TeamInteractiveShowcase() {
                   onClick={() => setActiveMedicalIdx(idx)}
                   className={`text-left p-3.5 rounded-xl border transition-all cursor-pointer flex items-center gap-3 ${
                     isSelected
-                      ? "bg-navy text-white border-navy"
-                      : "bg-white text-navy border-slate-200/80"
+                      ? "bg-navy text-white border-navy shadow-xs"
+                      : "bg-white text-navy border-slate-200/80 hover:border-primary hover:bg-primary-light/45"
                   }`}
                 >
                   <div className="relative w-11 h-11 rounded-lg overflow-hidden shrink-0 bg-slate-100 border border-white/20 flex items-center justify-center">
@@ -1026,8 +1073,8 @@ export default function TeamInteractiveShowcase() {
                   onClick={() => setActiveOpsIdx(idx)}
                   className={`text-left p-4 rounded-xl border transition-all cursor-pointer flex items-center gap-3.5 ${
                     isSelected
-                      ? "bg-navy text-white border-navy"
-                      : "bg-canvas text-navy border-slate-200/80"
+                      ? "bg-navy text-white border-navy shadow-xs"
+                      : "bg-canvas text-navy border-slate-200/80 hover:border-primary hover:bg-primary-light/45"
                   }`}
                 >
                   <div className="relative w-11 h-11 rounded-lg overflow-hidden shrink-0 bg-white border border-slate-200/60 flex items-center justify-center">

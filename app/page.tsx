@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import AfricaHeroMap from "@/components/AfricaHeroMap";
 import CommunityCTA from "@/components/CommunityCTA";
+import AnnualAgendaAndBudget from "@/components/AnnualAgendaAndBudget";
 
 const getInvolvedPathways = [
   {
@@ -728,44 +729,11 @@ export default function Home() {
       </section>
 
       {/* =========================================
-          SECTION 1.E: SINGLE INFORMATIONAL ₦20,000,000 PROJECT OBJECTIVES SECTION
-          (Objectives only — no live donation buttons)
+          SECTION 1.E: ₦50,000,000 ANNUAL BUDGET & 1-YEAR AGENDA (DEC 2026 – DEC 2027)
       ========================================= */}
       <section className="pt-16 sm:pt-20 pb-0 bg-navy-deep text-white relative overflow-hidden">
         <div className="max-w-[1440px] 2xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24 relative z-10">
-          <div className="max-w-3xl mb-12 sm:mb-14">
-            <span className="text-xs font-bold uppercase tracking-widest text-primary font-heading block mb-2.5">
-              2026/2027 Pilot Programme · Informational Overview
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-heading tracking-tight leading-[1.15]">
-              ₦20,000,000 Programme{" "}
-              <span className="text-primary">Objectives</span>
-            </h2>
-            <p className="text-slate-300 mt-3.5 text-sm sm:text-base lg:text-lg leading-relaxed font-normal">
-              Our planned ₦20,000,000 programme framework is structured to establish initial outreach pilots, preventive screenings, health education, and locally relevant health data research across our seven core focus areas:
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-white/15 bg-navy-dark/40">
-            {pilotProjectObjectives.map((obj) => (
-              <div
-                key={obj.index}
-                className="p-6 sm:p-8 border-r border-b border-white/15 flex flex-col justify-between"
-              >
-                <div>
-                  <span className="text-xs font-mono font-bold text-primary block mb-3">
-                    OBJECTIVE {obj.index}
-                  </span>
-                  <h3 className="text-lg sm:text-xl font-extrabold text-white font-heading mb-2">
-                    {obj.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                    {obj.detail}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <AnnualAgendaAndBudget theme="dark" />
         </div>
 
         <div className="w-full overflow-hidden leading-none -mb-px">
