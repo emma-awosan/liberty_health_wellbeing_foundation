@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollRevealObserver from "@/components/ScrollRevealObserver";
+import OutreachFlyerModal from "@/components/OutreachFlyerModal";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -173,6 +174,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <OutreachFlyerModal />
         <ScrollRevealObserver />
       </body>
     </html>
